@@ -1,16 +1,178 @@
-## Hi there 👋
+<p align="center">
+  <img src="https://raw.githubusercontent.com/masood1996-geo/masood1996-geo/main/assets/banner.png" alt="Banner" width="100%"/>
+</p>
 
-<!--
-**masood1996-geo/masood1996-geo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<h1 align="center">
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/> Hey there, I'm <strong>Masood Sultan</strong>
+</h1>
 
-Here are some ideas to get you started:
+<p align="center">
+  <a href="https://www.linkedin.com/in/masood1996/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="mailto:masood.geo@yahoo.com"><img src="https://img.shields.io/badge/Email-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" alt="Email"/></a>
+  <a href="https://github.com/masood1996-geo"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=80&lines=%F0%9F%8C%8D+Geoscientist+%7C+AI+%26+Automation+Developer;%F0%9F%93%8D+Berlin%2C+Germany+%7C+MSc+Global+Change+Geography" alt="Typing SVG" />
+</p>
+
+---
+
+## 🧬 About Me
+
+```yaml
+name:       Masood Sultan
+role:       Geoscientist & AI Developer
+education:  MSc Global Change Geography — Humboldt University of Berlin
+focus:      Earth Sciences × Artificial Intelligence × Automation
+location:   Berlin, Germany 🇩🇪
+```
+
+I'm a **Geoscientist** with a passion for building intelligent automation tools. My work sits at the intersection of **Earth Sciences**, **AI/LLM technologies**, and **full-stack development**. I specialize in taking complex, manual workflows and turning them into sleek, automated pipelines.
+
+- 🔭 Currently building **AI-powered web scrapers** and **automation bots**
+- 🌱 Pursuing opportunities in **climate modeling**, **AI weather prediction**, and **computational geoscience**
+- 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin**
+- 🎓 **BSc** in Geophysics from **Bahria University** (CGPA 3.55/4.00)
+- 🏆 **3rd Runner-up** — Imperial Barrel Awards, Asia Pacific Region (AAPG)
+
+---
+
+## 🛠️ Tech Stack
+
+<table>
+<tr>
+<td valign="top" width="33%">
+
+### 💻 Languages
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
+### 🤖 AI & Data
+![Generative AI](https://img.shields.io/badge/Generative_AI-FF6F61?style=flat-square&logo=openai&logoColor=white)
+![LLMs](https://img.shields.io/badge/LLMs-412991?style=flat-square&logo=openai&logoColor=white)
+![Data Analysis](https://img.shields.io/badge/Data_Analysis-4EAA25?style=flat-square&logo=pandas&logoColor=white)
+![Statistics](https://img.shields.io/badge/Statistics-FF6384?style=flat-square&logo=scipy&logoColor=white)
+![Math Modeling](https://img.shields.io/badge/Mathematical_Modeling-0C2340?style=flat-square&logo=wolfram&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
+### 🌍 Geosciences
+![ArcGIS](https://img.shields.io/badge/ArcGIS-2C7AC3?style=flat-square&logo=arcgis&logoColor=white)
+![GIS](https://img.shields.io/badge/GIS-3CB371?style=flat-square&logo=qgis&logoColor=white)
+![Petrel](https://img.shields.io/badge/Schlumberger_Petrel-0070C0?style=flat-square&logo=data:image/png;base64,&logoColor=white)
+![3D Modeling](https://img.shields.io/badge/3D_Geomodelling-FF8C00?style=flat-square&logo=three.js&logoColor=white)
+![Seismic](https://img.shields.io/badge/3D_Seismic-8B0000?style=flat-square&logo=data:image/png;base64,&logoColor=white)
+
+</td>
+</tr>
+<tr>
+<td valign="top" width="33%">
+
+### 🔧 Dev Tools
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
+![API](https://img.shields.io/badge/REST_APIs-009688?style=flat-square&logo=fastapi&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
+### 🧠 AI Tools
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude_Code-D97706?style=flat-square&logo=anthropic&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-412991?style=flat-square&logo=openai&logoColor=white)
+![Antigravity](https://img.shields.io/badge/Google_Antigravity-4285F4?style=flat-square&logo=google&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
+### 🗣️ Languages
+![English](https://img.shields.io/badge/English-C1-2E86C1?style=flat-square)
+![German](https://img.shields.io/badge/German-A2-F4D03F?style=flat-square)
+![Urdu](https://img.shields.io/badge/Urdu-C1-1ABC9C?style=flat-square)
+![Hindi](https://img.shields.io/badge/Hindi-B1-E74C3C?style=flat-square)
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🚀 Featured Projects
+
+<a href="https://github.com/masood1996-geo/openhouse-bot">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot&theme=tokyonight&hide_border=true&border_radius=10" />
+</a>
+<a href="https://github.com/masood1996-geo/ai-scraper">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=masood1996-geo&repo=ai-scraper&theme=tokyonight&hide_border=true&border_radius=10" />
+</a>
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=masood1996-geo&show_icons=true&theme=tokyonight&hide_border=true&border_radius=10&include_all_commits=true&count_private=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=masood1996-geo&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=masood1996-geo&theme=tokyonight&hide_border=true&border_radius=10" alt="GitHub Streak" />
+</p>
+
+---
+
+## 🎓 Education & Research
+
+| Degree | Field | Institution | Year |
+|--------|-------|-------------|------|
+| 🎓 **MSc** | Global Change Geography | Humboldt University of Berlin 🇩🇪 | 2019–2026 |
+| 🎓 **BSc** | Geophysics | Bahria University Karachi 🇵🇰 | 2014–2018 |
+
+### 📄 Research
+- 🗺️ **3D Geomodelling** — Salt Creek field, Casper, Wyoming, USA *(Completed)*
+- 💧 **Rebound Effect** — Water supply & demand in the United States *(In Progress)*
+
+---
+
+## 🏅 Awards & Achievements
+
+- 🥉 **3rd Runner-up** — Imperial Barrel Awards, Asia Pacific Region (AAPG)
+- 🏆 **Rector Honor Award** — Bahria University Karachi (2014–2018)
+- ⚓ **Behr-e-Paima Survey Vessel Boarding** — Pakistan Navy (2015)
+- 🎖️ **Multiple Merit Scholarships**
+
+---
+
+## 🤝 Professional Memberships
+
+| Organization | Role |
+|--------------|------|
+| Pakistan Association of Petroleum Geoscientist (PAPG) | 🎓 Student Vice President |
+| American Association of Petroleum Geologist (AAPG) | 📋 Student Member |
+| Society of Exploration Geophysicist (SEG) | 💰 Student Treasurer |
+| HOPE (Help Of Patients In Exigency By Students) | 🌟 Ambassador |
+
+---
+
+## 📈 Activity Graph
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=masood1996-geo&theme=tokyo-night&hide_border=true&radius=10)](https://github.com/masood1996-geo)
+
+---
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=masood1996-geo&style=for-the-badge&color=38BDF8&label=PROFILE+VIEWS" alt="Profile Views" />
+</p>
+
+<p align="center">
+  <em>🌍 Bridging Earth Sciences and AI — one commit at a time.</em>
+</p>
