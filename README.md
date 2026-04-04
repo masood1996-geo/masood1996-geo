@@ -142,6 +142,33 @@ I'm a **Geoscientist** with a passion for building intelligent automation tools.
 - 🗺️ **3D Geomodelling Case Study** — *A case study of 3D geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA*. Published in the **Journal of Applied Geophysics**. [DOI: 10.1016/j.jappgeo.2020.104114](https://doi.org/10.1016/j.jappgeo.2020.104114) *(Completed)*
 - 💧 **Rebound Effect** — Water supply & demand in the United States *(In Progress)*
 
+### 📖 Master's Thesis: The KIEA Framework for Adaptive Water Governance
+**Title:** *A Critical Review of Participatory Approaches in Water Management for Climate Change Adaptation*
+
+My primary contribution to the field of Global Change Geography is the **Conditional Enabling Framework (KIEA)**, developed to diagnose and evaluate participatory water governance under severe climate stress and hydrological non-stationarity. Traditional models assume participation uniformly yields positive outcomes—my research demonstrates that participation often devolves into tokenism or elite capture unless four interdependent enabling conditions are met simultaneously.
+
+#### The Four Dimensions of KIEA:
+1. 🧠 **Knowledge Performance (K):** Diverse evidence (scientific and local) must be integrated, validated, and readily accessible for time-sensitive decision-making. 
+2. 🏛️ **Institutional Performance (I):** Participatory outputs must maintain authoritative influence and translate into binding decisions rather than being restricted to symbolic consultation.
+3. ⚖️ **Equity Performance (E):** Robust procedural safeguards must ensure meaningful representation, protecting marginalized communities from elite domination or disproportionate resource burdens.
+4. 🔄 **Adaptive Performance (A):** The system must support iterative rule revision, ongoing monitoring, and continuous adaptation as climatic baselines drastically shift over time.
+
+<p align="center">
+  <img src="assets/thesis_fig_p53_1.jpeg" alt="KIEA Weakest Link Logic" width="60%">
+  <br><em>Figure: The KIEA Dimensions. Following "binding constraint logic," the weakest dimension strictly limits overall governance effectiveness.</em>
+</p>
+
+#### Diagnostic Pathways & Binding Constraint Logic
+Instead of universally expanding participation platforms, the framework insists that policy interventions must surgically target the *binding constraint*. I developed comprehensive diagnostic pathways detailing how hydrological regimes, governance scales, institutional limitations, and hazard types condition exactly which K, I, E, or A dimension will inevitably fail first.
+
+<p align="center">
+  <img src="assets/thesis_fig_p61_1.png" alt="Diagnostic Pathways Hydrological" width="48%">
+  <img src="assets/thesis_fig_p62_1.png" alt="Diagnostic Pathways Social" width="48%">
+  <br><em>Figures: Step-by-step diagnostic pathways translating Hydrological, Governance, Social, and Hazard contexts directly into their corresponding binding constraints.</em>
+</p>
+
+Through a realist synthesis of 121 global water management studies, this diagnostic instrument directly shifts theoretical climate governance toward measurable, actionable, and prescriptive implementation.
+
 ---
 
 ## 🏅 Awards & Achievements
