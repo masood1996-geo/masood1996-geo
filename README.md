@@ -30,6 +30,7 @@ location:   Berlin, Germany 🇩🇪
 
 I'm a **Geoscientist** with a passion for building intelligent automation tools. My work sits at the intersection of **Earth Sciences**, **AI/LLM technologies**, and **full-stack development**. I specialize in taking complex, manual workflows and turning them into sleek, automated pipelines.
 
+- 🌐 Check out my **[Professional Portfolio](https://69d066a8a49071a26788.appwrite.network/)**
 - 🔭 Currently building **AI-powered web scrapers** and **automation bots**
 - 🌱 Pursuing opportunities in **climate modeling**, **AI weather prediction**, and **computational geoscience**
 - 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin**
@@ -138,7 +139,7 @@ I'm a **Geoscientist** with a passion for building intelligent automation tools.
 | 🎓 **BSc** | Geophysics | Bahria University Karachi 🇵🇰 | 2014–2018 |
 
 ### 📄 Research
-- 🗺️ **3D Geomodelling** — Salt Creek field, Casper, Wyoming, USA *(Completed)*
+- 🗺️ **3D Geomodelling Case Study** — *A case study of 3D geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA*. Published in the **Journal of Applied Geophysics**. [DOI: 10.1016/j.jappgeo.2020.104114](https://doi.org/10.1016/j.jappgeo.2020.104114) *(Completed)*
 - 💧 **Rebound Effect** — Water supply & demand in the United States *(In Progress)*
 
 ---
