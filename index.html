@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masood Sultan — Where the Earth Meets the Algorithm</title>
+    <meta name="description" content="Masood Sultan: Geoscientist turned AI engineer. Building self-learning scrapers, autonomous apartment hunters, and computational tools that bridge Earth science with machine intelligence. Berlin, Germany.">
+    <meta name="author" content="Masood Sultan">
+    <meta property="og:title" content="Masood Sultan — Where the Earth Meets the Algorithm">
+    <meta property="og:description" content="Geoscientist turned AI engineer. Self-learning scrapers, autonomous bots, and computational geoscience tools.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/262189506?v=4">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Terrain Canvas Background -->
+    <canvas id="terrain-canvas"></canvas>
+
+    <!-- Minimal Top Bar -->
+    <header class="topbar" id="topbar">
+        <div class="topbar-inner">
+            <a href="#" class="topbar-name">masood<span class="accent-dot">.</span>sultan</a>
+            <nav class="topbar-nav">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#stack">Stack</a>
+                <a href="#contact">Say hello</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO: Editorial, cinematic, not generic -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-overline">
+                    <span class="overline-line"></span>
+                    <span>Geoscientist & AI Engineer — Berlin</span>
+                </div>
+                <h1 class="hero-heading">
+                    Where the<br>
+                    <em class="serif-accent">Earth</em> meets<br>
+                    the <em class="serif-accent">Algorithm</em>
+                </h1>
+                <p class="hero-body">
+                    I build autonomous systems that think for themselves. Self-learning scrapers 
+                    that evolve with every run. Bots that hunt apartments across 50+ portals while you sleep. 
+                    All grounded in a decade of geoscience training — seismic interpretation, 3D subsurface modeling, 
+                    and climate data analysis.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#work" class="cta-primary">See what I've built</a>
+                    <a href="https://github.com/masood1996-geo" target="_blank" class="cta-ghost">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-portrait">
+                    <img src="https://avatars.githubusercontent.com/u/262189506?v=4" alt="Masood Sultan" loading="eager">
+                    <div class="portrait-overlay"></div>
+                </div>
+                <div class="hero-signal">
+                    <div class="signal-bar">
+                        <span class="signal-pulse"></span>
+                        <span class="signal-text">Open to research positions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- WORK: Bold project showcases, not boring cards -->
+    <section class="work" id="work">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="label-num">01</span>
+                <span class="label-text">Selected Work</span>
+            </div>
+
+            <!-- Project 1: ai-scraper -->
+            <article class="project" id="project-ai-scraper">
+                <div class="project-index">01</div>
+                <div class="project-content">
+                    <div class="project-meta">
+                        <span class="meta-tag">Python</span>
+                        <span class="meta-tag">LLMs</span>
+                        <span class="meta-tag">Self-Learning</span>
+                        <span class="meta-tag">MIT License</span>
+                    </div>
+                    <h2 class="project-title">
+                        <a href="https://github.com/masood1996-geo/ai-scraper" target="_blank">ai-scraper</a>
+                    </h2>
+                    <p class="project-desc">
+                        A web scraper that <strong>teaches itself</strong>. Point it at any website — it figures out the structure, 
+                        extracts data using LLMs, and <strong>remembers what worked</strong>. Next time it hits the same domain, 
+                        it's faster and more accurate. It builds domain-specific profiles, scores its own output quality, 
+                        and auto-evolves its extraction prompts. Headless Chrome under the hood, with persistent memory 
+                        that compounds over time.
+                    </p>
+                    <div class="project-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div>
+                                <strong>Self-Evolving Prompts</strong>
+                                <span>Gets smarter with every single scrape</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
+                            <div>
+                                <strong>Persistent Memory</strong>
+                                <span>Domain profiling that compounds over time</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <strong>Quality Scoring</strong>
+                                <span>Self-evaluates extraction accuracy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/masood1996-geo/ai-scraper" target="_blank" class="project-link">
+                        View repository
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+                <div class="project-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-bar">
+                            <span class="term-dot red"></span>
+                            <span class="term-dot yellow"></span>
+                            <span class="term-dot green"></span>
+                            <span class="term-title">ai-scraper</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-1">
+                            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">python scraper.py --url</span> <span class="term-arg">"https://arxiv.org/list/physics.geo-ph"</span></div>
+                            <div class="term-line dim"><span class="term-info">[engine]</span> No domain profile found. Learning...</div>
+                            <div class="term-line dim"><span class="term-info">[chrome]</span> Headless browser launched</div>
+                            <div class="term-line dim"><span class="term-info">[llm]</span> Analyzing page structure...</div>
+                            <div class="term-line accent"><span class="term-info">[learn]</span> Domain profile created: arxiv.org</div>
+                            <div class="term-line accent"><span class="term-info">[learn]</span> Extraction accuracy: <span class="term-highlight">94.7%</span></div>
+                            <div class="term-line"><span class="term-info">[done]</span> 127 papers extracted → papers.json</div>
+                            <div class="term-line blink-cursor"><span class="term-prompt">$</span> <span class="cursor-block">█</span></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div class="project-divider"></div>
+
+            <!-- Project 2: openhouse-bot -->
+            <article class="project project-reverse" id="project-openhouse">
+                <div class="project-index">02</div>
+                <div class="project-content">
+                    <div class="project-meta">
+                        <span class="meta-tag">Python</span>
+                        <span class="meta-tag">Telegram</span>
+                        <span class="meta-tag">Automation</span>
+                        <span class="meta-tag">AGPL-3.0</span>
+                    </div>
+                    <h2 class="project-title">
+                        <a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank">openhouse-bot</a>
+                    </h2>
+                    <p class="project-desc">
+                        Born out of frustration with Berlin's brutal housing market. This bot crawls <strong>50+ real estate 
+                        portals worldwide</strong>, applies your exact filters — price, rooms, location, commute time — and 
+                        fires matching listings to your Telegram <strong>24/7</strong>. It uses an LLM-powered universal crawler 
+                        that adapts to any portal's layout, plus headless Chrome to bypass anti-bot detection. 
+                        Set it and forget it.
+                    </p>
+                    <div class="project-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            </div>
+                            <div>
+                                <strong>50+ Portals</strong>
+                                <span>Global coverage, not just one platform</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                            <div>
+                                <strong>Instant Telegram Alerts</strong>
+                                <span>New listings hit your phone in seconds</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                            </div>
+                            <div>
+                                <strong>Anti-Bot Bypass</strong>
+                                <span>Headless Chrome + stealth mode</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" class="project-link">
+                        View repository
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+                <div class="project-visual">
+                    <div class="terminal-window terminal-dark">
+                        <div class="terminal-bar">
+                            <span class="term-dot red"></span>
+                            <span class="term-dot yellow"></span>
+                            <span class="term-dot green"></span>
+                            <span class="term-title">openhouse-bot</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-2">
+                            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">python bot.py</span> <span class="term-arg">--city berlin --max-rent 900</span></div>
+                            <div class="term-line dim"><span class="term-info">[bot]</span> Monitoring 54 portals...</div>
+                            <div class="term-line dim"><span class="term-info">[scan]</span> immobilienscout24.de — 12 new</div>
+                            <div class="term-line dim"><span class="term-info">[scan]</span> wg-gesucht.de — 4 new</div>
+                            <div class="term-line accent"><span class="term-info">[match]</span> 2BR Kreuzberg €780 — <span class="term-highlight">SENT</span></div>
+                            <div class="term-line accent"><span class="term-info">[match]</span> 1BR Neukölln €650 — <span class="term-highlight">SENT</span></div>
+                            <div class="term-line dim"><span class="term-info">[scan]</span> Next cycle in 120s...</div>
+                            <div class="term-line blink-cursor"><span class="term-prompt">$</span> <span class="cursor-block">█</span></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ABOUT: Editorial magazine style, not cookie-cutter cards -->
+    <section class="about" id="about">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="label-num">02</span>
+                <span class="label-text">Background</span>
+            </div>
+            <div class="about-layout">
+                <div class="about-main">
+                    <h2 class="about-heading">
+                        I didn't start in tech.<br>
+                        I started <em class="serif-accent">underground</em>.
+                    </h2>
+                    <div class="about-prose">
+                        <p>
+                            My first career was interpreting what's beneath your feet — 3D seismic surveys, subsurface 
+                            geological models, wellbore data. I earned a <strong>BSc in Geophysics</strong> from Bahria University 
+                            (3.55/4.00 CGPA) and placed <strong>3rd in the Imperial Barrel Awards, Asia Pacific</strong> — one of 
+                            the most competitive geoscience competitions organized by the AAPG.
+                        </p>
+                        <p>
+                            Then I moved to Berlin for an <strong>MSc in Global Change Geography</strong> at Humboldt University, 
+                            where the work shifted from subsurface to atmosphere — climate data, earth observation satellites, 
+                            computational modelling. Somewhere along the way, I realized the tools I needed didn't exist. 
+                            So I started building them.
+                        </p>
+                        <p>
+                            Now I write Python instead of field reports. I build LLM-powered systems that crawl, extract, 
+                            learn, and adapt. The geoscience training never left — it just evolved into a different kind 
+                            of excavation.
+                        </p>
+                    </div>
+                </div>
+                <aside class="about-sidebar">
+                    <div class="sidebar-block">
+                        <h4>Education</h4>
+                        <div class="edu-item">
+                            <span class="edu-years">2023 — 2025</span>
+                            <strong>MSc Global Change Geography</strong>
+                            <span class="edu-school">Humboldt University of Berlin</span>
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-years">2015 — 2019</span>
+                            <strong>BSc Geophysics</strong>
+                            <span class="edu-school">Bahria University · 3.55/4.00</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-block">
+                        <h4>Recognition</h4>
+                        <div class="edu-item highlight-item">
+                            <strong>Imperial Barrel Awards</strong>
+                            <span class="edu-school">3rd Place · AAPG Asia Pacific</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-block">
+                        <h4>Languages</h4>
+                        <div class="lang-grid">
+                            <div class="lang-item"><strong>English</strong><span>C1</span></div>
+                            <div class="lang-item"><strong>Urdu</strong><span>C1</span></div>
+                            <div class="lang-item"><strong>Hindi</strong><span>B1</span></div>
+                            <div class="lang-item"><strong>German</strong><span>A2</span></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- STACK: Clean, dense, not gimmicky -->
+    <section class="stack" id="stack">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="label-num">03</span>
+                <span class="label-text">Technical Stack</span>
+            </div>
+            <div class="stack-grid">
+                <div class="stack-col">
+                    <h3 class="stack-heading">Languages</h3>
+                    <ul class="stack-list">
+                        <li>Python 3.x <span class="stack-note">primary</span></li>
+                        <li>R</li>
+                        <li>C++</li>
+                        <li>JavaScript</li>
+                        <li>HTML / CSS</li>
+                    </ul>
+                </div>
+                <div class="stack-col">
+                    <h3 class="stack-heading">AI & ML</h3>
+                    <ul class="stack-list">
+                        <li>Large Language Models <span class="stack-note">Ollama, APIs</span></li>
+                        <li>Generative AI</li>
+                        <li>Machine Learning</li>
+                        <li>Pandas / SciPy / NumPy</li>
+                        <li>Wolfram</li>
+                    </ul>
+                </div>
+                <div class="stack-col">
+                    <h3 class="stack-heading">Geoscience</h3>
+                    <ul class="stack-list">
+                        <li>ArcGIS / QGIS</li>
+                        <li>Petrel</li>
+                        <li>3D Seismic Interpretation</li>
+                        <li>3D Geomodelling</li>
+                        <li>Three.js <span class="stack-note">visualization</span></li>
+                    </ul>
+                </div>
+                <div class="stack-col">
+                    <h3 class="stack-heading">Infrastructure</h3>
+                    <ul class="stack-list">
+                        <li>Docker</li>
+                        <li>FastAPI</li>
+                        <li>GitHub Actions</li>
+                        <li>Headless Chrome</li>
+                        <li>Appwrite</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT: Simple, direct -->
+    <section class="contact" id="contact">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="label-num">04</span>
+                <span class="label-text">Contact</span>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-main">
+                    <h2 class="contact-heading">
+                        Looking for a PhD position<br>
+                        in computational geoscience<br>
+                        or <em class="serif-accent">climate AI</em>.
+                    </h2>
+                    <p class="contact-body">
+                        Also open to research collaborations, interesting side projects, 
+                        or anything where geoscience meets code. Based in Berlin.
+                    </p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:mmsultan2009@gmail.com" class="contact-link" id="lnk-email">
+                        <span class="cl-label">Email</span>
+                        <span class="cl-value">mmsultan2009@gmail.com</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/masood1996/" target="_blank" class="contact-link" id="lnk-linkedin">
+                        <span class="cl-label">LinkedIn</span>
+                        <span class="cl-value">/in/masood1996</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <a href="https://github.com/masood1996-geo" target="_blank" class="contact-link" id="lnk-github">
+                        <span class="cl-label">GitHub</span>
+                        <span class="cl-value">masood1996-geo</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span>© 2026 Masood Sultan</span>
+            <span>Berlin, Germany</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
