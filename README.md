@@ -110,10 +110,10 @@ I'm a **Geoscientist** with a passion for building intelligent automation tools.
 ## 🚀 Featured Projects
 
 <a href="https://github.com/masood1996-geo/openhouse-bot">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot&theme=tokyonight&hide_border=true&border_radius=10" />
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot&theme=tokyonight&hide_border=true&border_radius=10" />
 </a>
 <a href="https://github.com/masood1996-geo/ai-scraper">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=masood1996-geo&repo=ai-scraper&theme=tokyonight&hide_border=true&border_radius=10" />
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-scraper&theme=tokyonight&hide_border=true&border_radius=10" />
 </a>
 
 ---
@@ -121,8 +121,8 @@ I'm a **Geoscientist** with a passion for building intelligent automation tools.
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=masood1996-geo&show_icons=true&theme=tokyonight&hide_border=true&border_radius=10&include_all_commits=true&count_private=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=masood1996-geo&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" />
+  <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api?username=masood1996-geo&show_icons=true&theme=tokyonight&hide_border=true&border_radius=10&include_all_commits=true&count_private=true" />
+  <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=masood1996-geo&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" />
 </p>
 
 <p align="center">
