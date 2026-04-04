@@ -26,6 +26,7 @@
             <a href="#" class="topbar-name">masood<span class="accent-dot">.</span>sultan</a>
             <nav class="topbar-nav">
                 <a href="#work">Work</a>
+                <a href="#research">Research</a>
                 <a href="#about">About</a>
                 <a href="#stack">Stack</a>
                 <a href="#contact">Say hello</a>
@@ -182,8 +183,8 @@
                         Born out of frustration with Berlin's brutal housing market. This bot crawls <strong>50+ real estate 
                         portals worldwide</strong>, applies your exact filters — price, rooms, location, commute time — and 
                         fires matching listings to your Telegram <strong>24/7</strong>. It uses an LLM-powered universal crawler 
-                        that adapts to any portal's layout, plus headless Chrome to bypass anti-bot detection. 
-                        Set it and forget it.
+                        that adapts to any portal's layout. Now features a <strong>Live Demo on Hugging Face</strong> to try 
+                        the real-time scraping pipeline directly from your browser.
                     </p>
                     <div class="project-features">
                         <div class="feature">
@@ -209,15 +210,21 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                             </div>
                             <div>
-                                <strong>Anti-Bot Bypass</strong>
-                                <span>Headless Chrome + stealth mode</span>
+                                <strong>Live HF Demo</strong>
+                                <span>Real-time scraping execution in browser</span>
                             </div>
                         </div>
                     </div>
-                    <a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" class="project-link">
-                        View repository
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" class="project-link">
+                            View repository
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </a>
+                        <a href="https://huggingface.co/spaces/masood1996/openhouse-bot" target="_blank" class="project-link" style="color: #ff9d00;">
+                            Try Live Demo
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="project-visual">
                     <div class="terminal-window terminal-dark">
@@ -243,11 +250,75 @@
         </div>
     </section>
 
+    <!-- RESEARCH: Publications & Papers -->
+    <section class="research" id="research">
+        <div class="section-inner">
+            <div class="section-label">
+                <span class="label-num">02</span>
+                <span class="label-text">Publications</span>
+            </div>
+            <article class="project" style="margin-top: 1rem; border-top: none; padding-top: 0;">
+                <div class="project-content" style="max-width: 100%;">
+                    <div class="project-meta">
+                        <span class="meta-tag">Journal of Applied Geophysics</span>
+                        <span class="meta-tag">2020</span>
+                        <span class="meta-tag">3D Geomodelling</span>
+                    </div>
+                    <h2 class="project-title" style="font-size: 1.5rem; margin-top: 1rem;">
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0926985119308869" target="_blank">A case study of 3D geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA</a>
+                    </h2>
+                    <p class="project-desc">
+                        A detailed geomodelling case study on the Teapot Dome, demonstrating advanced workflows in 3D subsurface modeling and reservoir characterization. Published in the highly respected Journal of Applied Geophysics.
+                    </p>
+                    <a href="https://doi.org/10.1016/j.jappgeo.2020.104114" target="_blank" class="project-link">
+                        Read on ScienceDirect
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="project" style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+                <div class="project-content" style="max-width: 100%;">
+                    <div class="project-meta">
+                        <span class="meta-tag">Master's Thesis</span>
+                        <span class="meta-tag">2025</span>
+                        <span class="meta-tag">Water Governance & Adaptation</span>
+                    </div>
+                    <h2 class="project-title" style="font-size: 1.5rem; margin-top: 1rem;">
+                        A Critical Review of Participatory Approaches in Water Management for Climate Change Adaptation
+                    </h2>
+                    <p class="project-desc">
+                        My primary contribution to the field of Global Change Geography is the <strong>Conditional Enabling Framework (KIEA)</strong>, developed to diagnose and evaluate participatory water governance under severe climate stress and hydrological non-stationarity. <br><br>
+                        Traditional models assume participation uniformly yields positive outcomes—my research demonstrates that participation often devolves into tokenism or elite capture unless four interdependent enabling conditions are met simultaneously: <strong>Knowledge Performance (K)</strong>, <strong>Institutional Performance (I)</strong>, <strong>Equity Performance (E)</strong>, and <strong>Adaptive Performance (A)</strong>.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-top: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                        <figure style="flex: 1; min-width: 300px; margin: 0;">
+                            <img src="assets/thesis_fig_p53_1.jpeg" alt="KIEA Weakest Link Logic" style="width: 100%; border-radius: 4px; border: 1px solid var(--border);">
+                            <figcaption style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; text-align: center;">Figure: The KIEA Dimensions & Binding Constraint Logic.</figcaption>
+                        </figure>
+                        <figure style="flex: 2; min-width: 300px; margin: 0; display: flex; gap: 1rem;">
+                            <div style="flex: 1;">
+                                <img src="assets/thesis_fig_p61_1.png" alt="Diagnostic Pathways Hydrological" style="width: 100%; border-radius: 4px; border: 1px solid var(--border);">
+                            </div>
+                            <div style="flex: 1;">
+                                <img src="assets/thesis_fig_p62_1.png" alt="Diagnostic Pathways Social" style="width: 100%; border-radius: 4px; border: 1px solid var(--border);">
+                            </div>
+                        </figure>
+                    </div>
+                    <p class="project-desc" style="margin-top: 1.5rem; font-size: 0.95rem;">
+                        <em>Through a realist synthesis of 121 global water management studies, this diagnostic instrument directly shifts theoretical climate governance toward measurable, actionable, and prescriptive implementation.</em>
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
     <!-- ABOUT: Editorial magazine style, not cookie-cutter cards -->
     <section class="about" id="about">
         <div class="section-inner">
             <div class="section-label">
-                <span class="label-num">02</span>
+                <span class="label-num">03</span>
                 <span class="label-text">Background</span>
             </div>
             <div class="about-layout">
@@ -315,7 +386,7 @@
     <section class="stack" id="stack">
         <div class="section-inner">
             <div class="section-label">
-                <span class="label-num">03</span>
+                <span class="label-num">04</span>
                 <span class="label-text">Technical Stack</span>
             </div>
             <div class="stack-grid">
@@ -367,7 +438,7 @@
     <section class="contact" id="contact">
         <div class="section-inner">
             <div class="section-label">
-                <span class="label-num">04</span>
+                <span class="label-num">05</span>
                 <span class="label-text">Contact</span>
             </div>
             <div class="contact-layout">
