@@ -3,14 +3,15 @@
    Terrain mesh, scroll reveals, no gimmicks
    =========================================== */
 
-// ---- Terrain Mesh Background ----
+// ---- Topographic Mesh Background ----
 class TerrainMesh {
     constructor(canvas) {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
         this.cols = 0;
         this.rows = 0;
-        this.spacing = 30;
+        this.spacingX = 25;
+        this.spacingY = 30; // Closer vertical spacing for 3D effect
         this.points = [];
         this.time = 0;
         this.mouse = { x: -1000, y: -1000 };
@@ -22,8 +23,8 @@ class TerrainMesh {
     resize() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
-        this.cols = Math.ceil(this.canvas.width / this.spacing) + 2;
-        this.rows = Math.ceil(this.canvas.height / this.spacing) + 2;
+        this.cols = Math.ceil(this.canvas.width / this.spacingX) + 2;
+        this.rows = Math.ceil(this.canvas.height / this.spacingY) + 4; // Extra rows for overlap
         this.buildGrid();
     }
 
@@ -32,10 +33,10 @@ class TerrainMesh {
         for (let r = 0; r < this.rows; r++) {
             for (let c = 0; c < this.cols; c++) {
                 this.points.push({
-                    x: c * this.spacing,
-                    y: r * this.spacing,
-                    baseX: c * this.spacing,
-                    baseY: r * this.spacing
+                    x: c * this.spacingX - this.spacingX,
+                    y: r * this.spacingY - this.spacingY * 2,
+                    baseX: c * this.spacingX - this.spacingX,
+                    baseY: r * this.spacingY - this.spacingY * 2
                 });
             }
         }
@@ -50,70 +51,73 @@ class TerrainMesh {
     }
 
     animate() {
-        this.time += 0.003;
+        this.time += 0.0015; // Slow, organic movement
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        // Update points with wave displacement
-        for (const p of this.points) {
-            const wave1 = Math.sin(p.baseX * 0.008 + this.time * 2) * 4;
-            const wave2 = Math.cos(p.baseY * 0.006 + this.time * 1.5) * 3;
-            p.x = p.baseX + wave1;
-            p.y = p.baseY + wave2;
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        
+        // Use exact background color to mask out lines behind
+        const bgColor = isLight ? '#f9f8f5' : '#0c0c0e'; 
+        const lineColor = isLight ? 'rgba(0, 0, 0, 0.08)' : 'rgba(196, 240, 77, 0.06)';
 
-            // Mouse push
+        // Update points with organic wave displacement
+        for (const p of this.points) {
+            // Complex multi-octave sine field = pseudo-perlin noise
+            const wave1 = Math.sin(p.baseX * 0.003 + this.time * 2) * 20;
+            const wave2 = Math.cos(p.baseY * 0.004 + p.baseX * 0.002 - this.time) * 30;
+            const wave3 = Math.sin((p.baseX + p.baseY) * 0.008 + this.time * 3) * 10;
+            
+            p.x = p.baseX;
+            // Displacement mainly on Y axis to simulate elevation
+            p.y = p.baseY + wave1 + wave2 + wave3;
+
+            // Mouse interaction: push points away slightly
             const dx = p.x - this.mouse.x;
             const dy = p.y - this.mouse.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-                const force = (120 - dist) / 120;
-                p.x += dx * force * 0.15;
-                p.y += dy * force * 0.15;
+            if (dist < 250) {
+                const force = (250 - dist) / 250;
+                p.y += dy * force * 0.2;
             }
         }
 
-        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-        const lineColor = isLight ? 'rgba(0, 0, 0, 0.05)' : 'rgba(196, 240, 77, 0.03)';
-        const dotColorBase = isLight ? '101, 163, 13' : '196, 240, 77';
-
-        // Draw horizontal lines
-        this.ctx.strokeStyle = lineColor;
-        this.ctx.lineWidth = 0.5;
+        // Draw horizontal lines from top to bottom
+        this.ctx.lineWidth = 1;
+        this.ctx.lineJoin = 'round';
 
         for (let r = 0; r < this.rows; r++) {
             this.ctx.beginPath();
-            for (let c = 0; c < this.cols; c++) {
-                const idx = r * this.cols + c;
-                const p = this.points[idx];
-                if (c === 0) this.ctx.moveTo(p.x, p.y);
-                else this.ctx.lineTo(p.x, p.y);
-            }
-            this.ctx.stroke();
-        }
+            let firstPoint = this.points[r * this.cols];
+            this.ctx.moveTo(firstPoint.x, firstPoint.y);
 
-        // Draw vertical lines
-        for (let c = 0; c < this.cols; c++) {
-            this.ctx.beginPath();
-            for (let r = 0; r < this.rows; r++) {
-                const idx = r * this.cols + c;
-                const p = this.points[idx];
-                if (r === 0) this.ctx.moveTo(p.x, p.y);
-                else this.ctx.lineTo(p.x, p.y);
+            for (let c = 1; c < this.cols; c++) {
+                const p = this.points[r * this.cols + c];
+                // Smooth bezier curve through the points
+                const prev = this.points[r * this.cols + c - 1];
+                const cpX = (prev.x + p.x) / 2;
+                const cpY = (prev.y + p.y) / 2;
+                
+                if (c === 1) {
+                    this.ctx.lineTo(cpX, cpY);
+                } else if (c === this.cols - 1) {
+                    this.ctx.quadraticCurveTo(prev.x, prev.y, p.x, p.y);
+                } else {
+                    this.ctx.quadraticCurveTo(prev.x, prev.y, cpX, cpY);
+                }
             }
-            this.ctx.stroke();
-        }
 
-        // Draw dots at intersections near mouse
-        for (const p of this.points) {
-            const dx = p.x - this.mouse.x;
-            const dy = p.y - this.mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 200) {
-                const alpha = (1 - dist / 200) * (isLight ? 0.3 : 0.4);
-                this.ctx.beginPath();
-                this.ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
-                this.ctx.fillStyle = `rgba(${dotColorBase}, ${alpha})`;
-                this.ctx.fill();
-            }
+            // To create the 3D masking effect, draw a polygon down to the bottom of the canvas and fill it
+            const lastPoint = this.points[r * this.cols + this.cols - 1];
+            this.ctx.lineTo(lastPoint.x, this.canvas.height + 100);
+            this.ctx.lineTo(firstPoint.x, this.canvas.height + 100);
+            this.ctx.closePath();
+
+            this.ctx.fillStyle = bgColor;
+            this.ctx.fill();
+
+            // Then stroke the exact same path
+            this.ctx.strokeStyle = lineColor;
+            this.ctx.stroke();
         }
 
         requestAnimationFrame(() => this.animate());

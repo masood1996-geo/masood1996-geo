@@ -26,17 +26,17 @@
 }
 
 :root[data-theme="light"] {
-    --bg: #f8fafc;
+    --bg: #f9f8f5;
     --bg-elevated: #ffffff;
-    --bg-surface: #f1f5f9;
+    --bg-surface: #f1f0ec;
     --border: rgba(0,0,0,0.08);
-    --border-hover: rgba(0,0,0,0.16);
-    --text: #0f172a;
-    --text-secondary: #475569;
-    --text-muted: #94a3b8;
-    --accent: #65a30d;
-    --accent-dim: rgba(101,163,13,0.12);
-    --accent-2: #0d9488;
+    --border-hover: rgba(0,0,0,0.14);
+    --text: #2a2826;
+    --text-secondary: #5c5855;
+    --text-muted: #8c8782;
+    --accent: #ca5d22;
+    --accent-dim: rgba(202, 93, 34, 0.1);
+    --accent-2: #248194;
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
