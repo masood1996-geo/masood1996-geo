@@ -71,8 +71,12 @@ class TerrainMesh {
             }
         }
 
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        const lineColor = isLight ? 'rgba(0, 0, 0, 0.05)' : 'rgba(196, 240, 77, 0.03)';
+        const dotColorBase = isLight ? '101, 163, 13' : '196, 240, 77';
+
         // Draw horizontal lines
-        this.ctx.strokeStyle = 'rgba(196, 240, 77, 0.03)';
+        this.ctx.strokeStyle = lineColor;
         this.ctx.lineWidth = 0.5;
 
         for (let r = 0; r < this.rows; r++) {
@@ -104,10 +108,10 @@ class TerrainMesh {
             const dy = p.y - this.mouse.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 200) {
-                const alpha = (1 - dist / 200) * 0.4;
+                const alpha = (1 - dist / 200) * (isLight ? 0.3 : 0.4);
                 this.ctx.beginPath();
                 this.ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
-                this.ctx.fillStyle = `rgba(196, 240, 77, ${alpha})`;
+                this.ctx.fillStyle = `rgba(${dotColorBase}, ${alpha})`;
                 this.ctx.fill();
             }
         }
@@ -184,12 +188,41 @@ function initTerminals() {
     terminals.forEach(t => observer.observe(t));
 }
 
+// ---- Theme Logic ----
+function initTheme() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return;
+
+    const savedTheme = localStorage.getItem('theme');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    let currentTheme = savedTheme || (prefersLight ? 'light' : 'dark');
+
+    const updateTheme = (theme) => {
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+        }
+        localStorage.setItem('theme', theme);
+    };
+
+    updateTheme(currentTheme);
+
+    toggleBtn.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        updateTheme(currentTheme);
+    });
+}
+
 // ---- Init ----
 document.addEventListener('DOMContentLoaded', () => {
     // Terrain background
     const canvas = document.getElementById('terrain-canvas');
     if (canvas) new TerrainMesh(canvas);
 
+    initTheme();
     initTopbar();
     initReveal();
     initTerminals();

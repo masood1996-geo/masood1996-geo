@@ -25,6 +25,9 @@
         <div class="topbar-inner">
             <a href="#" class="topbar-name">masood<span class="accent-dot">.</span>sultan</a>
             <nav class="topbar-nav">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-dark"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
                 <a href="#work">Work</a>
                 <a href="#research">Research</a>
                 <a href="#about">About</a>
@@ -88,9 +91,89 @@
                 <span class="label-text">Selected Work</span>
             </div>
 
-            <!-- Project 1: ai-scraper -->
-            <article class="project" id="project-ai-scraper">
+            <!-- Project 1: TerraMind Core -->
+            <article class="project" id="project-terramind">
                 <div class="project-index">01</div>
+                <div class="project-content">
+                    <div class="project-meta">
+                        <span class="meta-tag">TypeScript</span>
+                        <span class="meta-tag">Node.js</span>
+                        <span class="meta-tag">Express</span>
+                        <span class="meta-tag">SSE</span>
+                    </div>
+                    <h2 class="project-title">
+                        <a href="https://github.com/masood1996-geo/terramind-core" target="_blank">TerraMind Core</a>
+                    </h2>
+                    <p class="project-desc">
+                        A real-time global disaster intelligence platform entirely powered by <strong>open government APIs</strong>. It dynamically aggregates and normalizes data from USGS Earthquakes, NASA EONET Wildfires, NOAA Weather Alerts, and NASA FIRMS Satellite Fire Detection into a single unified stream. Features a built-in <strong>GeoScience AI Assistant</strong> to help developers and scientists map disaster impacts using remote sensing. 
+                    </p>
+                    <div class="project-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                            </div>
+                            <div>
+                                <strong>4 Gov APIs Unified</strong>
+                                <span>Multi-source normalizer pipeline for global coverage</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <div>
+                                <strong>Server-Sent Events (SSE)</strong>
+                                <span>Real-time push engine without polling delays</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+                            </div>
+                            <div>
+                                <strong>Interactive Dashboard</strong>
+                                <span>Live map markers, responsive UI, severity filters</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://github.com/masood1996-geo/terramind-core" target="_blank" class="project-link">
+                            View repository
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </a>
+                        <a href="https://huggingface.co/spaces/masood1996/terramind-core" target="_blank" class="project-link" style="color: #ff9d00;">
+                            Live Dashboard
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-bar">
+                            <span class="term-dot red"></span>
+                            <span class="term-dot yellow"></span>
+                            <span class="term-dot green"></span>
+                            <span class="term-title">terramind-core</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-terramind">
+                            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">npm start</span></div>
+                            <div class="term-line dim"><span class="term-info">[server]</span> TerraMind API Engine booting on port 4100</div>
+                            <div class="term-line accent"><span class="term-info">[pipeline]</span> Normalizing mult-source hazard feeds...</div>
+                            <div class="term-line dim"><span class="term-info">[usgs]</span> Extracted 8 seismic anomalies</div>
+                            <div class="term-line dim"><span class="term-info">[nasa-firms]</span> Scanning VIIRS 375m fire detections</div>
+                            <div class="term-line accent"><span class="term-info">[sse]</span> Broadcasting delta update to connected clients →</div>
+                            <div class="term-line"><span class="term-info">[status]</span> 22 active events cached. Next sweep in 120s.</div>
+                            <div class="term-line blink-cursor"><span class="term-prompt">$</span> <span class="cursor-block">█</span></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div class="project-divider"></div>
+
+            <!-- Project 2: ai-scraper -->
+            <article class="project project-reverse" id="project-ai-scraper">
+                <div class="project-index">02</div>
                 <div class="project-content">
                     <div class="project-meta">
                         <span class="meta-tag">Python</span>
@@ -166,9 +249,9 @@
 
             <div class="project-divider"></div>
 
-            <!-- Project 2: openhouse-bot -->
-            <article class="project project-reverse" id="project-openhouse">
-                <div class="project-index">02</div>
+            <!-- Project 3: openhouse-bot -->
+            <article class="project" id="project-openhouse">
+                <div class="project-index">03</div>
                 <div class="project-content">
                     <div class="project-meta">
                         <span class="meta-tag">Python</span>
@@ -292,17 +375,17 @@
                         Traditional models assume participation uniformly yields positive outcomes—my research demonstrates that participation often devolves into tokenism or elite capture unless four interdependent enabling conditions are met simultaneously: <strong>Knowledge Performance (K)</strong>, <strong>Institutional Performance (I)</strong>, <strong>Equity Performance (E)</strong>, and <strong>Adaptive Performance (A)</strong>.
                     </p>
                     
-                    <div style="display: flex; gap: 2rem; margin-top: 2rem; align-items: flex-start; flex-wrap: wrap;">
-                        <figure style="flex: 1; min-width: 300px; margin: 0;">
-                            <img src="assets/thesis_fig_p53_1.jpeg" alt="KIEA Weakest Link Logic" style="width: 100%; border-radius: 4px; border: 1px solid var(--border);">
-                            <figcaption style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; text-align: center;">Figure: The KIEA Dimensions & Binding Constraint Logic.</figcaption>
+                    <div class="thesis-grid">
+                        <figure class="thesis-figure-main">
+                            <img src="assets/thesis_fig_p53_1.jpeg" alt="KIEA Weakest Link Logic">
+                            <figcaption>Figure: The KIEA Dimensions & Binding Constraint Logic.</figcaption>
                         </figure>
-                        <figure style="flex: 2; min-width: 300px; margin: 0; display: flex; gap: 1rem;">
-                            <div style="flex: 1;">
-                                <img src="assets/thesis_fig_p61_1.png" alt="Diagnostic Pathways Hydrological" style="width: 100%; border-radius: 4px; border: 1px solid var(--border);">
+                        <figure class="thesis-figure-secondary">
+                            <div>
+                                <img src="assets/thesis_fig_p61_1.png" alt="Diagnostic Pathways Hydrological">
                             </div>
-                            <div style="flex: 1;">
-                                <img src="assets/thesis_fig_p62_1.png" alt="Diagnostic Pathways Social" style="width: 100%; border-radius: 4px; border: 1px solid var(--border);">
+                            <div>
+                                <img src="assets/thesis_fig_p62_1.png" alt="Diagnostic Pathways Social">
                             </div>
                         </figure>
                     </div>
