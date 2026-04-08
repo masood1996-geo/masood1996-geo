@@ -3,18 +3,15 @@
    Terrain mesh, scroll reveals, no gimmicks
    =========================================== */
 
-// ---- Topographic Mesh Background ----
-class TerrainMesh {
+// ---- Seismic Mouse Trail ----
+class SeismicTrail {
     constructor(canvas) {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
-        this.cols = 0;
-        this.rows = 0;
-        this.spacingX = 25;
-        this.spacingY = 30; // Closer vertical spacing for 3D effect
         this.points = [];
-        this.time = 0;
-        this.mouse = { x: -1000, y: -1000 };
+        this.maxPoints = 40;
+        this.mouse = { x: -1000, y: -1000, vx: 0, vy: 0 };
+        this.lastMouse = { x: -1000, y: -1000 };
         this.resize();
         this.bindEvents();
         this.animate();
@@ -23,101 +20,81 @@ class TerrainMesh {
     resize() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
-        this.cols = Math.ceil(this.canvas.width / this.spacingX) + 2;
-        this.rows = Math.ceil(this.canvas.height / this.spacingY) + 4; // Extra rows for overlap
-        this.buildGrid();
-    }
-
-    buildGrid() {
-        this.points = [];
-        for (let r = 0; r < this.rows; r++) {
-            for (let c = 0; c < this.cols; c++) {
-                this.points.push({
-                    x: c * this.spacingX - this.spacingX,
-                    y: r * this.spacingY - this.spacingY * 2,
-                    baseX: c * this.spacingX - this.spacingX,
-                    baseY: r * this.spacingY - this.spacingY * 2
-                });
-            }
-        }
     }
 
     bindEvents() {
         window.addEventListener('resize', () => this.resize());
         window.addEventListener('mousemove', (e) => {
+            this.lastMouse.x = this.mouse.x;
+            this.lastMouse.y = this.mouse.y;
             this.mouse.x = e.clientX;
             this.mouse.y = e.clientY;
+            
+            // Calculate velocity
+            this.mouse.vx = this.mouse.x - this.lastMouse.x;
+            this.mouse.vy = this.mouse.y - this.lastMouse.y;
+            let speed = Math.sqrt(this.mouse.vx ** 2 + this.mouse.vy ** 2);
+            
+            // Generate jitter purely based on speed
+            let jitter = 0;
+            if (speed > 5) {
+                // High amplitude for high speed, resembling seismic P/S waves
+                jitter = (Math.random() - 0.5) * speed * 1.5;
+                if (jitter > 80) jitter = 80; // cap amplitude
+                if (jitter < -80) jitter = -80;
+            }
+
+            this.points.push({
+                x: this.mouse.x,
+                y: this.mouse.y + jitter, // Apply displacement perpendicular
+                age: 0
+            });
+
+            if (this.points.length > this.maxPoints) {
+                this.points.shift();
+            }
         });
     }
 
     animate() {
-        this.time += 0.0015; // Slow, organic movement
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-        
-        // Use exact background color to mask out lines behind
-        const bgColor = isLight ? '#f9f8f5' : '#0c0c0e'; 
-        const lineColor = isLight ? 'rgba(0, 0, 0, 0.08)' : 'rgba(196, 240, 77, 0.06)';
+        // Accent colors: terracotta in light, neon green in dark
+        const rgb = isLight ? '202, 93, 34' : '196, 240, 77';
 
-        // Update points with organic wave displacement
-        for (const p of this.points) {
-            // Complex multi-octave sine field = pseudo-perlin noise
-            const wave1 = Math.sin(p.baseX * 0.003 + this.time * 2) * 20;
-            const wave2 = Math.cos(p.baseY * 0.004 + p.baseX * 0.002 - this.time) * 30;
-            const wave3 = Math.sin((p.baseX + p.baseY) * 0.008 + this.time * 3) * 10;
-            
-            p.x = p.baseX;
-            // Displacement mainly on Y axis to simulate elevation
-            p.y = p.baseY + wave1 + wave2 + wave3;
+        if (this.points.length > 1) {
+            this.ctx.lineJoin = 'round';
+            this.ctx.lineCap = 'round';
 
-            // Mouse interaction: push points away slightly
-            const dx = p.x - this.mouse.x;
-            const dy = p.y - this.mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 250) {
-                const force = (250 - dist) / 250;
-                p.y += dy * force * 0.2;
-            }
-        }
-
-        // Draw horizontal lines from top to bottom
-        this.ctx.lineWidth = 1;
-        this.ctx.lineJoin = 'round';
-
-        for (let r = 0; r < this.rows; r++) {
-            this.ctx.beginPath();
-            let firstPoint = this.points[r * this.cols];
-            this.ctx.moveTo(firstPoint.x, firstPoint.y);
-
-            for (let c = 1; c < this.cols; c++) {
-                const p = this.points[r * this.cols + c];
-                // Smooth bezier curve through the points
-                const prev = this.points[r * this.cols + c - 1];
-                const cpX = (prev.x + p.x) / 2;
-                const cpY = (prev.y + p.y) / 2;
+            for (let i = 1; i < this.points.length; i++) {
+                let p1 = this.points[i - 1];
+                let p2 = this.points[i];
                 
-                if (c === 1) {
-                    this.ctx.lineTo(cpX, cpY);
-                } else if (c === this.cols - 1) {
-                    this.ctx.quadraticCurveTo(prev.x, prev.y, p.x, p.y);
-                } else {
-                    this.ctx.quadraticCurveTo(prev.x, prev.y, cpX, cpY);
-                }
+                // Opacity fades significantly with age
+                let opacity = 1 - (p2.age / 40);
+                if (opacity < 0) opacity = 0;
+
+                this.ctx.beginPath();
+                this.ctx.moveTo(p1.x, p1.y);
+                this.ctx.lineTo(p2.x, p2.y);
+                
+                // Dynamic line width and glow
+                this.ctx.lineWidth = 2 * opacity;
+                this.ctx.strokeStyle = `rgba(${rgb}, ${opacity})`;
+                this.ctx.shadowBlur = 10 * opacity;
+                this.ctx.shadowColor = `rgba(${rgb}, ${opacity})`;
+                
+                this.ctx.stroke();
+
+                // Age the points
+                p1.age += 1;
             }
-
-            // To create the 3D masking effect, draw a polygon down to the bottom of the canvas and fill it
-            const lastPoint = this.points[r * this.cols + this.cols - 1];
-            this.ctx.lineTo(lastPoint.x, this.canvas.height + 100);
-            this.ctx.lineTo(firstPoint.x, this.canvas.height + 100);
-            this.ctx.closePath();
-
-            this.ctx.fillStyle = bgColor;
-            this.ctx.fill();
-
-            // Then stroke the exact same path
-            this.ctx.strokeStyle = lineColor;
-            this.ctx.stroke();
+            // Age the last point
+            this.points[this.points.length - 1].age += 1;
+            
+            // Remove completely faded points
+            this.points = this.points.filter(p => p.age < 40);
         }
 
         requestAnimationFrame(() => this.animate());
@@ -224,7 +201,7 @@ function initTheme() {
 document.addEventListener('DOMContentLoaded', () => {
     // Terrain background
     const canvas = document.getElementById('terrain-canvas');
-    if (canvas) new TerrainMesh(canvas);
+    if (canvas) new SeismicTrail(canvas);
 
     initTheme();
     initTopbar();
