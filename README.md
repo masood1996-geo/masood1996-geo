@@ -31,7 +31,7 @@ location:   Berlin, Germany 🇩🇪
 I'm a **Geoscientist** with a passion for building intelligent automation tools. My work sits at the intersection of **Earth Sciences**, **AI/LLM technologies**, and **full-stack development**. I specialize in taking complex, manual workflows and turning them into sleek, automated pipelines.
 
 - 🌐 Check out my **[Professional Portfolio](https://69d066a8a49071a26788.appwrite.network/)**
-- 🔭 Currently building **AI-powered web scrapers** and **automation bots**
+- 🔭 Currently building **[TerraMind Core](https://github.com/masood1996-geo/terramind-core)** (Global Disaster Intelligence Platform) and **autonomous web agents**
 - 🌱 Pursuing opportunities in **climate modeling**, **AI weather prediction**, and **computational geoscience**
 - 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin**
 - 🎓 **BSc** in Geophysics from **Bahria University** (CGPA 3.55/4.00)
@@ -109,6 +109,9 @@ I'm a **Geoscientist** with a passion for building intelligent automation tools.
 
 ## 🚀 Featured Projects
 
+<a href="https://github.com/masood1996-geo/terramind-core">
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=terramind-core&theme=tokyonight&hide_border=true&border_radius=10" />
+</a>
 <a href="https://github.com/masood1996-geo/openhouse-bot">
   <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot&theme=tokyonight&hide_border=true&border_radius=10" />
 </a>
