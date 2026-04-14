@@ -397,9 +397,9 @@ body[data-page="home"] #main-nav {
     pointer-events: none;
     z-index: 9999;
     display: none;
-    transform: translate(-16px, -8px);
+    transform: translate(-18px, -6px);
     transition: transform 0.06s ease-out;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
 }
 
 #pickaxe-cursor.visible { display: block; }
@@ -409,10 +409,10 @@ body[data-page="home"] #main-nav {
 }
 
 @keyframes pickSwing {
-    0%   { transform: translate(-16px, -8px) rotate(0deg); }
-    30%  { transform: translate(-16px, -8px) rotate(30deg) translateY(4px); }
-    55%  { transform: translate(-16px, -8px) rotate(-10deg) translateY(1px); }
-    100% { transform: translate(-16px, -8px) rotate(0deg); }
+    0%   { transform: translate(-18px, -6px) rotate(0deg); }
+    30%  { transform: translate(-18px, -6px) rotate(25deg) translateY(6px); }
+    55%  { transform: translate(-18px, -6px) rotate(-8deg) translateY(2px); }
+    100% { transform: translate(-18px, -6px) rotate(0deg); }
 }
 
 @keyframes gentlePulse {
