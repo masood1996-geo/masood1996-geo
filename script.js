@@ -5,6 +5,95 @@
 (function () {
     'use strict';
 
+    // ─── Seismic Mouse Trail ───────────────────────────────────────
+    class SeismicTrail {
+        constructor(canvas) {
+            this.canvas = canvas;
+            this.ctx = canvas.getContext('2d');
+            this.points = [];
+            this.maxPoints = 40;
+            this.mouse = { x: -1000, y: -1000, vx: 0, vy: 0 };
+            this.lastMouse = { x: -1000, y: -1000 };
+            this.resize();
+            this.bindEvents();
+            this.animate();
+        }
+
+        resize() {
+            this.canvas.width = window.innerWidth;
+            this.canvas.height = window.innerHeight;
+        }
+
+        bindEvents() {
+            window.addEventListener('resize', () => this.resize());
+            window.addEventListener('mousemove', (e) => {
+                this.lastMouse.x = this.mouse.x;
+                this.lastMouse.y = this.mouse.y;
+                this.mouse.x = e.clientX;
+                this.mouse.y = e.clientY;
+
+                this.mouse.vx = this.mouse.x - this.lastMouse.x;
+                this.mouse.vy = this.mouse.y - this.lastMouse.y;
+                let speed = Math.sqrt(this.mouse.vx ** 2 + this.mouse.vy ** 2);
+
+                let jitter = 0;
+                if (speed > 5) {
+                    jitter = (Math.random() - 0.5) * speed * 1.5;
+                    if (jitter > 80) jitter = 80;
+                    if (jitter < -80) jitter = -80;
+                }
+
+                this.points.push({
+                    x: this.mouse.x,
+                    y: this.mouse.y + jitter,
+                    age: 0
+                });
+
+                if (this.points.length > this.maxPoints) {
+                    this.points.shift();
+                }
+            });
+        }
+
+        animate() {
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+            // Cyan accent matching the globe aesthetic
+            const rgb = '0, 240, 255';
+
+            if (this.points.length > 1) {
+                this.ctx.lineJoin = 'round';
+                this.ctx.lineCap = 'round';
+
+                for (let i = 1; i < this.points.length; i++) {
+                    let p1 = this.points[i - 1];
+                    let p2 = this.points[i];
+
+                    let opacity = 1 - (p2.age / 40);
+                    if (opacity < 0) opacity = 0;
+
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(p1.x, p1.y);
+                    this.ctx.lineTo(p2.x, p2.y);
+
+                    this.ctx.lineWidth = 2 * opacity;
+                    this.ctx.strokeStyle = `rgba(${rgb}, ${opacity})`;
+                    this.ctx.shadowBlur = 10 * opacity;
+                    this.ctx.shadowColor = `rgba(${rgb}, ${opacity})`;
+
+                    this.ctx.stroke();
+
+                    p1.age += 1;
+                }
+                this.points[this.points.length - 1].age += 1;
+
+                this.points = this.points.filter(p => p.age < 40);
+            }
+
+            requestAnimationFrame(() => this.animate());
+        }
+    }
+
     // ─── Configuration ─────────────────────────────────────────────
     const GLOBE_RADIUS = 1.0;
     const GLOBE_SEGMENTS = 64;
@@ -756,6 +845,10 @@
         initGlobe();
         initShovelCursor();
         initExcavation();
+
+        // Seismic mouse trail (global, all pages)
+        const seismicCanvas = document.getElementById('seismic-canvas');
+        if (seismicCanvas) new SeismicTrail(seismicCanvas);
     }
 
     if (document.readyState === 'loading') {
