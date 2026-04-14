@@ -560,12 +560,7 @@
         const targetRotY = globeGroup.rotation.y + mouseX * 0.1;
         globeGroup.rotation.y += (targetRotY - globeGroup.rotation.y) * 0.01;
 
-        if (digStage >= 3 && !excavated) {
-            const progress = Math.min(1, (digStage - 2) / 3);
-            if (countryLinesMesh) countryLinesMesh.material.opacity = Math.max(0, 0.5 * (1 - progress));
-            if (globeMesh) globeMesh.material.opacity = Math.max(0, 1 - progress * 0.8);
-            if (gridGroup) gridGroup.children.forEach(l => { l.material.opacity = Math.max(0, 0.25 * (1 - progress)); });
-        }
+        // No per-frame opacity manipulation — keep globe solid until final reveal
 
         updateParticles();
 
@@ -687,7 +682,6 @@
         createDigParticles(hitPoint, 15 + digStage * 8, false);
         shakeCamera(0.03 + digStage * 0.015, 300 + digStage * 80);
 
-        if (digStage === 3) animateDissolve();
         if (digStage === 4) refs.nameReveal.classList.add('revealing');
 
         if (digStage >= MAX_DIGS) {
@@ -721,19 +715,7 @@
         }
     }
 
-    function animateDissolve() {
-        const startTime = Date.now();
-        const duration = 2000;
-        function dissolve() {
-            const t = Math.min(1, (Date.now() - startTime) / duration);
-            const ease = 1 - Math.pow(1 - t, 3);
-            if (globeMesh) globeMesh.material.opacity = Math.max(0, 1 - ease * 0.5);
-            if (countryLinesMesh) countryLinesMesh.material.opacity = Math.max(0, 0.5 - ease * 0.3);
-            cracksGroup.children.forEach(crack => { crack.material.opacity = Math.max(0, 0.7 - ease * 0.3); });
-            if (t < 1) requestAnimationFrame(dissolve);
-        }
-        dissolve();
-    }
+    // No intermediate dissolve — globe stays solid and only fades on final reveal
 
     function completeExcavation(hitPoint) {
         excavated = true;
