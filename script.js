@@ -222,7 +222,7 @@
         refs.globeCanvas = document.getElementById('globe-canvas');
         refs.digPrompt = document.getElementById('dig-prompt');
         refs.nameReveal = document.getElementById('name-reveal');
-        refs.pickaxeCursor = document.getElementById('pickaxe-cursor');
+        refs.pickaxeCursor = null; // Using CSS cursor instead
         refs.footer = document.getElementById('site-footer');
         refs.pages = document.querySelectorAll('.page');
         refs.navAnchors = document.querySelectorAll('.nav-links a');
@@ -664,12 +664,10 @@
         playPickaxeSound();
         playSeismicPulse(digStage);
 
-        // Animate pickaxe
-        if (refs.pickaxeCursor) {
-            refs.pickaxeCursor.classList.remove('digging');
-            void refs.pickaxeCursor.offsetWidth;
-            refs.pickaxeCursor.classList.add('digging');
-        }
+        // Animate pickaxe hit feedback
+        refs.globeContainer.classList.remove('digging');
+        void refs.globeContainer.offsetWidth;
+        refs.globeContainer.classList.add('digging');
 
         // Screen shake (CSS + camera)
         document.body.classList.remove('screen-shake');
@@ -749,6 +747,7 @@
         refs.nameReveal.classList.remove('revealing');
         refs.nameReveal.classList.add('revealed');
         refs.digPrompt.classList.add('hidden');
+        refs.globeContainer.classList.remove('pickaxe-active');
 
         refs.globeCanvas.removeEventListener('click', onGlobeClick);
         refs.globeCanvas.removeEventListener('touchend', onGlobeTouch);
@@ -789,29 +788,11 @@
 
     // ─── Pickaxe Cursor ────────────────────────────────────────────
     function initPickaxeCursor() {
-        if (!refs.globeContainer || !refs.pickaxeCursor) return;
-        if ('ontouchstart' in window) return;
-
-        let pickVisible = false;
-
-        refs.globeContainer.addEventListener('mouseenter', () => {
-            if (excavated) return;
-            refs.pickaxeCursor.classList.add('visible');
-            refs.globeContainer.style.cursor = 'none';
-            pickVisible = true;
-        });
-
-        refs.globeContainer.addEventListener('mouseleave', () => {
-            refs.pickaxeCursor.classList.remove('visible');
-            refs.globeContainer.style.cursor = '';
-            pickVisible = false;
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!pickVisible) return;
-            refs.pickaxeCursor.style.left = e.clientX + 'px';
-            refs.pickaxeCursor.style.top = e.clientY + 'px';
-        });
+        if (!refs.globeContainer) return;
+        // Add pickaxe cursor class (CSS handles the actual cursor image)
+        if (!excavated) {
+            refs.globeContainer.classList.add('pickaxe-active');
+        }
     }
 
     // ─── Initialization ────────────────────────────────────────────
