@@ -14,6 +14,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Masood Sultan",
+        "url": "https://masoodsultan.com",
+        "jobTitle": "Geoscientist & AI Engineer",
+        "description": "Computational geoscientist specializing in agentic AI systems, autonomous data platforms, and climate adaptation research.",
+        "email": "masood.geo@yahoo.com",
+        "alumniOf": [
+            {"@type": "CollegeOrUniversity", "name": "Humboldt University of Berlin"},
+            {"@type": "CollegeOrUniversity", "name": "Bahria University"}
+        ],
+        "sameAs": [
+            "https://github.com/masood1996-geo",
+            "https://www.linkedin.com/in/masood1996/"
+        ],
+        "knowsAbout": ["Computational Geoscience", "Climate AI", "Agentic Systems", "Water Governance", "3D Geomodelling"]
+    }
+    </script>
 </head>
 <body data-page="home">
 
@@ -80,12 +100,14 @@
                     <div class="dig-segment" data-i="3"></div>
                     <div class="dig-segment" data-i="4"></div>
                 </div>
+                <a href="#/projects" class="skip-globe" id="skip-globe">Enter Portfolio →</a>
             </div>
             <div id="name-reveal">
                 <h1 class="reveal-name">MASOOD<br>SULTAN</h1>
-                <p class="reveal-subtitle">Geoscientist &amp; AI Engineer — Berlin</p>
+                <p class="reveal-subtitle">Geoscientist &amp; AI Engineer — Berlin · Open to PhD positions</p>
                 <div class="reveal-actions">
                     <a href="#/projects" class="btn-primary" id="btn-explore">Explore my work</a>
+                    <a href="#/research" class="btn-ghost" id="btn-research">View Research</a>
                     <a href="#/info" class="btn-ghost" id="btn-about">About me</a>
                 </div>
             </div>
@@ -103,11 +125,11 @@
                             <img src="https://avatars.githubusercontent.com/u/262189506?v=4" alt="Masood Sultan" loading="lazy">
                             <div class="portrait-glow"></div>
                         </div>
-                        <h1 class="info-heading">I didn't start in tech.<br>I started <em class="serif-accent">underground</em>.</h1>
+                        <h1 class="info-heading">My career didn't begin in tech.<br>It began <em class="serif-accent">underground</em>.</h1>
                         <div class="info-prose">
-                            <p>My first career was interpreting what's beneath your feet — 3D seismic surveys, subsurface geological models, wellbore data. I earned a <strong>BSc in Geophysics</strong> from Bahria University (3.55/4.00 CGPA) and placed <strong>3rd in the Imperial Barrel Awards, Asia Pacific</strong> — one of the most competitive geoscience competitions organized by the AAPG.</p>
-                            <p>Then I moved to Berlin for an <strong>MSc in Global Change Geography</strong> at Humboldt University, where the work shifted from subsurface to atmosphere — climate data, earth observation satellites, computational modelling. Somewhere along the way, I realized the tools I needed didn't exist. So I started building them.</p>
-                            <p>Now I write Python instead of field reports. I build LLM-powered systems that crawl, extract, learn, and adapt. The geoscience training never left — it just evolved into a different kind of excavation.</p>
+                            <p>My foundation lies in interpreting the subsurface — 3D seismic surveys, geological models, wellbore data. I earned a <strong>BSc in Geophysics</strong> from Bahria University (3.55/4.00 CGPA) and placed <strong>3rd in the Imperial Barrel Awards, Asia Pacific</strong> — one of the most competitive geoscience competitions organized by the AAPG, competing against teams from across the region.</p>
+                            <p>I then moved to Berlin for an <strong>MSc in Global Change Geography</strong> at Humboldt University, where my focus shifted from subsurface to atmosphere — climate data, earth observation satellites, and computational modelling. When existing tools proved inadequate for the research questions I was asking, I taught myself to build them.</p>
+                            <p>Today, my fieldwork is computational. I build LLM-powered systems and agentic architectures that crawl, extract, and adapt to complex environmental datasets — from real-time disaster APIs to satellite imagery. The geoscience training never left; it evolved into a different kind of excavation.</p>
                         </div>
                     </div>
                     <aside class="info-sidebar">
@@ -133,11 +155,23 @@
                         </div>
                         <div class="sidebar-block">
                             <h4>Languages</h4>
-                            <div class="lang-grid">
-                                <div class="lang-item"><strong>English</strong><span>C1</span></div>
-                                <div class="lang-item"><strong>Urdu</strong><span>C1</span></div>
-                                <div class="lang-item"><strong>Hindi</strong><span>B1</span></div>
-                                <div class="lang-item"><strong>German</strong><span>A2</span></div>
+                            <div class="lang-bars">
+                                <div class="lang-bar-item">
+                                    <div class="lang-bar-header"><strong>English</strong><span>C1 — Professional</span></div>
+                                    <div class="lang-bar-track"><div class="lang-bar-fill" style="width:85%"></div></div>
+                                </div>
+                                <div class="lang-bar-item">
+                                    <div class="lang-bar-header"><strong>Urdu</strong><span>C1 — Native</span></div>
+                                    <div class="lang-bar-track"><div class="lang-bar-fill" style="width:85%"></div></div>
+                                </div>
+                                <div class="lang-bar-item">
+                                    <div class="lang-bar-header"><strong>Hindi</strong><span>B1 — Conversational</span></div>
+                                    <div class="lang-bar-track"><div class="lang-bar-fill" style="width:55%"></div></div>
+                                </div>
+                                <div class="lang-bar-item">
+                                    <div class="lang-bar-header"><strong>German</strong><span>A2 — Elementary</span></div>
+                                    <div class="lang-bar-track"><div class="lang-bar-fill" style="width:30%"></div></div>
+                                </div>
                             </div>
                         </div>
                     </aside>
@@ -198,19 +232,22 @@
                             </div>
                         </div>
                         <div class="project-visual">
-                            <div class="terminal-window">
-                                <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">terramind-core</span></div>
-                                <div class="terminal-body">
-                                    <div class="tl"><span class="tp">$</span> <span class="tc">npm start</span></div>
-                                    <div class="tl dim"><span class="ti">[server]</span> TerraMind API Engine booting on port 4100</div>
-                                    <div class="tl accent"><span class="ti">[pipeline]</span> Normalizing multi-source hazard feeds...</div>
-                                    <div class="tl dim"><span class="ti">[usgs]</span> Extracted 8 seismic anomalies</div>
-                                    <div class="tl dim"><span class="ti">[nasa-firms]</span> Scanning VIIRS 375m fire detections</div>
-                                    <div class="tl accent"><span class="ti">[sse]</span> Broadcasting delta update to connected clients →</div>
-                                    <div class="tl"><span class="ti">[status]</span> 22 active events cached. Next sweep in 120s.</div>
-                                    <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                            <details class="terminal-collapse">
+                                <summary class="terminal-toggle">View Terminal Output</summary>
+                                <div class="terminal-window">
+                                    <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">terramind-core</span></div>
+                                    <div class="terminal-body">
+                                        <div class="tl"><span class="tp">$</span> <span class="tc">npm start</span></div>
+                                        <div class="tl dim"><span class="ti">[server]</span> TerraMind API Engine booting on port 4100</div>
+                                        <div class="tl accent"><span class="ti">[pipeline]</span> Normalizing multi-source hazard feeds...</div>
+                                        <div class="tl dim"><span class="ti">[usgs]</span> Extracted 8 seismic anomalies</div>
+                                        <div class="tl dim"><span class="ti">[nasa-firms]</span> Scanning VIIRS 375m fire detections</div>
+                                        <div class="tl accent"><span class="ti">[sse]</span> Broadcasting delta update to connected clients →</div>
+                                        <div class="tl"><span class="ti">[status]</span> 22 active events cached. Next sweep in 120s.</div>
+                                        <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                                    </div>
                                 </div>
-                            </div>
+                            </details>
                         </div>
                     </div>
                 </article>
@@ -237,19 +274,22 @@
                             </div>
                         </div>
                         <div class="project-visual">
-                            <div class="terminal-window">
-                                <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">ai-scraper</span></div>
-                                <div class="terminal-body">
-                                    <div class="tl"><span class="tp">$</span> <span class="tc">python scraper.py --url</span> <span class="ta">"https://arxiv.org/list/physics.geo-ph"</span></div>
-                                    <div class="tl dim"><span class="ti">[engine]</span> No domain profile found. Learning...</div>
-                                    <div class="tl dim"><span class="ti">[chrome]</span> Headless browser launched</div>
-                                    <div class="tl dim"><span class="ti">[llm]</span> Analyzing page structure...</div>
-                                    <div class="tl accent"><span class="ti">[learn]</span> Domain profile created: arxiv.org</div>
-                                    <div class="tl accent"><span class="ti">[learn]</span> Extraction accuracy: <span class="th">94.7%</span></div>
-                                    <div class="tl"><span class="ti">[done]</span> 127 papers extracted → papers.json</div>
-                                    <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                            <details class="terminal-collapse">
+                                <summary class="terminal-toggle">View Terminal Output</summary>
+                                <div class="terminal-window">
+                                    <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">ai-scraper</span></div>
+                                    <div class="terminal-body">
+                                        <div class="tl"><span class="tp">$</span> <span class="tc">python scraper.py --url</span> <span class="ta">"https://arxiv.org/list/physics.geo-ph"</span></div>
+                                        <div class="tl dim"><span class="ti">[engine]</span> No domain profile found. Learning...</div>
+                                        <div class="tl dim"><span class="ti">[chrome]</span> Headless browser launched</div>
+                                        <div class="tl dim"><span class="ti">[llm]</span> Analyzing page structure...</div>
+                                        <div class="tl accent"><span class="ti">[learn]</span> Domain profile created: arxiv.org</div>
+                                        <div class="tl accent"><span class="ti">[learn]</span> Extraction accuracy: <span class="th">94.7%</span></div>
+                                        <div class="tl"><span class="ti">[done]</span> 127 papers extracted → papers.json</div>
+                                        <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                                    </div>
                                 </div>
-                            </div>
+                            </details>
                         </div>
                     </div>
                 </article>
@@ -265,7 +305,7 @@
                     <div class="project-body">
                         <div class="project-info">
                             <h2><a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" rel="noopener">openhouse-bot</a></h2>
-                            <p>Born out of frustration with Berlin's brutal housing market. This bot crawls <strong>50+ real estate portals worldwide</strong>, applies exact filters — price, rooms, location, commute time — and fires matching listings to your Telegram <strong>24/7</strong>. Uses an LLM-powered universal crawler that adapts to any portal's layout. Now features a <strong>Live Demo on Hugging Face</strong>.</p>
+                            <p>An <strong>adaptive, LLM-powered universal crawler</strong> that autonomously learns any website's structure — originally built to solve Berlin's housing crisis by scraping <strong>50+ real estate portals worldwide</strong>. The underlying architecture is directly transferable to geoscience applications: scraping unstructured climate reports, policy documents, and global hydrological databases. Features real-time Telegram alerting and a <strong>Live Demo on Hugging Face</strong>.</p>
                             <div class="feature-list">
                                 <div class="feature"><strong>50+ Portals</strong><span>Global coverage, not just one platform</span></div>
                                 <div class="feature"><strong>Instant Telegram Alerts</strong><span>New listings hit your phone in seconds</span></div>
@@ -277,19 +317,22 @@
                             </div>
                         </div>
                         <div class="project-visual">
-                            <div class="terminal-window">
-                                <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">openhouse-bot</span></div>
-                                <div class="terminal-body">
-                                    <div class="tl"><span class="tp">$</span> <span class="tc">python bot.py</span> <span class="ta">--city berlin --max-rent 900</span></div>
-                                    <div class="tl dim"><span class="ti">[bot]</span> Monitoring 54 portals...</div>
-                                    <div class="tl dim"><span class="ti">[scan]</span> immobilienscout24.de — 12 new</div>
-                                    <div class="tl dim"><span class="ti">[scan]</span> wg-gesucht.de — 4 new</div>
-                                    <div class="tl accent"><span class="ti">[match]</span> 2BR Kreuzberg €780 — <span class="th">SENT</span></div>
-                                    <div class="tl accent"><span class="ti">[match]</span> 1BR Neukölln €650 — <span class="th">SENT</span></div>
-                                    <div class="tl dim"><span class="ti">[scan]</span> Next cycle in 120s...</div>
-                                    <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                            <details class="terminal-collapse">
+                                <summary class="terminal-toggle">View Terminal Output</summary>
+                                <div class="terminal-window">
+                                    <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">openhouse-bot</span></div>
+                                    <div class="terminal-body">
+                                        <div class="tl"><span class="tp">$</span> <span class="tc">python bot.py</span> <span class="ta">--city berlin --max-rent 900</span></div>
+                                        <div class="tl dim"><span class="ti">[bot]</span> Monitoring 54 portals...</div>
+                                        <div class="tl dim"><span class="ti">[scan]</span> immobilienscout24.de — 12 new</div>
+                                        <div class="tl dim"><span class="ti">[scan]</span> wg-gesucht.de — 4 new</div>
+                                        <div class="tl accent"><span class="ti">[match]</span> 2BR Kreuzberg €780 — <span class="th">SENT</span></div>
+                                        <div class="tl accent"><span class="ti">[match]</span> 1BR Neukölln €650 — <span class="th">SENT</span></div>
+                                        <div class="tl dim"><span class="ti">[scan]</span> Next cycle in 120s...</div>
+                                        <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                                    </div>
                                 </div>
-                            </div>
+                            </details>
                         </div>
                     </div>
                 </article>
@@ -313,7 +356,14 @@
                     </div>
                     <h2>A Critical Review of Participatory Approaches in Water Management for Climate Change Adaptation</h2>
                     <p>My primary contribution to the field of Global Change Geography is the <strong>Conditional Enabling Framework (KIEA)</strong>, developed to diagnose and evaluate participatory water governance under severe climate stress and hydrological non-stationarity.</p>
-                    <p>Traditional models assume participation uniformly yields positive outcomes — my research demonstrates that participation often devolves into tokenism or elite capture unless four interdependent enabling conditions are met simultaneously: <strong>Knowledge Performance (K)</strong>, <strong>Institutional Performance (I)</strong>, <strong>Equity Performance (E)</strong>, and <strong>Adaptive Performance (A)</strong>.</p>
+                    <p>Traditional models assume participation uniformly yields positive outcomes — my research demonstrates that participation often devolves into tokenism or elite capture unless four interdependent enabling conditions are met simultaneously:</p>
+                    <div class="kiea-grid">
+                        <div class="kiea-dim"><strong>K — Knowledge Performance</strong><span>Data availability, scientific literacy, and knowledge co-production among stakeholders</span></div>
+                        <div class="kiea-dim"><strong>I — Institutional Performance</strong><span>Governance capacity, regulatory design, and formal/informal institutional coherence</span></div>
+                        <div class="kiea-dim"><strong>E — Equity Performance</strong><span>Equitable stakeholder representation, inclusive decision-making, and distributive justice</span></div>
+                        <div class="kiea-dim"><strong>A — Adaptive Performance</strong><span>Flexibility, iterative learning, and system resilience under uncertainty</span></div>
+                    </div>
+                    <p>When any single dimension falls below threshold — the <em>binding constraint</em> — the entire governance system underperforms, regardless of strength in other areas.</p>
                     <div class="thesis-grid">
                         <figure class="thesis-fig-main">
                             <img src="assets/thesis_fig_p53_1.jpeg" alt="KIEA Weakest Link Logic" loading="lazy">
@@ -335,8 +385,9 @@
                         <span class="pub-tag">3D Geomodelling</span>
                     </div>
                     <h2><a href="https://www.sciencedirect.com/science/article/abs/pii/S0926985119308869" target="_blank" rel="noopener">A case study of 3D geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA</a></h2>
-                    <p>A detailed geomodelling case study on the Teapot Dome, demonstrating advanced workflows in 3D subsurface modeling and reservoir characterization. Published in the highly respected Journal of Applied Geophysics.</p>
-                    <a href="https://doi.org/10.1016/j.jappgeo.2020.104114" target="_blank" rel="noopener" class="proj-link">Read on ScienceDirect →</a>
+                    <p><strong>Co-author</strong> · This study presents an advanced 3D geomodelling workflow applied to the Teapot Dome anticline in Wyoming — a publicly available dataset widely used in petroleum geoscience education. Using integrated well log correlation, seismic interpretation, and stochastic property modelling in Schlumberger Petrel, the research demonstrates best practices in <strong>reservoir characterization</strong> for the Second Wall Creek Sand of the Frontier Formation.</p>
+                    <p class="pub-citation">Sultan, M. et al. (2020). <em>Journal of Applied Geophysics</em>, Vol. 179, 104114.</p>
+                    <a href="https://doi.org/10.1016/j.jappgeo.2020.104114" target="_blank" rel="noopener" class="proj-link">DOI: 10.1016/j.jappgeo.2020.104114 →</a>
                 </article>
             </div>
         </section>
@@ -346,10 +397,13 @@
             <div class="page-content contact-page">
                 <div class="contact-hero">
                     <h1>Looking for a PhD position<br>in computational geoscience<br>or <em class="serif-accent">climate AI</em>.</h1>
-                    <p class="contact-body">Also open to research collaborations, interesting side projects, or anything where geoscience meets code. Based in Berlin.</p>
-                    <div class="signal-bar">
-                        <span class="signal-pulse"></span>
-                        <span>Open to research positions</span>
+                    <p class="contact-body">If you're seeking a researcher at the intersection of geoscience, AI, and climate adaptation — someone who can build the tools <em>and</em> do the science — let's connect. Based in Berlin.</p>
+                    <div class="contact-cta-row">
+                        <div class="signal-bar">
+                            <span class="signal-pulse"></span>
+                            <span>Open to research positions</span>
+                        </div>
+                        <a href="mailto:masood.geo@yahoo.com?subject=PhD%20Opportunity" class="btn-cv">Request Academic CV →</a>
                     </div>
                 </div>
                 <div class="contact-links">
