@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masood Sultan - Where the Earth Meets the Algorithm</title>
-    <meta name="description" content="Masood Sultan: Geoscientist turned AI engineer. Building self-learning scrapers, autonomous apartment hunters, and computational tools that bridge Earth science with machine intelligence. Berlin, Germany.">
+    <title>Masood Sultan — Geoscientist & AI Engineer</title>
+    <meta name="description" content="Masood Sultan: Geoscientist turned AI engineer. Building self-learning scrapers, autonomous systems, and computational tools that bridge Earth science with machine intelligence. Berlin, Germany.">
     <meta name="author" content="Masood Sultan">
-    <meta property="og:title" content="Masood Sultan - Where the Earth Meets the Algorithm">
+    <meta property="og:title" content="Masood Sultan — Where the Earth Meets the Algorithm">
     <meta property="og:description" content="Geoscientist turned AI engineer. Self-learning scrapers, autonomous bots, and computational geoscience tools.">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/262189506?v=4">
     <meta property="og:type" content="website">
@@ -15,550 +15,353 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
 
-    <!-- Terrain Canvas Background -->
-    <canvas id="terrain-canvas"></canvas>
+    <!-- Custom Shovel Cursor -->
+    <div id="shovel-cursor">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 3C13 3 10 7 10 11V16H14V28H16V30H20V28H22V16H26V11C26 7 23 3 18 3Z" fill="#A8B2BE" stroke="#6B7280" stroke-width="0.5"/>
+            <path d="M15 5C13 7 12 9 12 11V14H16V5H15Z" fill="#C5CED8" opacity="0.35"/>
+            <rect x="16" y="16" width="4" height="12" rx="1" fill="#B8860B"/>
+            <rect x="14.5" y="28" width="7" height="3" rx="1.5" fill="#8B4513"/>
+        </svg>
+    </div>
 
-    <!-- Minimal Top Bar -->
-    <header class="topbar" id="topbar">
-        <div class="topbar-inner">
-            <a href="#" class="topbar-name">masood<span class="accent-dot">.</span>sultan</a>
-            <nav class="topbar-nav">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-dark"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-                <a href="#work">Work</a>
-                <a href="#research">Research</a>
-                <a href="#about">About</a>
-                <a href="#stack">Stack</a>
-                <a href="#contact">Say hello</a>
-            </nav>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <a href="#/" class="nav-brand">M<span class="dot">.</span>S</a>
+        <div class="nav-links" id="nav-links">
+            <a href="#/" data-page="home">Home</a>
+            <a href="#/info" data-page="info">Info</a>
+            <a href="#/projects" data-page="projects">Projects</a>
+            <a href="#/research" data-page="research">Research</a>
+            <a href="#/contact" data-page="contact">Contact</a>
         </div>
-    </header>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-    <!-- HERO: Editorial, cinematic, not generic -->
-    <section class="hero" id="hero">
-        <div class="hero-inner">
-            <div class="hero-left">
-                <div class="hero-overline">
-                    <span class="overline-line"></span>
-                    <span>Geoscientist & AI Engineer - Berlin</span>
-                </div>
-                <h1 class="hero-heading">
-                    Decoding the <em class="serif-accent">Earth</em><br>
-                    through <em class="serif-accent">Code & AI</em>
-                </h1>
-                <p class="hero-body">
-                    I am an AI engineer and geophysicist specializing in computational geoscience and autonomous data systems. I build platforms that ingest planetary-scale data - from real-time disaster APIs to satellite imagery - and transform it into actionable intelligence. My background ranges from 3D subsurface geomodelling to developing self-learning scrapers and deployment-ready climate monitoring architectures.
-                </p>
-                <div class="hero-ctas">
-                    <a href="#work" class="cta-primary">See what I've built</a>
-                    <a href="https://github.com/masood1996-geo" target="_blank" class="cta-ghost">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        GitHub
-                    </a>
+    <!-- ═══════════════ PAGES ═══════════════ -->
+    <main id="app">
+
+        <!-- ─── HOME: Globe + Excavation ─── -->
+        <section id="page-home" class="page active">
+            <div id="globe-container">
+                <canvas id="globe-canvas"></canvas>
+            </div>
+            <div id="dig-prompt">
+                <div class="dig-text">Click the earth to unearth what lies beneath</div>
+                <div class="dig-progress">
+                    <div class="dig-segment" data-i="0"></div>
+                    <div class="dig-segment" data-i="1"></div>
+                    <div class="dig-segment" data-i="2"></div>
+                    <div class="dig-segment" data-i="3"></div>
+                    <div class="dig-segment" data-i="4"></div>
                 </div>
             </div>
-            <div class="hero-right">
-                <div class="hero-portrait">
-                    <img src="https://avatars.githubusercontent.com/u/262189506?v=4" alt="Masood Sultan" loading="eager">
-                    <div class="portrait-overlay"></div>
+            <div id="name-reveal">
+                <h1 class="reveal-name">MASOOD<br>SULTAN</h1>
+                <p class="reveal-subtitle">Geoscientist &amp; AI Engineer — Berlin</p>
+                <div class="reveal-actions">
+                    <a href="#/projects" class="btn-primary" id="btn-explore">Explore my work</a>
+                    <a href="#/info" class="btn-ghost" id="btn-about">About me</a>
                 </div>
-                <div class="hero-signal">
+            </div>
+        </section>
+
+        <!-- ─── INFO ─── -->
+        <section id="page-info" class="page">
+            <div class="page-content">
+                <div class="page-header">
+                    <span class="page-label">01 — Background</span>
+                </div>
+                <div class="info-layout">
+                    <div class="info-narrative">
+                        <div class="info-portrait">
+                            <img src="https://avatars.githubusercontent.com/u/262189506?v=4" alt="Masood Sultan" loading="lazy">
+                            <div class="portrait-glow"></div>
+                        </div>
+                        <h1 class="info-heading">I didn't start in tech.<br>I started <em class="serif-accent">underground</em>.</h1>
+                        <div class="info-prose">
+                            <p>My first career was interpreting what's beneath your feet — 3D seismic surveys, subsurface geological models, wellbore data. I earned a <strong>BSc in Geophysics</strong> from Bahria University (3.55/4.00 CGPA) and placed <strong>3rd in the Imperial Barrel Awards, Asia Pacific</strong> — one of the most competitive geoscience competitions organized by the AAPG.</p>
+                            <p>Then I moved to Berlin for an <strong>MSc in Global Change Geography</strong> at Humboldt University, where the work shifted from subsurface to atmosphere — climate data, earth observation satellites, computational modelling. Somewhere along the way, I realized the tools I needed didn't exist. So I started building them.</p>
+                            <p>Now I write Python instead of field reports. I build LLM-powered systems that crawl, extract, learn, and adapt. The geoscience training never left — it just evolved into a different kind of excavation.</p>
+                        </div>
+                    </div>
+                    <aside class="info-sidebar">
+                        <div class="sidebar-block">
+                            <h4>Education</h4>
+                            <div class="edu-item">
+                                <span class="edu-years">2023 — 2025</span>
+                                <strong>MSc Global Change Geography</strong>
+                                <span class="edu-school">Humboldt University of Berlin</span>
+                            </div>
+                            <div class="edu-item">
+                                <span class="edu-years">2015 — 2019</span>
+                                <strong>BSc Geophysics</strong>
+                                <span class="edu-school">Bahria University · 3.55/4.00</span>
+                            </div>
+                        </div>
+                        <div class="sidebar-block">
+                            <h4>Recognition</h4>
+                            <div class="edu-item highlight-item">
+                                <strong>Imperial Barrel Awards</strong>
+                                <span class="edu-school">3rd Place · AAPG Asia Pacific</span>
+                            </div>
+                        </div>
+                        <div class="sidebar-block">
+                            <h4>Languages</h4>
+                            <div class="lang-grid">
+                                <div class="lang-item"><strong>English</strong><span>C1</span></div>
+                                <div class="lang-item"><strong>Urdu</strong><span>C1</span></div>
+                                <div class="lang-item"><strong>Hindi</strong><span>B1</span></div>
+                                <div class="lang-item"><strong>German</strong><span>A2</span></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <!-- Tech Stack -->
+                <div class="stack-section">
+                    <h2 class="stack-title">Technical Stack</h2>
+                    <div class="stack-grid">
+                        <div class="stack-col">
+                            <h3>Languages &amp; Web</h3>
+                            <ul><li>Python 3.x</li><li>TypeScript / Node.js</li><li>Express.js</li><li>HTML / CSS</li><li>R (RStudio)</li></ul>
+                        </div>
+                        <div class="stack-col">
+                            <h3>AI &amp; Automation</h3>
+                            <ul><li>Agentic Systems (LLMs)</li><li>Open WebUI</li><li>Headless Web Scraping</li><li>Telegram Bots</li><li>Process Automation</li></ul>
+                        </div>
+                        <div class="stack-col">
+                            <h3>Data &amp; GeoScience</h3>
+                            <ul><li>3D Geomodelling (Petrel)</li><li>Spatial Analysis (QGIS)</li><li>Climate Data Analytics</li><li>Real-time APIs (FIRMS, USGS)</li><li>Pandas / NumPy</li></ul>
+                        </div>
+                        <div class="stack-col">
+                            <h3>Infrastructure</h3>
+                            <ul><li>Server-Sent Events (SSE)</li><li>REST API Architecture</li><li>Hugging Face Spaces</li><li>Docker / Appwrite</li><li>Git / PowerShell</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PROJECTS ─── -->
+        <section id="page-projects" class="page">
+            <div class="page-content">
+                <div class="page-header">
+                    <span class="page-label">02 — Selected Work</span>
+                    <h1>Things I've Built</h1>
+                </div>
+
+                <!-- TerraMind Core -->
+                <article class="project-card" id="project-terramind">
+                    <div class="project-header">
+                        <span class="project-num">01</span>
+                        <div class="project-tags">
+                            <span>TypeScript</span><span>Node.js</span><span>Express</span><span>SSE</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-info">
+                            <h2><a href="https://github.com/masood1996-geo/terramind-core" target="_blank" rel="noopener">TerraMind Core</a></h2>
+                            <p>A real-time global disaster intelligence platform entirely powered by <strong>open government APIs</strong>. Dynamically aggregates data from USGS Earthquakes, NASA EONET Wildfires, NOAA Weather Alerts, and NASA FIRMS Satellite Fire Detection into a unified stream. Features a built-in <strong>GeoScience AI Assistant</strong>.</p>
+                            <div class="feature-list">
+                                <div class="feature"><strong>4 Gov APIs Unified</strong><span>Multi-source normalizer pipeline</span></div>
+                                <div class="feature"><strong>Server-Sent Events</strong><span>Real-time push without polling</span></div>
+                                <div class="feature"><strong>Interactive Dashboard</strong><span>Live map markers + severity filters</span></div>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/masood1996-geo/terramind-core" target="_blank" rel="noopener" class="proj-link">View repository →</a>
+                                <a href="https://huggingface.co/spaces/masood1996/terramind-core" target="_blank" rel="noopener" class="proj-link accent">Live Dashboard →</a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="terminal-window">
+                                <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">terramind-core</span></div>
+                                <div class="terminal-body">
+                                    <div class="tl"><span class="tp">$</span> <span class="tc">npm start</span></div>
+                                    <div class="tl dim"><span class="ti">[server]</span> TerraMind API Engine booting on port 4100</div>
+                                    <div class="tl accent"><span class="ti">[pipeline]</span> Normalizing multi-source hazard feeds...</div>
+                                    <div class="tl dim"><span class="ti">[usgs]</span> Extracted 8 seismic anomalies</div>
+                                    <div class="tl dim"><span class="ti">[nasa-firms]</span> Scanning VIIRS 375m fire detections</div>
+                                    <div class="tl accent"><span class="ti">[sse]</span> Broadcasting delta update to connected clients →</div>
+                                    <div class="tl"><span class="ti">[status]</span> 22 active events cached. Next sweep in 120s.</div>
+                                    <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ai-scraper -->
+                <article class="project-card" id="project-aiscraper">
+                    <div class="project-header">
+                        <span class="project-num">02</span>
+                        <div class="project-tags">
+                            <span>Python</span><span>LLMs</span><span>Self-Learning</span><span>MIT License</span>
+                        </div>
+                    </div>
+                    <div class="project-body reverse">
+                        <div class="project-info">
+                            <h2><a href="https://github.com/masood1996-geo/ai-scraper" target="_blank" rel="noopener">ai-scraper</a></h2>
+                            <p>A web scraper that <strong>teaches itself</strong>. Point it at any website — it figures out the structure, extracts data using LLMs, and <strong>remembers what worked</strong>. It builds domain-specific profiles, scores its own output quality, and auto-evolves its extraction prompts. Headless Chrome under the hood, with persistent memory that compounds over time.</p>
+                            <div class="feature-list">
+                                <div class="feature"><strong>Self-Evolving Prompts</strong><span>Gets smarter with every scrape</span></div>
+                                <div class="feature"><strong>Persistent Memory</strong><span>Domain profiling compounds over time</span></div>
+                                <div class="feature"><strong>Quality Scoring</strong><span>Self-evaluates extraction accuracy</span></div>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/masood1996-geo/ai-scraper" target="_blank" rel="noopener" class="proj-link">View repository →</a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="terminal-window">
+                                <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">ai-scraper</span></div>
+                                <div class="terminal-body">
+                                    <div class="tl"><span class="tp">$</span> <span class="tc">python scraper.py --url</span> <span class="ta">"https://arxiv.org/list/physics.geo-ph"</span></div>
+                                    <div class="tl dim"><span class="ti">[engine]</span> No domain profile found. Learning...</div>
+                                    <div class="tl dim"><span class="ti">[chrome]</span> Headless browser launched</div>
+                                    <div class="tl dim"><span class="ti">[llm]</span> Analyzing page structure...</div>
+                                    <div class="tl accent"><span class="ti">[learn]</span> Domain profile created: arxiv.org</div>
+                                    <div class="tl accent"><span class="ti">[learn]</span> Extraction accuracy: <span class="th">94.7%</span></div>
+                                    <div class="tl"><span class="ti">[done]</span> 127 papers extracted → papers.json</div>
+                                    <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- openhouse-bot -->
+                <article class="project-card" id="project-openhouse">
+                    <div class="project-header">
+                        <span class="project-num">03</span>
+                        <div class="project-tags">
+                            <span>Python</span><span>Telegram</span><span>Automation</span><span>AGPL-3.0</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-info">
+                            <h2><a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" rel="noopener">openhouse-bot</a></h2>
+                            <p>Born out of frustration with Berlin's brutal housing market. This bot crawls <strong>50+ real estate portals worldwide</strong>, applies exact filters — price, rooms, location, commute time — and fires matching listings to your Telegram <strong>24/7</strong>. Uses an LLM-powered universal crawler that adapts to any portal's layout. Now features a <strong>Live Demo on Hugging Face</strong>.</p>
+                            <div class="feature-list">
+                                <div class="feature"><strong>50+ Portals</strong><span>Global coverage, not just one platform</span></div>
+                                <div class="feature"><strong>Instant Telegram Alerts</strong><span>New listings hit your phone in seconds</span></div>
+                                <div class="feature"><strong>Live HF Demo</strong><span>Real-time scraping in browser</span></div>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" rel="noopener" class="proj-link">View repository →</a>
+                                <a href="https://huggingface.co/spaces/masood1996/openhouse-bot" target="_blank" rel="noopener" class="proj-link accent">Try Live Demo →</a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="terminal-window">
+                                <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">openhouse-bot</span></div>
+                                <div class="terminal-body">
+                                    <div class="tl"><span class="tp">$</span> <span class="tc">python bot.py</span> <span class="ta">--city berlin --max-rent 900</span></div>
+                                    <div class="tl dim"><span class="ti">[bot]</span> Monitoring 54 portals...</div>
+                                    <div class="tl dim"><span class="ti">[scan]</span> immobilienscout24.de — 12 new</div>
+                                    <div class="tl dim"><span class="ti">[scan]</span> wg-gesucht.de — 4 new</div>
+                                    <div class="tl accent"><span class="ti">[match]</span> 2BR Kreuzberg €780 — <span class="th">SENT</span></div>
+                                    <div class="tl accent"><span class="ti">[match]</span> 1BR Neukölln €650 — <span class="th">SENT</span></div>
+                                    <div class="tl dim"><span class="ti">[scan]</span> Next cycle in 120s...</div>
+                                    <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ─── RESEARCH ─── -->
+        <section id="page-research" class="page">
+            <div class="page-content">
+                <div class="page-header">
+                    <span class="page-label">03 — Publications</span>
+                    <h1>Academic Research</h1>
+                </div>
+
+                <!-- Thesis -->
+                <article class="pub-card">
+                    <div class="pub-meta">
+                        <span class="pub-tag">Master's Thesis</span>
+                        <span class="pub-tag">2025</span>
+                        <span class="pub-tag">Water Governance &amp; Adaptation</span>
+                    </div>
+                    <h2>A Critical Review of Participatory Approaches in Water Management for Climate Change Adaptation</h2>
+                    <p>My primary contribution to the field of Global Change Geography is the <strong>Conditional Enabling Framework (KIEA)</strong>, developed to diagnose and evaluate participatory water governance under severe climate stress and hydrological non-stationarity.</p>
+                    <p>Traditional models assume participation uniformly yields positive outcomes — my research demonstrates that participation often devolves into tokenism or elite capture unless four interdependent enabling conditions are met simultaneously: <strong>Knowledge Performance (K)</strong>, <strong>Institutional Performance (I)</strong>, <strong>Equity Performance (E)</strong>, and <strong>Adaptive Performance (A)</strong>.</p>
+                    <div class="thesis-grid">
+                        <figure class="thesis-fig-main">
+                            <img src="assets/thesis_fig_p53_1.jpeg" alt="KIEA Weakest Link Logic" loading="lazy">
+                            <figcaption>The KIEA Dimensions &amp; Binding Constraint Logic</figcaption>
+                        </figure>
+                        <figure class="thesis-fig-secondary">
+                            <div><img src="assets/thesis_fig_p61_1.png" alt="Diagnostic Pathways Hydrological" loading="lazy"></div>
+                            <div><img src="assets/thesis_fig_p62_1.png" alt="Diagnostic Pathways Social" loading="lazy"></div>
+                        </figure>
+                    </div>
+                    <p class="pub-note"><em>Through a realist synthesis of 121 global water management studies, this diagnostic instrument directly shifts theoretical climate governance toward measurable, actionable, and prescriptive implementation.</em></p>
+                </article>
+
+                <!-- Journal Paper -->
+                <article class="pub-card">
+                    <div class="pub-meta">
+                        <span class="pub-tag">Journal of Applied Geophysics</span>
+                        <span class="pub-tag">2020</span>
+                        <span class="pub-tag">3D Geomodelling</span>
+                    </div>
+                    <h2><a href="https://www.sciencedirect.com/science/article/abs/pii/S0926985119308869" target="_blank" rel="noopener">A case study of 3D geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA</a></h2>
+                    <p>A detailed geomodelling case study on the Teapot Dome, demonstrating advanced workflows in 3D subsurface modeling and reservoir characterization. Published in the highly respected Journal of Applied Geophysics.</p>
+                    <a href="https://doi.org/10.1016/j.jappgeo.2020.104114" target="_blank" rel="noopener" class="proj-link">Read on ScienceDirect →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT ─── -->
+        <section id="page-contact" class="page">
+            <div class="page-content contact-page">
+                <div class="contact-hero">
+                    <h1>Looking for a PhD position<br>in computational geoscience<br>or <em class="serif-accent">climate AI</em>.</h1>
+                    <p class="contact-body">Also open to research collaborations, interesting side projects, or anything where geoscience meets code. Based in Berlin.</p>
                     <div class="signal-bar">
                         <span class="signal-pulse"></span>
-                        <span class="signal-text">Open to research positions</span>
+                        <span>Open to research positions</span>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll-hint">
-            <span>scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- WORK: Bold project showcases, not boring cards -->
-    <section class="work" id="work">
-        <div class="section-inner">
-            <div class="section-label">
-                <span class="label-num">01</span>
-                <span class="label-text">Selected Work</span>
-            </div>
-
-            <!-- Project 1: TerraMind Core -->
-            <article class="project" id="project-terramind">
-                <div class="project-index">01</div>
-                <div class="project-content">
-                    <div class="project-meta">
-                        <span class="meta-tag">TypeScript</span>
-                        <span class="meta-tag">Node.js</span>
-                        <span class="meta-tag">Express</span>
-                        <span class="meta-tag">SSE</span>
-                    </div>
-                    <h2 class="project-title">
-                        <a href="https://github.com/masood1996-geo/terramind-core" target="_blank">TerraMind Core</a>
-                    </h2>
-                    <p class="project-desc">
-                        A real-time global disaster intelligence platform entirely powered by <strong>open government APIs</strong>. It dynamically aggregates and normalizes data from USGS Earthquakes, NASA EONET Wildfires, NOAA Weather Alerts, and NASA FIRMS Satellite Fire Detection into a single unified stream. Features a built-in <strong>GeoScience AI Assistant</strong> to help developers and scientists map disaster impacts using remote sensing. 
-                    </p>
-                    <div class="project-features">
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                            </div>
-                            <div>
-                                <strong>4 Gov APIs Unified</strong>
-                                <span>Multi-source normalizer pipeline for global coverage</span>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            </div>
-                            <div>
-                                <strong>Server-Sent Events (SSE)</strong>
-                                <span>Real-time push engine without polling delays</span>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
-                            </div>
-                            <div>
-                                <strong>Interactive Dashboard</strong>
-                                <span>Live map markers, responsive UI, severity filters</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                        <a href="https://github.com/masood1996-geo/terramind-core" target="_blank" class="project-link">
-                            View repository
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </a>
-                        <a href="https://huggingface.co/spaces/masood1996/terramind-core" target="_blank" class="project-link" style="color: #ff9d00;">
-                            Live Dashboard
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-visual">
-                    <div class="terminal-window">
-                        <div class="terminal-bar">
-                            <span class="term-dot red"></span>
-                            <span class="term-dot yellow"></span>
-                            <span class="term-dot green"></span>
-                            <span class="term-title">terramind-core</span>
-                        </div>
-                        <div class="terminal-body" id="terminal-terramind">
-                            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">npm start</span></div>
-                            <div class="term-line dim"><span class="term-info">[server]</span> TerraMind API Engine booting on port 4100</div>
-                            <div class="term-line accent"><span class="term-info">[pipeline]</span> Normalizing mult-source hazard feeds...</div>
-                            <div class="term-line dim"><span class="term-info">[usgs]</span> Extracted 8 seismic anomalies</div>
-                            <div class="term-line dim"><span class="term-info">[nasa-firms]</span> Scanning VIIRS 375m fire detections</div>
-                            <div class="term-line accent"><span class="term-info">[sse]</span> Broadcasting delta update to connected clients →</div>
-                            <div class="term-line"><span class="term-info">[status]</span> 22 active events cached. Next sweep in 120s.</div>
-                            <div class="term-line blink-cursor"><span class="term-prompt">$</span> <span class="cursor-block">█</span></div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <div class="project-divider"></div>
-
-            <!-- Project 2: ai-scraper -->
-            <article class="project project-reverse" id="project-ai-scraper">
-                <div class="project-index">02</div>
-                <div class="project-content">
-                    <div class="project-meta">
-                        <span class="meta-tag">Python</span>
-                        <span class="meta-tag">LLMs</span>
-                        <span class="meta-tag">Self-Learning</span>
-                        <span class="meta-tag">MIT License</span>
-                    </div>
-                    <h2 class="project-title">
-                        <a href="https://github.com/masood1996-geo/ai-scraper" target="_blank">ai-scraper</a>
-                    </h2>
-                    <p class="project-desc">
-                        A web scraper that <strong>teaches itself</strong>. Point it at any website - it figures out the structure, 
-                        extracts data using LLMs, and <strong>remembers what worked</strong>. Next time it hits the same domain, 
-                        it's faster and more accurate. It builds domain-specific profiles, scores its own output quality, 
-                        and auto-evolves its extraction prompts. Headless Chrome under the hood, with persistent memory 
-                        that compounds over time.
-                    </p>
-                    <div class="project-features">
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                            </div>
-                            <div>
-                                <strong>Self-Evolving Prompts</strong>
-                                <span>Gets smarter with every single scrape</span>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            </div>
-                            <div>
-                                <strong>Persistent Memory</strong>
-                                <span>Domain profiling that compounds over time</span>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <div>
-                                <strong>Quality Scoring</strong>
-                                <span>Self-evaluates extraction accuracy</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://github.com/masood1996-geo/ai-scraper" target="_blank" class="project-link">
-                        View repository
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
-                </div>
-                <div class="project-visual">
-                    <div class="terminal-window">
-                        <div class="terminal-bar">
-                            <span class="term-dot red"></span>
-                            <span class="term-dot yellow"></span>
-                            <span class="term-dot green"></span>
-                            <span class="term-title">ai-scraper</span>
-                        </div>
-                        <div class="terminal-body" id="terminal-1">
-                            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">python scraper.py --url</span> <span class="term-arg">"https://arxiv.org/list/physics.geo-ph"</span></div>
-                            <div class="term-line dim"><span class="term-info">[engine]</span> No domain profile found. Learning...</div>
-                            <div class="term-line dim"><span class="term-info">[chrome]</span> Headless browser launched</div>
-                            <div class="term-line dim"><span class="term-info">[llm]</span> Analyzing page structure...</div>
-                            <div class="term-line accent"><span class="term-info">[learn]</span> Domain profile created: arxiv.org</div>
-                            <div class="term-line accent"><span class="term-info">[learn]</span> Extraction accuracy: <span class="term-highlight">94.7%</span></div>
-                            <div class="term-line"><span class="term-info">[done]</span> 127 papers extracted → papers.json</div>
-                            <div class="term-line blink-cursor"><span class="term-prompt">$</span> <span class="cursor-block">█</span></div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <div class="project-divider"></div>
-
-            <!-- Project 3: openhouse-bot -->
-            <article class="project" id="project-openhouse">
-                <div class="project-index">03</div>
-                <div class="project-content">
-                    <div class="project-meta">
-                        <span class="meta-tag">Python</span>
-                        <span class="meta-tag">Telegram</span>
-                        <span class="meta-tag">Automation</span>
-                        <span class="meta-tag">AGPL-3.0</span>
-                    </div>
-                    <h2 class="project-title">
-                        <a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank">openhouse-bot</a>
-                    </h2>
-                    <p class="project-desc">
-                        Born out of frustration with Berlin's brutal housing market. This bot crawls <strong>50+ real estate 
-                        portals worldwide</strong>, applies your exact filters - price, rooms, location, commute time - and 
-                        fires matching listings to your Telegram <strong>24/7</strong>. It uses an LLM-powered universal crawler 
-                        that adapts to any portal's layout. Now features a <strong>Live Demo on Hugging Face</strong> to try 
-                        the real-time scraping pipeline directly from your browser.
-                    </p>
-                    <div class="project-features">
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                            </div>
-                            <div>
-                                <strong>50+ Portals</strong>
-                                <span>Global coverage, not just one platform</span>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                            </div>
-                            <div>
-                                <strong>Instant Telegram Alerts</strong>
-                                <span>New listings hit your phone in seconds</span>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                            </div>
-                            <div>
-                                <strong>Live HF Demo</strong>
-                                <span>Real-time scraping execution in browser</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                        <a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" class="project-link">
-                            View repository
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </a>
-                        <a href="https://huggingface.co/spaces/masood1996/openhouse-bot" target="_blank" class="project-link" style="color: #ff9d00;">
-                            Try Live Demo
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-visual">
-                    <div class="terminal-window terminal-dark">
-                        <div class="terminal-bar">
-                            <span class="term-dot red"></span>
-                            <span class="term-dot yellow"></span>
-                            <span class="term-dot green"></span>
-                            <span class="term-title">openhouse-bot</span>
-                        </div>
-                        <div class="terminal-body" id="terminal-2">
-                            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">python bot.py</span> <span class="term-arg">--city berlin --max-rent 900</span></div>
-                            <div class="term-line dim"><span class="term-info">[bot]</span> Monitoring 54 portals...</div>
-                            <div class="term-line dim"><span class="term-info">[scan]</span> immobilienscout24.de - 12 new</div>
-                            <div class="term-line dim"><span class="term-info">[scan]</span> wg-gesucht.de - 4 new</div>
-                            <div class="term-line accent"><span class="term-info">[match]</span> 2BR Kreuzberg €780 - <span class="term-highlight">SENT</span></div>
-                            <div class="term-line accent"><span class="term-info">[match]</span> 1BR Neukölln €650 - <span class="term-highlight">SENT</span></div>
-                            <div class="term-line dim"><span class="term-info">[scan]</span> Next cycle in 120s...</div>
-                            <div class="term-line blink-cursor"><span class="term-prompt">$</span> <span class="cursor-block">█</span></div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- RESEARCH: Publications & Papers -->
-    <section class="research" id="research">
-        <div class="section-inner">
-            <div class="section-label">
-                <span class="label-num">02</span>
-                <span class="label-text">Publications</span>
-                 <article class="project" style="margin-top: 1rem; border-top: none; padding-top: 0;">
-                <div class="project-content" style="max-width: 100%;">
-                    <div class="project-meta">
-                        <span class="meta-tag">Master's Thesis</span>
-                        <span class="meta-tag">2025</span>
-                        <span class="meta-tag">Water Governance & Adaptation</span>
-                    </div>
-                    <h2 class="project-title" style="font-size: 1.5rem; margin-top: 1rem;">
-                        A Critical Review of Participatory Approaches in Water Management for Climate Change Adaptation
-                    </h2>
-                    <p class="project-desc">
-                        My primary contribution to the field of Global Change Geography is the <strong>Conditional Enabling Framework (KIEA)</strong>, developed to diagnose and evaluate participatory water governance under severe climate stress and hydrological non-stationarity. <br><br>
-                        Traditional models assume participation uniformly yields positive outcomes - my research demonstrates that participation often devolves into tokenism or elite capture unless four interdependent enabling conditions are met simultaneously: <strong>Knowledge Performance (K)</strong>, <strong>Institutional Performance (I)</strong>, <strong>Equity Performance (E)</strong>, and <strong>Adaptive Performance (A)</strong>.
-                    </p>
-                    
-                    <div class="thesis-grid">
-                        <figure class="thesis-figure-main">
-                            <img src="assets/thesis_fig_p53_1.jpeg" alt="KIEA Weakest Link Logic">
-                            <figcaption>Figure: The KIEA Dimensions & Binding Constraint Logic.</figcaption>
-                        </figure>
-                        <figure class="thesis-figure-secondary">
-                            <div>
-                                <img src="assets/thesis_fig_p61_1.png" alt="Diagnostic Pathways Hydrological">
-                            </div>
-                            <div>
-                                <img src="assets/thesis_fig_p62_1.png" alt="Diagnostic Pathways Social">
-                            </div>
-                        </figure>
-                    </div>
-                    <p class="project-desc" style="margin-top: 1.5rem; font-size: 0.95rem;">
-                        <em>Through a realist synthesis of 121 global water management studies, this diagnostic instrument directly shifts theoretical climate governance toward measurable, actionable, and prescriptive implementation.</em>
-                    </p>
-                </div>
-            </article>
-
-            <article class="project" style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 2rem;">
-                <div class="project-content" style="max-width: 100%;">
-                    <div class="project-meta">
-                        <span class="meta-tag">Journal of Applied Geophysics</span>
-                        <span class="meta-tag">2020</span>
-                        <span class="meta-tag">3D Geomodelling</span>
-                    </div>
-                    <h2 class="project-title" style="font-size: 1.5rem; margin-top: 1rem;">
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0926985119308869" target="_blank">A case study of 3D geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA</a>
-                    </h2>
-                    <p class="project-desc">
-                        A detailed geomodelling case study on the Teapot Dome, demonstrating advanced workflows in 3D subsurface modeling and reservoir characterization. Published in the highly respected Journal of Applied Geophysics.
-                    </p>
-                    <a href="https://doi.org/10.1016/j.jappgeo.2020.104114" target="_blank" class="project-link">
-                        Read on ScienceDirect
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- ABOUT: Editorial magazine style, not cookie-cutter cards -->
-    <section class="about" id="about">
-        <div class="section-inner">
-            <div class="section-label">
-                <span class="label-num">03</span>
-                <span class="label-text">Background</span>
-            </div>
-            <div class="about-layout">
-                <div class="about-main">
-                    <h2 class="about-heading">
-                        I didn't start in tech.<br>
-                        I started <em class="serif-accent">underground</em>.
-                    </h2>
-                    <div class="about-prose">
-                        <p>
-                            My first career was interpreting what's beneath your feet - 3D seismic surveys, subsurface 
-                            geological models, wellbore data. I earned a <strong>BSc in Geophysics</strong> from Bahria University 
-                            (3.55/4.00 CGPA) and placed <strong>3rd in the Imperial Barrel Awards, Asia Pacific</strong> - one of 
-                            the most competitive geoscience competitions organized by the AAPG.
-                        </p>
-                        <p>
-                            Then I moved to Berlin for an <strong>MSc in Global Change Geography</strong> at Humboldt University, 
-                            where the work shifted from subsurface to atmosphere - climate data, earth observation satellites, 
-                            computational modelling. Somewhere along the way, I realized the tools I needed didn't exist. 
-                            So I started building them.
-                        </p>
-                        <p>
-                            Now I write Python instead of field reports. I build LLM-powered systems that crawl, extract, 
-                            learn, and adapt. The geoscience training never left - it just evolved into a different kind 
-                            of excavation.
-                        </p>
-                    </div>
-                </div>
-                <aside class="about-sidebar">
-                    <div class="sidebar-block">
-                        <h4>Education</h4>
-                        <div class="edu-item">
-                            <span class="edu-years">2023 - 2025</span>
-                            <strong>MSc Global Change Geography</strong>
-                            <span class="edu-school">Humboldt University of Berlin</span>
-                        </div>
-                        <div class="edu-item">
-                            <span class="edu-years">2015 - 2019</span>
-                            <strong>BSc Geophysics</strong>
-                            <span class="edu-school">Bahria University · 3.55/4.00</span>
-                        </div>
-                    </div>
-                    <div class="sidebar-block">
-                        <h4>Recognition</h4>
-                        <div class="edu-item highlight-item">
-                            <strong>Imperial Barrel Awards</strong>
-                            <span class="edu-school">3rd Place · AAPG Asia Pacific</span>
-                        </div>
-                    </div>
-                    <div class="sidebar-block">
-                        <h4>Languages</h4>
-                        <div class="lang-grid">
-                            <div class="lang-item"><strong>English</strong><span>C1</span></div>
-                            <div class="lang-item"><strong>Urdu</strong><span>C1</span></div>
-                            <div class="lang-item"><strong>Hindi</strong><span>B1</span></div>
-                            <div class="lang-item"><strong>German</strong><span>A2</span></div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </section>
-
-    <!-- STACK: Clean, dense, not gimmicky -->
-    <section class="stack" id="stack">
-        <div class="section-inner">
-            <div class="section-label">
-                <span class="label-num">04</span>
-                <span class="label-text">Technical Stack</span>
-            </div>
-            <div class="stack-grid">
-                <div class="stack-col">
-                    <h3 class="stack-heading">Languages & Web</h3>
-                    <ul class="stack-list">
-                        <li>Python 3.x</li>
-                        <li>TypeScript / Node.js</li>
-                        <li>Express.js</li>
-                        <li>HTML / CSS</li>
-                        <li>R (RStudio)</li>
-                    </ul>
-                </div>
-                <div class="stack-col">
-                    <h3 class="stack-heading">AI & Automation</h3>
-                    <ul class="stack-list">
-                        <li>Agentic Systems (LLMs)</li>
-                        <li>Open WebUI</li>
-                        <li>Headless Web Scraping</li>
-                        <li>Telegram Bots</li>
-                        <li>Process Automation</li>
-                    </ul>
-                </div>
-                <div class="stack-col">
-                    <h3 class="stack-heading">Data & GeoScience</h3>
-                    <ul class="stack-list">
-                        <li>3D Geomodelling (Petrel)</li>
-                        <li>Spatial Analysis (QGIS)</li>
-                        <li>Climate Data Analytics</li>
-                        <li>Real-time APIS (FIRMS, USGS)</li>
-                        <li>Pandas / NumPy</li>
-                    </ul>
-                </div>
-                <div class="stack-col">
-                    <h3 class="stack-heading">Infrastructure</h3>
-                    <ul class="stack-list">
-                        <li>Server-Sent Events (SSE)</li>
-                        <li>REST API Architecture</li>
-                        <li>Hugging Face Spaces</li>
-                        <li>Docker / Appwrite</li>
-                        <li>Git / PowerShell</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT: Simple, direct -->
-    <section class="contact" id="contact">
-        <div class="section-inner">
-            <div class="section-label">
-                <span class="label-num">05</span>
-                <span class="label-text">Contact</span>
-            </div>
-            <div class="contact-layout">
-                <div class="contact-main">
-                    <h2 class="contact-heading">
-                        Looking for a PhD position<br>
-                        in computational geoscience<br>
-                        or <em class="serif-accent">climate AI</em>.
-                    </h2>
-                    <p class="contact-body">
-                        Also open to research collaborations, interesting side projects, 
-                        or anything where geoscience meets code. Based in Berlin.
-                    </p>
                 </div>
                 <div class="contact-links">
                     <a href="mailto:mmsultan2009@gmail.com" class="contact-link" id="lnk-email">
                         <span class="cl-label">Email</span>
                         <span class="cl-value">mmsultan2009@gmail.com</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        <span class="cl-arrow">→</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/masood1996/" target="_blank" class="contact-link" id="lnk-linkedin">
+                    <a href="https://www.linkedin.com/in/masood1996/" target="_blank" rel="noopener" class="contact-link" id="lnk-linkedin">
                         <span class="cl-label">LinkedIn</span>
                         <span class="cl-value">/in/masood1996</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        <span class="cl-arrow">→</span>
                     </a>
-                    <a href="https://github.com/masood1996-geo" target="_blank" class="contact-link" id="lnk-github">
+                    <a href="https://github.com/masood1996-geo" target="_blank" rel="noopener" class="contact-link" id="lnk-github">
                         <span class="cl-label">GitHub</span>
                         <span class="cl-value">masood1996-geo</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        <span class="cl-arrow">→</span>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer">
+    </main>
+
+    <footer id="site-footer">
         <div class="footer-inner">
             <span>© 2026 Masood Sultan</span>
             <span>Berlin, Germany</span>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
