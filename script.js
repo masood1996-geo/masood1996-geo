@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════
    MASOOD SULTAN — Portfolio Engine
-   Three.js Globe · SPA Router · Excavation Mechanic
+   Three.js Globe · SPA Router · Excavation · Sound · Theme
    ═══════════════════════════════════════════════════════════════════ */
 (function () {
     'use strict';
@@ -31,67 +31,160 @@
                 this.lastMouse.y = this.mouse.y;
                 this.mouse.x = e.clientX;
                 this.mouse.y = e.clientY;
-
                 this.mouse.vx = this.mouse.x - this.lastMouse.x;
                 this.mouse.vy = this.mouse.y - this.lastMouse.y;
                 let speed = Math.sqrt(this.mouse.vx ** 2 + this.mouse.vy ** 2);
-
                 let jitter = 0;
                 if (speed > 5) {
                     jitter = (Math.random() - 0.5) * speed * 1.5;
                     if (jitter > 80) jitter = 80;
                     if (jitter < -80) jitter = -80;
                 }
-
-                this.points.push({
-                    x: this.mouse.x,
-                    y: this.mouse.y + jitter,
-                    age: 0
-                });
-
-                if (this.points.length > this.maxPoints) {
-                    this.points.shift();
-                }
+                this.points.push({ x: this.mouse.x, y: this.mouse.y + jitter, age: 0 });
+                if (this.points.length > this.maxPoints) this.points.shift();
             });
         }
 
         animate() {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-            // Cyan accent matching the globe aesthetic
-            const rgb = '0, 240, 255';
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            const rgb = isLight ? '0, 100, 170' : '0, 240, 255';
 
             if (this.points.length > 1) {
                 this.ctx.lineJoin = 'round';
                 this.ctx.lineCap = 'round';
-
                 for (let i = 1; i < this.points.length; i++) {
                     let p1 = this.points[i - 1];
                     let p2 = this.points[i];
-
                     let opacity = 1 - (p2.age / 40);
                     if (opacity < 0) opacity = 0;
-
                     this.ctx.beginPath();
                     this.ctx.moveTo(p1.x, p1.y);
                     this.ctx.lineTo(p2.x, p2.y);
-
                     this.ctx.lineWidth = 2 * opacity;
                     this.ctx.strokeStyle = `rgba(${rgb}, ${opacity})`;
                     this.ctx.shadowBlur = 10 * opacity;
                     this.ctx.shadowColor = `rgba(${rgb}, ${opacity})`;
-
                     this.ctx.stroke();
-
                     p1.age += 1;
                 }
                 this.points[this.points.length - 1].age += 1;
-
                 this.points = this.points.filter(p => p.age < 40);
             }
-
             requestAnimationFrame(() => this.animate());
         }
+    }
+
+    // ─── Sound Engine (Web Audio API) ──────────────────────────────
+    let audioCtx = null;
+    let soundEnabled = true;
+
+    function getAudioCtx() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        return audioCtx;
+    }
+
+    function playPickaxeSound() {
+        if (!soundEnabled) return;
+        try {
+            const ctx = getAudioCtx();
+            // Metallic strike
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            const osc2 = ctx.createOscillator();
+            const gain2 = ctx.createGain();
+
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(800, ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(200, ctx.currentTime + 0.15);
+            gain.gain.setValueAtTime(0.15, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+
+            osc2.type = 'triangle';
+            osc2.frequency.setValueAtTime(1200, ctx.currentTime);
+            osc2.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.1);
+            gain2.gain.setValueAtTime(0.1, ctx.currentTime);
+            gain2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+
+            osc.connect(gain).connect(ctx.destination);
+            osc2.connect(gain2).connect(ctx.destination);
+            osc.start(ctx.currentTime);
+            osc2.start(ctx.currentTime);
+            osc.stop(ctx.currentTime + 0.25);
+            osc2.stop(ctx.currentTime + 0.2);
+        } catch (e) { /* Silent fail */ }
+    }
+
+    function playSeismicPulse(intensity) {
+        if (!soundEnabled) return;
+        try {
+            const ctx = getAudioCtx();
+            // Low rumble
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(40 + intensity * 10, ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(20, ctx.currentTime + 0.5);
+            gain.gain.setValueAtTime(0.2 + intensity * 0.05, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
+            osc.connect(gain).connect(ctx.destination);
+            osc.start(ctx.currentTime);
+            osc.stop(ctx.currentTime + 0.7);
+
+            // High crackle
+            const bufferSize = ctx.sampleRate * 0.15;
+            const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.3));
+            }
+            const noise = ctx.createBufferSource();
+            noise.buffer = buffer;
+            const noiseGain = ctx.createGain();
+            noiseGain.gain.setValueAtTime(0.08 + intensity * 0.02, ctx.currentTime);
+            noiseGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+            noise.connect(noiseGain).connect(ctx.destination);
+            noise.start(ctx.currentTime);
+        } catch (e) { /* Silent fail */ }
+    }
+
+    function playRevealSound() {
+        if (!soundEnabled) return;
+        try {
+            const ctx = getAudioCtx();
+            const notes = [523.25, 659.25, 783.99, 1046.5]; // C5-E5-G5-C6
+            notes.forEach((freq, i) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, ctx.currentTime + i * 0.12);
+                gain.gain.setValueAtTime(0, ctx.currentTime + i * 0.12);
+                gain.gain.linearRampToValueAtTime(0.12, ctx.currentTime + i * 0.12 + 0.05);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.12 + 0.8);
+                osc.connect(gain).connect(ctx.destination);
+                osc.start(ctx.currentTime + i * 0.12);
+                osc.stop(ctx.currentTime + i * 0.12 + 1);
+            });
+        } catch (e) { /* Silent fail */ }
+    }
+
+    function playClickSound() {
+        if (!soundEnabled) return;
+        try {
+            const ctx = getAudioCtx();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(600, ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.06);
+            gain.gain.setValueAtTime(0.06, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
+            osc.connect(gain).connect(ctx.destination);
+            osc.start(ctx.currentTime);
+            osc.stop(ctx.currentTime + 0.1);
+        } catch (e) { /* Silent fail */ }
     }
 
     // ─── Configuration ─────────────────────────────────────────────
@@ -108,6 +201,7 @@
     let digStage = 0;
     let globeReady = false;
     let excavated = false;
+    let countriesLoaded = false; // Guard against double-load
 
     // Three.js objects
     let scene, camera, renderer;
@@ -128,11 +222,13 @@
         refs.globeCanvas = document.getElementById('globe-canvas');
         refs.digPrompt = document.getElementById('dig-prompt');
         refs.nameReveal = document.getElementById('name-reveal');
-        refs.shovelCursor = document.getElementById('shovel-cursor');
+        refs.pickaxeCursor = document.getElementById('pickaxe-cursor');
         refs.footer = document.getElementById('site-footer');
         refs.pages = document.querySelectorAll('.page');
         refs.navAnchors = document.querySelectorAll('.nav-links a');
         refs.digSegments = document.querySelectorAll('.dig-segment');
+        refs.soundToggle = document.getElementById('sound-toggle');
+        refs.themeToggle = document.getElementById('theme-toggle');
     }
 
     // ─── Utility ───────────────────────────────────────────────────
@@ -149,7 +245,6 @@
     // ─── SPA Router ────────────────────────────────────────────────
     function initRouter() {
         window.addEventListener('hashchange', handleRoute);
-        // Handle initial route
         handleRoute();
     }
 
@@ -160,15 +255,12 @@
     }
 
     function navigateTo(page) {
-        if (page === currentPage) return;
+        if (page === currentPage && document.querySelector('.page.active')) return;
 
-        // Hide all pages
         refs.pages.forEach(p => p.classList.remove('active'));
 
-        // Show target page
         const target = document.getElementById('page-' + page);
         if (!target) {
-            // Fallback to home
             document.getElementById('page-home').classList.add('active');
             currentPage = 'home';
         } else {
@@ -176,29 +268,26 @@
             currentPage = page;
         }
 
-        // Update body data attribute
         document.body.setAttribute('data-page', currentPage);
 
-        // Update nav active state
         refs.navAnchors.forEach(a => {
             a.classList.toggle('active', a.dataset.page === currentPage);
         });
 
-        // Scroll to top
         window.scrollTo(0, 0);
 
-        // Close mobile menu
         if (refs.navLinks.classList.contains('open')) {
             refs.navLinks.classList.remove('open');
             refs.navToggle.classList.remove('open');
         }
 
-        // Manage globe animation
         if (currentPage === 'home' && globeReady) {
             startGlobeAnimation();
         } else if (currentPage !== 'home') {
             stopGlobeAnimation();
         }
+
+        playClickSound();
     }
 
     // ─── Mobile Menu ───────────────────────────────────────────────
@@ -209,28 +298,78 @@
         });
     }
 
+    // ─── Theme Toggle ──────────────────────────────────────────────
+    function initTheme() {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateThemeIcons('light');
+        }
+
+        refs.themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            if (next === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', next);
+            updateThemeIcons(next);
+            playClickSound();
+        });
+    }
+
+    function updateThemeIcons(theme) {
+        const moon = document.getElementById('theme-moon');
+        const sun = document.getElementById('theme-sun');
+        if (theme === 'light') {
+            moon.style.display = 'none';
+            sun.style.display = 'block';
+        } else {
+            moon.style.display = 'block';
+            sun.style.display = 'none';
+        }
+    }
+
+    // ─── Sound Toggle ──────────────────────────────────────────────
+    function initSound() {
+        const saved = localStorage.getItem('sound');
+        if (saved === 'off') {
+            soundEnabled = false;
+            updateSoundIcons();
+        }
+
+        refs.soundToggle.addEventListener('click', () => {
+            soundEnabled = !soundEnabled;
+            localStorage.setItem('sound', soundEnabled ? 'on' : 'off');
+            updateSoundIcons();
+            if (soundEnabled) playClickSound();
+        });
+    }
+
+    function updateSoundIcons() {
+        const on = document.getElementById('sound-on-icon');
+        const off = document.getElementById('sound-off-icon');
+        on.style.display = soundEnabled ? 'block' : 'none';
+        off.style.display = soundEnabled ? 'none' : 'block';
+    }
+
     // ─── Globe Engine ──────────────────────────────────────────────
     function initGlobe() {
-        // Check for Three.js
         if (typeof THREE === 'undefined') {
-            console.warn('Three.js not available. Showing name directly.');
+            console.warn('Three.js not available.');
             showNameDirectly();
             return;
         }
 
-        // Check if already excavated this session
-        if (sessionStorage.getItem('excavated')) {
-            excavated = true;
-        }
+        // NO sessionStorage check — always show fresh globe
 
-        // Scene
         scene = new THREE.Scene();
 
-        // Camera
         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = CAMERA_DISTANCE;
 
-        // Renderer
         renderer = new THREE.WebGLRenderer({
             canvas: refs.globeCanvas,
             antialias: true,
@@ -240,7 +379,6 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setClearColor(0x07080f, 1);
 
-        // Lighting
         const ambient = new THREE.AmbientLight(0x222244, 0.6);
         scene.add(ambient);
         const point = new THREE.PointLight(0x00f0ff, 0.8, 50);
@@ -250,11 +388,9 @@
         point2.position.set(-5, -2, 3);
         scene.add(point2);
 
-        // Globe group (everything that rotates together)
         globeGroup = new THREE.Group();
         scene.add(globeGroup);
 
-        // Dark sphere
         const sphereGeo = new THREE.SphereGeometry(GLOBE_RADIUS, GLOBE_SEGMENTS, GLOBE_SEGMENTS);
         const sphereMat = new THREE.MeshPhongMaterial({
             color: 0x0d1117,
@@ -266,35 +402,18 @@
         globeMesh = new THREE.Mesh(sphereGeo, sphereMat);
         globeGroup.add(globeMesh);
 
-        // Grid lines
         createGridLines();
-
-        // Atmosphere glow
         createAtmosphere();
-
-        // Stars
         createStars();
 
-        // Cracks group
         cracksGroup = new THREE.Group();
         globeGroup.add(cracksGroup);
 
-        // Load countries
         loadCountryData();
-
-        // Berlin marker
         addBerlinMarker();
 
-        // Handle resize
         window.addEventListener('resize', handleResize);
-
-        // Mouse parallax
         document.addEventListener('mousemove', handleMouseMove);
-
-        // If already excavated, show name and dim globe
-        if (excavated) {
-            showNameDirectly();
-        }
 
         globeReady = true;
         startGlobeAnimation();
@@ -308,12 +427,7 @@
         }
         const geo = new THREE.BufferGeometry();
         geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const mat = new THREE.PointsMaterial({
-            color: 0xffffff,
-            size: 0.06,
-            transparent: true,
-            opacity: 0.7
-        });
+        const mat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.06, transparent: true, opacity: 0.7 });
         scene.add(new THREE.Points(geo, mat));
     }
 
@@ -345,43 +459,36 @@
 
     function createGridLines() {
         gridGroup = new THREE.Group();
-        const gridMat = new THREE.LineBasicMaterial({
-            color: 0x1a1a3e,
-            transparent: true,
-            opacity: 0.25
-        });
+        const gridMat = new THREE.LineBasicMaterial({ color: 0x1a1a3e, transparent: true, opacity: 0.25 });
 
-        // Latitude lines every 30°
         for (let lat = -60; lat <= 60; lat += 30) {
             const pts = [];
             for (let lng = -180; lng <= 180; lng += 3) {
                 pts.push(latLngToVector3(lat, lng, GLOBE_RADIUS * 1.001));
             }
-            const geo = new THREE.BufferGeometry().setFromPoints(pts);
-            gridGroup.add(new THREE.Line(geo, gridMat));
+            gridGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), gridMat));
         }
 
-        // Longitude lines every 30°
         for (let lng = -180; lng < 180; lng += 30) {
             const pts = [];
             for (let lat = -90; lat <= 90; lat += 3) {
                 pts.push(latLngToVector3(lat, lng, GLOBE_RADIUS * 1.001));
             }
-            const geo = new THREE.BufferGeometry().setFromPoints(pts);
-            gridGroup.add(new THREE.Line(geo, gridMat));
+            gridGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), gridMat));
         }
 
         globeGroup.add(gridGroup);
     }
 
     function loadCountryData() {
+        // Guard: only load once
+        if (countriesLoaded) return;
+        countriesLoaded = true;
+
         fetch(WORLD_ATLAS_URL)
             .then(r => r.json())
             .then(worldData => {
-                if (typeof topojson === 'undefined') {
-                    console.warn('topojson-client not loaded.');
-                    return;
-                }
+                if (typeof topojson === 'undefined') return;
                 const mesh = topojson.mesh(worldData, worldData.objects.countries);
                 const points = [];
 
@@ -395,17 +502,11 @@
                 });
 
                 const geo = new THREE.BufferGeometry().setFromPoints(points);
-                const mat = new THREE.LineBasicMaterial({
-                    color: 0x00f0ff,
-                    transparent: true,
-                    opacity: 0.5
-                });
+                const mat = new THREE.LineBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.5 });
                 countryLinesMesh = new THREE.LineSegments(geo, mat);
                 globeGroup.add(countryLinesMesh);
             })
-            .catch(err => {
-                console.warn('Failed to load world atlas data:', err);
-            });
+            .catch(err => console.warn('Failed to load world atlas:', err));
     }
 
     function addBerlinMarker() {
@@ -416,14 +517,8 @@
         berlinMarker.position.copy(pos);
         globeGroup.add(berlinMarker);
 
-        // Glow ring
         const ringGeo = new THREE.RingGeometry(0.018, 0.024, 32);
-        const ringMat = new THREE.MeshBasicMaterial({
-            color: 0xff3366,
-            transparent: true,
-            opacity: 0.4,
-            side: THREE.DoubleSide
-        });
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0xff3366, transparent: true, opacity: 0.4, side: THREE.DoubleSide });
         const ring = new THREE.Mesh(ringGeo, ringMat);
         ring.position.copy(pos);
         ring.lookAt(new THREE.Vector3(0, 0, 0));
@@ -457,45 +552,23 @@
 
     function animateGlobe() {
         animationId = requestAnimationFrame(animateGlobe);
-
         if (!globeGroup) return;
 
-        // Auto-rotate
         globeGroup.rotation.y += AUTO_ROTATE_SPEED;
 
-        // Mouse parallax
         globeGroup.rotation.x += (mouseY * 0.15 - globeGroup.rotation.x) * 0.02;
         const targetRotY = globeGroup.rotation.y + mouseX * 0.1;
         globeGroup.rotation.y += (targetRotY - globeGroup.rotation.y) * 0.01;
 
-        // Excavation animations
         if (digStage >= 3 && !excavated) {
             const progress = Math.min(1, (digStage - 2) / 3);
-            if (countryLinesMesh) {
-                globeGroup.children.forEach(child => {
-                    if (child === countryLinesMesh || child === gridGroup || child === atmosphereMesh) {
-                        // Don't scale individual children, scale will affect positions
-                    }
-                });
-                countryLinesMesh.material.opacity = Math.max(0, 0.5 * (1 - progress));
-            }
-            if (globeMesh) {
-                globeMesh.material.opacity = Math.max(0, 1 - progress * 0.8);
-            }
-            if (gridGroup) {
-                gridGroup.children.forEach(line => {
-                    line.material.opacity = Math.max(0, 0.25 * (1 - progress));
-                });
-            }
-            if (atmosphereMesh) {
-                atmosphereMesh.material.uniforms && (atmosphereMesh.material.opacity = Math.max(0, 0.5 * (1 - progress)));
-            }
+            if (countryLinesMesh) countryLinesMesh.material.opacity = Math.max(0, 0.5 * (1 - progress));
+            if (globeMesh) globeMesh.material.opacity = Math.max(0, 1 - progress * 0.8);
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.opacity = Math.max(0, 0.25 * (1 - progress)); });
         }
 
-        // Update particles
         updateParticles();
 
-        // Berlin marker pulse
         if (berlinMarker && !excavated) {
             const s = 1 + Math.sin(Date.now() * 0.004) * 0.3;
             berlinMarker.scale.setScalar(s);
@@ -510,47 +583,28 @@
         const colors = new Float32Array(count * 3);
         const velocities = [];
 
-        const earthColors = [
-            [0.6, 0.4, 0.2], [0.5, 0.35, 0.15],
-            [0.7, 0.55, 0.3], [0.4, 0.3, 0.15]
-        ];
-        const revealColors = [
-            [0.0, 0.94, 1.0], [0.49, 0.23, 0.93],
-            [1.0, 0.2, 0.4], [0.0, 0.8, 0.9]
-        ];
+        const earthColors = [[0.6,0.4,0.2],[0.5,0.35,0.15],[0.7,0.55,0.3],[0.4,0.3,0.15]];
+        const revealColors = [[0.0,0.94,1.0],[0.49,0.23,0.93],[1.0,0.2,0.4],[0.0,0.8,0.9]];
         const palette = isReveal ? revealColors : earthColors;
 
         for (let i = 0; i < count; i++) {
-            positions[i * 3] = origin.x;
-            positions[i * 3 + 1] = origin.y;
-            positions[i * 3 + 2] = origin.z;
-
+            positions[i*3] = origin.x;
+            positions[i*3+1] = origin.y;
+            positions[i*3+2] = origin.z;
             const dir = origin.clone().normalize();
             const spread = isReveal ? 0.06 : 0.04;
             const speed = isReveal ? 0.04 : 0.025;
             velocities.push(dir.clone().multiplyScalar(speed + Math.random() * speed).add(
-                new THREE.Vector3(
-                    (Math.random() - 0.5) * spread,
-                    Math.random() * spread * 0.5,
-                    (Math.random() - 0.5) * spread
-                )
+                new THREE.Vector3((Math.random()-0.5)*spread, Math.random()*spread*0.5, (Math.random()-0.5)*spread)
             ));
-
             const c = palette[Math.floor(Math.random() * palette.length)];
-            colors[i * 3] = c[0];
-            colors[i * 3 + 1] = c[1];
-            colors[i * 3 + 2] = c[2];
+            colors[i*3] = c[0]; colors[i*3+1] = c[1]; colors[i*3+2] = c[2];
         }
 
         const geo = new THREE.BufferGeometry();
         geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-        const mat = new THREE.PointsMaterial({
-            size: isReveal ? 0.04 : 0.025,
-            vertexColors: true,
-            transparent: true,
-            opacity: 1.0
-        });
+        const mat = new THREE.PointsMaterial({ size: isReveal ? 0.04 : 0.025, vertexColors: true, transparent: true, opacity: 1.0 });
         const pts = new THREE.Points(geo, mat);
         scene.add(pts);
         activeParticles.push({ mesh: pts, velocities, born: Date.now(), life: isReveal ? 3000 : 2000 });
@@ -568,13 +622,11 @@
                 activeParticles.splice(i, 1);
                 continue;
             }
-
             const pos = p.mesh.geometry.attributes.position.array;
             for (let j = 0; j < pos.length / 3; j++) {
-                pos[j * 3] += p.velocities[j].x;
-                pos[j * 3 + 1] += p.velocities[j].y - 0.0004 * age;
-                pos[j * 3 + 2] += p.velocities[j].z;
-                // Slow down
+                pos[j*3] += p.velocities[j].x;
+                pos[j*3+1] += p.velocities[j].y - 0.0004 * age;
+                pos[j*3+2] += p.velocities[j].z;
                 p.velocities[j].multiplyScalar(0.98);
             }
             p.mesh.geometry.attributes.position.needsUpdate = true;
@@ -584,8 +636,6 @@
 
     // ─── Excavation Controller ─────────────────────────────────────
     function initExcavation() {
-        if (excavated) return;
-
         refs.globeCanvas.addEventListener('click', onGlobeClick);
         refs.globeCanvas.addEventListener('touchend', onGlobeTouch);
     }
@@ -603,7 +653,6 @@
     }
 
     function performDig(clientX, clientY) {
-        // Raycast to globe
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
         mouse.x = (clientX / window.innerWidth) * 2 - 1;
@@ -616,40 +665,33 @@
         const hitPoint = intersects[0].point;
         digStage++;
 
-        // Animate shovel
-        refs.shovelCursor.classList.remove('digging');
-        void refs.shovelCursor.offsetWidth; // Force reflow
-        refs.shovelCursor.classList.add('digging');
+        // Sound effects
+        playPickaxeSound();
+        playSeismicPulse(digStage);
 
-        // Update progress bar
+        // Animate pickaxe
+        if (refs.pickaxeCursor) {
+            refs.pickaxeCursor.classList.remove('digging');
+            void refs.pickaxeCursor.offsetWidth;
+            refs.pickaxeCursor.classList.add('digging');
+        }
+
+        // Screen shake (CSS + camera)
+        document.body.classList.remove('screen-shake');
+        void document.body.offsetWidth;
+        document.body.classList.add('screen-shake');
+        setTimeout(() => document.body.classList.remove('screen-shake'), 400);
+
         updateDigProgress();
-
-        // Add cracks
         addCracks(hitPoint);
+        createDigParticles(hitPoint, 15 + digStage * 8, false);
+        shakeCamera(0.03 + digStage * 0.015, 300 + digStage * 80);
 
-        // Create particles
-        const particleCount = 15 + digStage * 8;
-        createDigParticles(hitPoint, particleCount, false);
-
-        // Camera shake
-        shakeCamera(0.02 + digStage * 0.01, 200 + digStage * 50);
-
-        // Stage-specific effects
-        if (digStage === 3) {
-            // Start dissolving globe
-            animateDissolve();
-        }
-
-        if (digStage === 4) {
-            // Name starts appearing
-            refs.nameReveal.classList.add('revealing');
-        }
+        if (digStage === 3) animateDissolve();
+        if (digStage === 4) refs.nameReveal.classList.add('revealing');
 
         if (digStage >= MAX_DIGS) {
-            // Final reveal
-            setTimeout(() => {
-                completeExcavation(hitPoint);
-            }, 400);
+            setTimeout(() => completeExcavation(hitPoint), 400);
         }
     }
 
@@ -665,52 +707,29 @@
             const pts = [];
             let current = hitPoint.clone();
             const segments = 5 + Math.floor(Math.random() * 6);
-
             for (let i = 0; i < segments; i++) {
-                const next = current.clone().add(
-                    new THREE.Vector3(
-                        (Math.random() - 0.5) * 0.08,
-                        (Math.random() - 0.5) * 0.08,
-                        (Math.random() - 0.5) * 0.08
-                    )
-                );
+                const next = current.clone().add(new THREE.Vector3(
+                    (Math.random()-0.5)*0.08, (Math.random()-0.5)*0.08, (Math.random()-0.5)*0.08
+                ));
                 next.normalize().multiplyScalar(GLOBE_RADIUS * 1.003);
                 pts.push(current, next);
                 current = next;
             }
-
             const geo = new THREE.BufferGeometry().setFromPoints(pts);
-            const mat = new THREE.LineBasicMaterial({
-                color: digStage >= 3 ? 0xff3366 : 0xff6b4a,
-                transparent: true,
-                opacity: 0.7
-            });
+            const mat = new THREE.LineBasicMaterial({ color: digStage >= 3 ? 0xff3366 : 0xff6b4a, transparent: true, opacity: 0.7 });
             cracksGroup.add(new THREE.LineSegments(geo, mat));
         }
     }
 
     function animateDissolve() {
-        // Gradually expand and fade globe elements
         const startTime = Date.now();
         const duration = 2000;
-
         function dissolve() {
-            const elapsed = Date.now() - startTime;
-            const t = Math.min(1, elapsed / duration);
-            const ease = 1 - Math.pow(1 - t, 3); // Ease-out cubic
-
-            if (globeMesh) {
-                globeMesh.material.opacity = Math.max(0, 1 - ease * 0.5);
-            }
-            if (countryLinesMesh) {
-                countryLinesMesh.material.opacity = Math.max(0, 0.5 - ease * 0.3);
-            }
-
-            // Fade cracks
-            cracksGroup.children.forEach(crack => {
-                crack.material.opacity = Math.max(0, 0.7 - ease * 0.3);
-            });
-
+            const t = Math.min(1, (Date.now() - startTime) / duration);
+            const ease = 1 - Math.pow(1 - t, 3);
+            if (globeMesh) globeMesh.material.opacity = Math.max(0, 1 - ease * 0.5);
+            if (countryLinesMesh) countryLinesMesh.material.opacity = Math.max(0, 0.5 - ease * 0.3);
+            cracksGroup.children.forEach(crack => { crack.material.opacity = Math.max(0, 0.7 - ease * 0.3); });
             if (t < 1) requestAnimationFrame(dissolve);
         }
         dissolve();
@@ -718,46 +737,37 @@
 
     function completeExcavation(hitPoint) {
         excavated = true;
-        sessionStorage.setItem('excavated', 'true');
+
+        // Reveal sound
+        playRevealSound();
 
         // Massive particle burst
-        const center = new THREE.Vector3(0, 0, 0);
         for (let i = 0; i < 5; i++) {
             const offset = new THREE.Vector3(
-                (Math.random() - 0.5) * 0.5,
-                (Math.random() - 0.5) * 0.5,
-                (Math.random() - 0.5) * 0.3 + 0.5
+                (Math.random()-0.5)*0.5, (Math.random()-0.5)*0.5, (Math.random()-0.5)*0.3 + 0.5
             );
             createDigParticles(offset, 40, true);
         }
 
-        // Dissolve everything
+        // Final dissolve
         const duration = 1200;
         const startTime = Date.now();
-
         function finalDissolve() {
-            const elapsed = Date.now() - startTime;
-            const t = Math.min(1, elapsed / duration);
+            const t = Math.min(1, (Date.now() - startTime) / duration);
             const ease = 1 - Math.pow(1 - t, 3);
-
             if (globeMesh) globeMesh.material.opacity = Math.max(0, globeMesh.material.opacity - 0.03);
             if (countryLinesMesh) countryLinesMesh.material.opacity = Math.max(0, countryLinesMesh.material.opacity - 0.02);
             if (gridGroup) gridGroup.children.forEach(l => { l.material.opacity = Math.max(0, l.material.opacity - 0.02); });
             cracksGroup.children.forEach(c => { c.material.opacity = Math.max(0, c.material.opacity - 0.03); });
             if (berlinMarker) berlinMarker.material.opacity = Math.max(0, 1 - ease);
-
             if (t < 1) requestAnimationFrame(finalDissolve);
         }
         finalDissolve();
 
-        // Show name
         refs.nameReveal.classList.remove('revealing');
         refs.nameReveal.classList.add('revealed');
-
-        // Hide dig prompt
         refs.digPrompt.classList.add('hidden');
 
-        // Remove click listeners
         refs.globeCanvas.removeEventListener('click', onGlobeClick);
         refs.globeCanvas.removeEventListener('touchend', onGlobeTouch);
     }
@@ -765,21 +775,9 @@
     function showNameDirectly() {
         digStage = MAX_DIGS;
         excavated = true;
-
-        // Show name immediately
-        if (refs.nameReveal) {
-            refs.nameReveal.classList.add('revealed');
-        }
-        if (refs.digPrompt) {
-            refs.digPrompt.classList.add('hidden');
-        }
-
-        // Fill all progress segments
-        if (refs.digSegments) {
-            refs.digSegments.forEach(s => s.classList.add('filled'));
-        }
-
-        // Dim globe
+        if (refs.nameReveal) refs.nameReveal.classList.add('revealed');
+        if (refs.digPrompt) refs.digPrompt.classList.add('hidden');
+        if (refs.digSegments) refs.digSegments.forEach(s => s.classList.add('filled'));
         if (globeMesh) globeMesh.material.opacity = 0.15;
         if (countryLinesMesh) countryLinesMesh.material.opacity = 0.1;
         if (gridGroup) gridGroup.children.forEach(l => { l.material.opacity = 0.05; });
@@ -787,11 +785,10 @@
 
     function shakeCamera(intensity, duration) {
         if (!camera) return;
-        const origZ = camera.position.z;
         const origX = camera.position.x;
         const origY = camera.position.y;
+        const origZ = camera.position.z;
         const startTime = Date.now();
-
         function shake() {
             const elapsed = Date.now() - startTime;
             if (elapsed < duration) {
@@ -808,32 +805,30 @@
         shake();
     }
 
-    // ─── Shovel Cursor ─────────────────────────────────────────────
-    function initShovelCursor() {
-        if (!refs.globeContainer || !refs.shovelCursor) return;
-
-        // Only enable on non-touch devices
+    // ─── Pickaxe Cursor ────────────────────────────────────────────
+    function initPickaxeCursor() {
+        if (!refs.globeContainer || !refs.pickaxeCursor) return;
         if ('ontouchstart' in window) return;
 
-        let shovelVisible = false;
+        let pickVisible = false;
 
         refs.globeContainer.addEventListener('mouseenter', () => {
             if (excavated) return;
-            refs.shovelCursor.classList.add('visible');
+            refs.pickaxeCursor.classList.add('visible');
             refs.globeContainer.style.cursor = 'none';
-            shovelVisible = true;
+            pickVisible = true;
         });
 
         refs.globeContainer.addEventListener('mouseleave', () => {
-            refs.shovelCursor.classList.remove('visible');
+            refs.pickaxeCursor.classList.remove('visible');
             refs.globeContainer.style.cursor = '';
-            shovelVisible = false;
+            pickVisible = false;
         });
 
         document.addEventListener('mousemove', (e) => {
-            if (!shovelVisible) return;
-            refs.shovelCursor.style.left = e.clientX + 'px';
-            refs.shovelCursor.style.top = e.clientY + 'px';
+            if (!pickVisible) return;
+            refs.pickaxeCursor.style.left = e.clientX + 'px';
+            refs.pickaxeCursor.style.top = e.clientY + 'px';
         });
     }
 
@@ -842,11 +837,12 @@
         cacheDom();
         initRouter();
         initMobileMenu();
+        initTheme();
+        initSound();
         initGlobe();
-        initShovelCursor();
+        initPickaxeCursor();
         initExcavation();
 
-        // Seismic mouse trail (global, all pages)
         const seismicCanvas = document.getElementById('seismic-canvas');
         if (seismicCanvas) new SeismicTrail(seismicCanvas);
     }

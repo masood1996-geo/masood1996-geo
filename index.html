@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Masood Sultan — Geoscientist & AI Engineer</title>
     <meta name="description" content="Masood Sultan: Geoscientist turned AI engineer. Building self-learning scrapers, autonomous systems, and computational tools that bridge Earth science with machine intelligence. Berlin, Germany.">
     <meta name="author" content="Masood Sultan">
@@ -20,13 +20,23 @@
     <!-- Seismic Mouse Trail Canvas -->
     <canvas id="seismic-canvas"></canvas>
 
-    <!-- Custom Shovel Cursor -->
-    <div id="shovel-cursor">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 3C13 3 10 7 10 11V16H14V28H16V30H20V28H22V16H26V11C26 7 23 3 18 3Z" fill="#A8B2BE" stroke="#6B7280" stroke-width="0.5"/>
-            <path d="M15 5C13 7 12 9 12 11V14H16V5H15Z" fill="#C5CED8" opacity="0.35"/>
-            <rect x="16" y="16" width="4" height="12" rx="1" fill="#B8860B"/>
-            <rect x="14.5" y="28" width="7" height="3" rx="1.5" fill="#8B4513"/>
+    <!-- Custom Pickaxe Cursor -->
+    <div id="pickaxe-cursor">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Handle -->
+            <line x1="14" y1="34" x2="32" y2="16" stroke="#8B6914" stroke-width="3" stroke-linecap="round"/>
+            <line x1="14" y1="34" x2="32" y2="16" stroke="#C4A035" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <!-- Grip wrapping -->
+            <line x1="16" y1="32" x2="18" y2="30" stroke="#6B4F10" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+            <line x1="19" y1="29" x2="21" y2="27" stroke="#6B4F10" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+            <!-- Head - curved pick -->
+            <path d="M30 18 C30 18, 36 12, 42 8 C43 7, 44 8, 43 9 C40 12, 36 14, 33 15 Z" fill="#8A9BAE" stroke="#5C6B7A" stroke-width="0.8"/>
+            <!-- Head - chisel side -->
+            <path d="M30 18 C30 18, 28 10, 24 6 C23 5, 22 6, 23 7 C25 10, 28 14, 30 16 Z" fill="#9AABB8" stroke="#5C6B7A" stroke-width="0.8"/>
+            <!-- Head highlight -->
+            <path d="M31 16 C34 13, 38 10, 41 8.5" stroke="rgba(255,255,255,0.3)" stroke-width="0.6" stroke-linecap="round" fill="none"/>
+            <!-- Metal sheen -->
+            <path d="M29 16 C27 12, 26 9, 24.5 7" stroke="rgba(255,255,255,0.25)" stroke-width="0.5" stroke-linecap="round" fill="none"/>
         </svg>
     </div>
 
@@ -40,9 +50,35 @@
             <a href="#/research" data-page="research">Research</a>
             <a href="#/contact" data-page="contact">Contact</a>
         </div>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
-            <span></span><span></span><span></span>
-        </button>
+        <div class="nav-controls">
+            <button id="sound-toggle" class="nav-icon-btn" aria-label="Toggle sound" title="Toggle sound">
+                <svg id="sound-on-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+                <svg id="sound-off-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+            </button>
+            <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle theme" title="Toggle theme">
+                <svg id="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg id="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
     <!-- ═══════════════ PAGES ═══════════════ -->
