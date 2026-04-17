@@ -205,7 +205,7 @@
 
     // Three.js objects
     let scene, camera, renderer;
-    let globeGroup, countryLinesMesh, globeMesh, atmosphereMesh, gridGroup, berlinMarker, starsMesh;
+    let globeGroup, countryLinesMesh, globeMesh, atmosphereMesh, gridGroup, berlinMarker;
     let cracksGroup;
     let activeParticles = [];
     let mouseX = 0, mouseY = 0;
@@ -345,18 +345,17 @@
         if (isLight) {
             renderer.setClearColor(0x000000, 0); // Transparent to show CSS gradient
             if (globeMesh) {
-                globeMesh.material.color.setHex(0xfbf9f4);
-                globeMesh.material.emissive.setHex(0xf3efdf);
+                globeMesh.material.color.setHex(0xfffaeb);
+                globeMesh.material.emissive.setHex(0xfdf4dc);
             }
-            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xe8dcc9); });
-            if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x99754f);
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xe6cba1); });
+            if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x0077aa);
             if (atmosphereMesh && atmosphereMesh.material.uniforms) {
                 atmosphereMesh.material.blending = THREE.NormalBlending;
-                atmosphereMesh.material.uniforms.color1.value.setHex(0xd89e5a); // Warm vibrant orange/brown
-                atmosphereMesh.material.uniforms.color2.value.setHex(0xfcebd3); // Lighter halo edge
-                atmosphereMesh.material.uniforms.alphaMult.value = 0.8;
+                atmosphereMesh.material.uniforms.color1.value.setHex(0xd4bea8); // Darker warm contrast
+                atmosphereMesh.material.uniforms.color2.value.setHex(0xc8b096);
+                atmosphereMesh.material.uniforms.alphaMult.value = 0.4;
             }
-            if (starsMesh) starsMesh.material.color.setHex(0x333333);
         } else {
             renderer.setClearColor(0x07080f, 1);
             if (globeMesh) {
@@ -371,7 +370,6 @@
                 atmosphereMesh.material.uniforms.color2.value.setHex(0x7c3aed); // Neon purple
                 atmosphereMesh.material.uniforms.alphaMult.value = 0.5;
             }
-            if (starsMesh) starsMesh.material.color.setHex(0xffffff);
         }
     }
 
@@ -471,8 +469,7 @@
         const geo = new THREE.BufferGeometry();
         geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         const mat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.06, transparent: true, opacity: 0.7 });
-        starsMesh = new THREE.Points(geo, mat);
-        scene.add(starsMesh);
+        scene.add(new THREE.Points(geo, mat));
     }
 
     function createAtmosphere() {

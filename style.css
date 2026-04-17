@@ -29,18 +29,18 @@
 
 /* ─── Variables: Light ──────────────────────────────────────────── */
 [data-theme="light"] {
-    --bg: #fdf7ed;
+    --bg: #f8f8f5;
     --bg-elevated: #ffffff;
     --bg-card: #ffffff;
-    --text: #8c6844; /* Warm brown */
-    --text-muted: #a38262;
-    --text-dim: #c5a98e;
-    --accent: #8c6844; /* Warm brown */
-    --accent-glow: rgba(140, 104, 68, 0.08);
+    --text: #1a1a2e;
+    --text-muted: #4a4a5a;
+    --text-dim: #8a8a9a;
+    --accent: #0077aa;
+    --accent-glow: rgba(0, 119, 170, 0.08);
     --accent2: #cc2255;
     --accent3: #6c30c4;
-    --border: rgba(140, 104, 68, 0.2);
-    --border-strong: rgba(140, 104, 68, 0.4);
+    --border: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.14);
     --surface: rgba(0, 0, 0, 0.025);
     --globe-bg: #e8e6e1;
     /* Terminal light overrides */
@@ -263,28 +263,28 @@ body[data-page="home"] #main-nav {
     justify-content: center;
 }
 
-/* Warm cream to pale blue gradient for light mode */
+/* Soft pastel yellow daylight behind globe in light mode */
 [data-theme="light"] #page-home {
-    background: linear-gradient(135deg, #fdf8e9 20%, #faecd5 50%, #e1f0f4 100%);
+    background: radial-gradient(ellipse at 50% 45%, #fffdf5 0%, #fef8e6 35%, #fcf0ce 60%, #faeac2 100%);
 }
 [data-theme="light"] #page-home .dig-text {
-    color: #8c6844;
+    color: #111111;
     font-weight: 500;
 }
 [data-theme="light"] #page-home .skip-globe {
-    color: #8c6844;
-    border-color: rgba(140, 104, 68, 0.3);
+    color: #111111;
+    border-color: rgba(0,0,0,0.3);
 }
 [data-theme="light"] #page-home .skip-globe:hover {
-    color: #5c442d;
+    color: #000000;
     border-color: var(--accent);
-    background: var(--accent-glow);
+    background: rgba(0, 119, 170, 0.08);
 }
 [data-theme="light"] .reveal-name {
-    color: #8c6844;
+    color: #111111;
 }
 [data-theme="light"] .reveal-subtitle {
-    color: #a38262;
+    color: #222222;
     font-weight: 500;
 }
 
