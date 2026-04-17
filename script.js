@@ -341,13 +341,14 @@
 
     function updateGlobeTheme(theme) {
         if (!renderer) return;
-        if (theme === 'light') {
-            renderer.setClearColor(0xe8e6e1, 1);
+        const isLight = theme === 'light';
+        if (isLight) {
+            renderer.setClearColor(0x000000, 0); // Transparent to show CSS gradient
             if (globeMesh) {
-                globeMesh.material.color.setHex(0xd8d6d0);
-                globeMesh.material.emissive.setHex(0xc0beb8);
+                globeMesh.material.color.setHex(0xf8f9fa);
+                globeMesh.material.emissive.setHex(0xe9ecef);
             }
-            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xa0a0a0); });
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xcdd4dd); });
             if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x0077aa);
         } else {
             renderer.setClearColor(0x07080f, 1);
@@ -405,7 +406,7 @@
         });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.setClearColor(0x07080f, 1);
+        renderer.setClearColor(0x000000, 0);
 
         const ambient = new THREE.AmbientLight(0x222244, 0.6);
         scene.add(ambient);
