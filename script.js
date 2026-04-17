@@ -350,6 +350,12 @@
             }
             if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xe6cba1); });
             if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x0077aa);
+            if (atmosphereMesh && atmosphereMesh.material.uniforms) {
+                atmosphereMesh.material.blending = THREE.NormalBlending;
+                atmosphereMesh.material.uniforms.color1.value.setHex(0xd4bea8); // Darker warm contrast
+                atmosphereMesh.material.uniforms.color2.value.setHex(0xc8b096);
+                atmosphereMesh.material.uniforms.alphaMult.value = 0.4;
+            }
         } else {
             renderer.setClearColor(0x07080f, 1);
             if (globeMesh) {
@@ -358,6 +364,12 @@
             }
             if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x1a1a3e); });
             if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x00f0ff);
+            if (atmosphereMesh && atmosphereMesh.material.uniforms) {
+                atmosphereMesh.material.blending = THREE.AdditiveBlending;
+                atmosphereMesh.material.uniforms.color1.value.setHex(0x00f0ff); // Neon cyan
+                atmosphereMesh.material.uniforms.color2.value.setHex(0x7c3aed); // Neon purple
+                atmosphereMesh.material.uniforms.alphaMult.value = 0.5;
+            }
         }
     }
 
@@ -463,6 +475,11 @@
     function createAtmosphere() {
         const geo = new THREE.SphereGeometry(GLOBE_RADIUS * 1.15, 64, 64);
         const mat = new THREE.ShaderMaterial({
+            uniforms: {
+                color1: { value: new THREE.Color(0x00f0ff) },
+                color2: { value: new THREE.Color(0x7c3aed) },
+                alphaMult: { value: 0.5 }
+            },
             vertexShader: `
                 varying vec3 vNormal;
                 void main() {
@@ -471,11 +488,14 @@
                 }
             `,
             fragmentShader: `
+                uniform vec3 color1;
+                uniform vec3 color2;
+                uniform float alphaMult;
                 varying vec3 vNormal;
                 void main() {
                     float intensity = pow(0.62 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 2.0);
-                    vec3 color = mix(vec3(0.0, 0.94, 1.0), vec3(0.49, 0.23, 0.93), 0.25);
-                    gl_FragColor = vec4(color, intensity * 0.5);
+                    vec3 color = mix(color1, color2, 0.25);
+                    gl_FragColor = vec4(color, intensity * alphaMult);
                 }
             `,
             blending: THREE.AdditiveBlending,
