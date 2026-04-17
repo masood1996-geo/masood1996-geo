@@ -43,13 +43,16 @@
 </head>
 <body data-page="home">
 
+    <!-- Skip to content for keyboard/screen reader users -->
+    <a href="#app" class="skip-link" id="skip-link">Skip to main content</a>
+
     <!-- Seismic Mouse Trail Canvas -->
-    <canvas id="seismic-canvas"></canvas>
+    <canvas id="seismic-canvas" aria-hidden="true"></canvas>
 
     <!-- Pickaxe cursor is handled via CSS cursor: url() -->
 
     <!-- Navigation -->
-    <nav id="main-nav">
+    <nav id="main-nav" role="navigation" aria-label="Main navigation">
         <a href="#/" class="nav-brand">M<span class="dot">.</span>S</a>
         <div class="nav-links" id="nav-links">
             <a href="#/" data-page="home">Home</a>
@@ -91,12 +94,12 @@
     </nav>
 
     <!-- ═══════════════ PAGES ═══════════════ -->
-    <main id="app">
+    <main id="app" role="main" aria-live="polite">
 
         <!-- ─── HOME: Globe + Excavation ─── -->
-        <section id="page-home" class="page active">
-            <div id="globe-container">
-                <canvas id="globe-canvas"></canvas>
+        <section id="page-home" class="page active" aria-label="Home">
+            <div id="globe-container" aria-label="Interactive 3D Earth globe visualization">
+                <canvas id="globe-canvas" aria-hidden="true"></canvas>
             </div>
             <div id="dig-prompt">
                 <div class="dig-text">Click the earth to unearth what lies beneath</div>
@@ -121,7 +124,7 @@
         </section>
 
         <!-- ─── INFO ─── -->
-        <section id="page-info" class="page">
+        <section id="page-info" class="page" aria-label="About me">
             <div class="page-content">
                 <div class="page-header">
                     <span class="page-label">01 — Background</span>
@@ -165,19 +168,19 @@
                             <div class="lang-bars">
                                 <div class="lang-bar-item">
                                     <div class="lang-bar-header"><strong>English</strong><span>C1 — Professional</span></div>
-                                    <div class="lang-bar-track"><div class="lang-bar-fill" style="width:85%"></div></div>
+                                    <div class="lang-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="English proficiency: C1 — Professional"><div class="lang-bar-fill" style="width:85%"></div></div>
                                 </div>
                                 <div class="lang-bar-item">
                                     <div class="lang-bar-header"><strong>Urdu</strong><span>C1 — Native</span></div>
-                                    <div class="lang-bar-track"><div class="lang-bar-fill" style="width:85%"></div></div>
+                                    <div class="lang-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Urdu proficiency: C1 — Native"><div class="lang-bar-fill" style="width:85%"></div></div>
                                 </div>
                                 <div class="lang-bar-item">
                                     <div class="lang-bar-header"><strong>Hindi</strong><span>B1 — Conversational</span></div>
-                                    <div class="lang-bar-track"><div class="lang-bar-fill" style="width:55%"></div></div>
+                                    <div class="lang-bar-track" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="Hindi proficiency: B1 — Conversational"><div class="lang-bar-fill" style="width:55%"></div></div>
                                 </div>
                                 <div class="lang-bar-item">
                                     <div class="lang-bar-header"><strong>German</strong><span>A2 — Elementary</span></div>
-                                    <div class="lang-bar-track"><div class="lang-bar-fill" style="width:30%"></div></div>
+                                    <div class="lang-bar-track" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" aria-label="German proficiency: A2 — Elementary"><div class="lang-bar-fill" style="width:30%"></div></div>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +212,7 @@
         </section>
 
         <!-- ─── PROJECTS ─── -->
-        <section id="page-projects" class="page">
+        <section id="page-projects" class="page" aria-label="Projects">
             <div class="page-content">
                 <div class="page-header">
                     <span class="page-label">02 — Selected Work</span>
@@ -241,7 +244,7 @@
                         <div class="project-visual">
                             <details class="terminal-collapse">
                                 <summary class="terminal-toggle">View Terminal Output</summary>
-                                <div class="terminal-window">
+                                <div class="terminal-window" role="img" aria-label="Terminal output showing TerraMind API booting on port 4100, normalizing hazard feeds from USGS, NASA FIRMS, and broadcasting 22 active events via server-sent events">
                                     <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">terramind-core</span></div>
                                     <div class="terminal-body">
                                         <div class="tl"><span class="tp">$</span> <span class="tc">npm start</span></div>
@@ -283,7 +286,7 @@
                         <div class="project-visual">
                             <details class="terminal-collapse">
                                 <summary class="terminal-toggle">View Terminal Output</summary>
-                                <div class="terminal-window">
+                                <div class="terminal-window" role="img" aria-label="Terminal output showing AI scraper learning arxiv.org structure, creating domain profile, and extracting 127 papers with 94.7 percent accuracy">
                                     <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">ai-scraper</span></div>
                                     <div class="terminal-body">
                                         <div class="tl"><span class="tp">$</span> <span class="tc">python scraper.py --url</span> <span class="ta">"https://arxiv.org/list/physics.geo-ph"</span></div>
@@ -326,7 +329,7 @@
                         <div class="project-visual">
                             <details class="terminal-collapse">
                                 <summary class="terminal-toggle">View Terminal Output</summary>
-                                <div class="terminal-window">
+                                <div class="terminal-window" role="img" aria-label="Terminal output showing OpenHouse bot monitoring 54 real estate portals in Berlin, finding matches in Kreuzberg and Neukölln and sending Telegram alerts">
                                     <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">openhouse-bot</span></div>
                                     <div class="terminal-body">
                                         <div class="tl"><span class="tp">$</span> <span class="tc">python bot.py</span> <span class="ta">--city berlin --max-rent 900</span></div>
@@ -347,7 +350,7 @@
         </section>
 
         <!-- ─── RESEARCH ─── -->
-        <section id="page-research" class="page">
+        <section id="page-research" class="page" aria-label="Academic Research">
             <div class="page-content">
                 <div class="page-header">
                     <span class="page-label">03 — Publications</span>
@@ -412,7 +415,7 @@
         </section>
 
         <!-- ─── MEDIA ─── -->
-        <section id="page-media" class="page">
+        <section id="page-media" class="page" aria-label="Media and Downloads">
             <div class="page-content">
                 <div class="page-header">
                     <span class="page-label">04 — Downloads</span>
@@ -462,7 +465,7 @@
         </section>
 
         <!-- ─── CONTACT ─── -->
-        <section id="page-contact" class="page">
+        <section id="page-contact" class="page" aria-label="Contact">
             <div class="page-content contact-page">
                 <div class="contact-hero">
                     <h2>Looking for a PhD position<br>in computational geoscience<br>or <em class="serif-accent">climate AI</em>.</h2>
@@ -497,7 +500,7 @@
 
     </main>
 
-    <footer id="site-footer">
+    <footer id="site-footer" role="contentinfo">
         <div class="footer-inner">
             <span>© 2026 Masood Sultan</span>
             <span>Berlin, Germany</span>
@@ -507,5 +510,31 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- Screen reader live region for page announcements -->
+    <div id="a11y-announce" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+
+    <!-- Accessibility Toolbar -->
+    <div id="a11y-toolbar" class="a11y-toolbar">
+        <button id="a11y-toggle" class="a11y-toggle-btn" aria-label="Accessibility options" title="Accessibility options">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm9 7h-6.8l-1.2-2H11l-1.2 2H3v2h4.2l1.8 3v7h2v-7l1-1.7L13 14v7h2v-7l1.8-3H21V9z"/></svg>
+        </button>
+        <div id="a11y-panel" class="a11y-panel" role="dialog" aria-label="Accessibility settings" hidden>
+            <h3>Accessibility</h3>
+            <label class="a11y-option">
+                <input type="checkbox" id="a11y-contrast">
+                <span>High Contrast</span>
+            </label>
+            <label class="a11y-option">
+                <input type="checkbox" id="a11y-large">
+                <span>Larger Text</span>
+            </label>
+            <label class="a11y-option">
+                <input type="checkbox" id="a11y-motion">
+                <span>Reduce Motion</span>
+            </label>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -276,6 +276,11 @@
 
         window.scrollTo(0, 0);
 
+        // Screen reader announcement
+        const pageNames = { home: 'Home', info: 'About me', projects: 'Projects', research: 'Academic Research', media: 'Media and Downloads', contact: 'Contact' };
+        const announceEl = document.getElementById('a11y-announce');
+        if (announceEl) announceEl.textContent = 'Navigated to ' + (pageNames[currentPage] || currentPage) + ' page';
+
         if (refs.navLinks.classList.contains('open')) {
             refs.navLinks.classList.remove('open');
             refs.navToggle.classList.remove('open');
@@ -837,6 +842,100 @@
         // Email obfuscation — assemble address client-side
         const emailEl = document.getElementById('email-display');
         if (emailEl) emailEl.textContent = 'masood.geo' + '@' + 'yahoo.com';
+
+        // Accessibility toolbar
+        initAccessibility();
+    }
+
+    // ─── Accessibility Toolbar ─────────────────────────────────────
+    function initAccessibility() {
+        const toggle = document.getElementById('a11y-toggle');
+        const panel = document.getElementById('a11y-panel');
+        const chkContrast = document.getElementById('a11y-contrast');
+        const chkLarge = document.getElementById('a11y-large');
+        const chkMotion = document.getElementById('a11y-motion');
+
+        if (!toggle || !panel) return;
+
+        // Restore saved preferences
+        const root = document.documentElement;
+        if (localStorage.getItem('a11y-contrast') === 'high') {
+            root.setAttribute('data-a11y-contrast', 'high');
+            if (chkContrast) chkContrast.checked = true;
+        }
+        if (localStorage.getItem('a11y-text') === 'large') {
+            root.setAttribute('data-a11y-text', 'large');
+            if (chkLarge) chkLarge.checked = true;
+        }
+        if (localStorage.getItem('a11y-motion') === 'reduce') {
+            root.setAttribute('data-a11y-motion', 'reduce');
+            if (chkMotion) chkMotion.checked = true;
+        }
+
+        // Toggle panel open/close
+        toggle.addEventListener('click', () => {
+            const isHidden = panel.hasAttribute('hidden');
+            if (isHidden) {
+                panel.removeAttribute('hidden');
+                panel.querySelector('input')?.focus();
+            } else {
+                panel.setAttribute('hidden', '');
+            }
+        });
+
+        // Close panel on Escape
+        panel.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                panel.setAttribute('hidden', '');
+                toggle.focus();
+            }
+        });
+
+        // Close panel when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#a11y-toolbar')) {
+                panel.setAttribute('hidden', '');
+            }
+        });
+
+        // High Contrast toggle
+        if (chkContrast) {
+            chkContrast.addEventListener('change', () => {
+                if (chkContrast.checked) {
+                    root.setAttribute('data-a11y-contrast', 'high');
+                    localStorage.setItem('a11y-contrast', 'high');
+                } else {
+                    root.removeAttribute('data-a11y-contrast');
+                    localStorage.removeItem('a11y-contrast');
+                }
+            });
+        }
+
+        // Large Text toggle
+        if (chkLarge) {
+            chkLarge.addEventListener('change', () => {
+                if (chkLarge.checked) {
+                    root.setAttribute('data-a11y-text', 'large');
+                    localStorage.setItem('a11y-text', 'large');
+                } else {
+                    root.removeAttribute('data-a11y-text');
+                    localStorage.removeItem('a11y-text');
+                }
+            });
+        }
+
+        // Reduce Motion toggle
+        if (chkMotion) {
+            chkMotion.addEventListener('change', () => {
+                if (chkMotion.checked) {
+                    root.setAttribute('data-a11y-motion', 'reduce');
+                    localStorage.setItem('a11y-motion', 'reduce');
+                } else {
+                    root.removeAttribute('data-a11y-motion');
+                    localStorage.removeItem('a11y-motion');
+                }
+            });
+        }
     }
 
     if (document.readyState === 'loading') {
