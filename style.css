@@ -29,20 +29,31 @@
 
 /* ─── Variables: Light ──────────────────────────────────────────── */
 [data-theme="light"] {
-    --bg: #f5f5f0;
+    --bg: #f8f8f5;
     --bg-elevated: #ffffff;
     --bg-card: #ffffff;
     --text: #1a1a2e;
-    --text-muted: #555566;
-    --text-dim: #999aaa;
+    --text-muted: #4a4a5a;
+    --text-dim: #8a8a9a;
     --accent: #0077aa;
-    --accent-glow: rgba(0, 119, 170, 0.1);
+    --accent-glow: rgba(0, 119, 170, 0.08);
     --accent2: #cc2255;
     --accent3: #6c30c4;
     --border: rgba(0, 0, 0, 0.08);
-    --border-strong: rgba(0, 0, 0, 0.15);
-    --surface: rgba(0, 0, 0, 0.03);
-    --globe-bg: #1a1a2e;
+    --border-strong: rgba(0, 0, 0, 0.14);
+    --surface: rgba(0, 0, 0, 0.025);
+    --globe-bg: #dce4ec;
+    /* Terminal light overrides */
+    --term-bg: #f4f4f0;
+    --term-bar-bg: #eaeae6;
+    --term-text: #2e3440;
+    --term-muted: #636d7a;
+    --term-prompt: #0077aa;
+    --term-cmd: #1a1a2e;
+    --term-arg: #cc2255;
+    --term-info: #6c30c4;
+    --term-highlight: #0077aa;
+    --term-accent: #0077aa;
 }
 
 /* ─── Reset ─────────────────────────────────────────────────────── */
@@ -102,12 +113,17 @@ strong { font-weight: 600; }
 }
 
 [data-theme="light"] #main-nav {
-    background: rgba(245, 245, 240, 0.7);
+    background: rgba(248, 248, 245, 0.8);
 }
 
 body[data-page="home"] #main-nav {
     background: rgba(7, 8, 15, 0.25);
     border-bottom-color: transparent;
+}
+
+[data-theme="light"] body[data-page="home"] #main-nav,
+[data-theme="light"]body[data-page="home"] #main-nav {
+    background: rgba(248, 248, 245, 0.35);
 }
 
 .nav-brand {
@@ -245,6 +261,26 @@ body[data-page="home"] #main-nav {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Daylight radial glow behind globe in light mode */
+[data-theme="light"] #page-home {
+    background: radial-gradient(ellipse at 50% 45%, #e8f0f8 0%, #dce4ec 35%, #c8d4de 65%, #b8c8d6 100%);
+}
+[data-theme="light"] #page-home .dig-text {
+    color: #4a5568;
+}
+[data-theme="light"] #page-home .skip-globe {
+    color: #4a5568;
+    border-color: rgba(0,0,0,0.15);
+}
+[data-theme="light"] #page-home .skip-globe:hover {
+    color: #1a1a2e;
+    border-color: var(--accent);
+    background: rgba(0, 119, 170, 0.08);
+}
+[data-theme="light"] .reveal-subtitle {
+    color: #4a5568;
 }
 
 #globe-container {
@@ -711,8 +747,12 @@ details[open] .terminal-toggle { color: var(--accent); }
 }
 
 [data-theme="light"] .terminal-toggle {
-    background: rgba(30, 30, 46, 0.6);
-    color: #aab;
+    background: var(--term-bar-bg, rgba(30, 30, 46, 0.6));
+    color: var(--term-muted, #aab);
+}
+[data-theme="light"] .terminal-toggle:hover {
+    color: var(--accent);
+    background: rgba(0, 119, 170, 0.06);
 }
 
 /* Terminal Windows */
@@ -726,8 +766,25 @@ details[open] .terminal-toggle { color: var(--accent); }
 }
 
 [data-theme="light"] .terminal-window {
-    background: #1e1e2e;
+    background: var(--term-bg, #f4f4f0);
+    border-color: rgba(0,0,0,0.12);
 }
+[data-theme="light"] .terminal-bar {
+    background: var(--term-bar-bg, #eaeae6);
+    border-bottom-color: rgba(0,0,0,0.08);
+}
+[data-theme="light"] .term-title {
+    color: var(--term-muted, #636d7a);
+}
+[data-theme="light"] .tl { color: var(--term-text, #2e3440); }
+[data-theme="light"] .tl.dim { color: var(--term-muted, #636d7a); }
+[data-theme="light"] .tl.accent { color: var(--term-accent, #0077aa); }
+[data-theme="light"] .tp { color: var(--term-prompt, #0077aa); }
+[data-theme="light"] .tc { color: var(--term-cmd, #1a1a2e); }
+[data-theme="light"] .ta { color: var(--term-arg, #cc2255); }
+[data-theme="light"] .ti { color: var(--term-info, #6c30c4); }
+[data-theme="light"] .th { color: var(--term-highlight, #0077aa); }
+[data-theme="light"] .cursor-block { color: var(--term-prompt, #0077aa); }
 
 .terminal-bar {
     display: flex;
@@ -1031,6 +1088,103 @@ body[data-page="home"] #site-footer { display: none; }
     font-family: var(--mono);
     font-size: 0.75rem;
     color: var(--text-dim);
+}
+
+/* ─── MEDIA Page ────────────────────────────────────────────────── */
+.media-section {
+    margin-bottom: 3rem;
+}
+.media-section-title {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+.media-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+.media-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.media-card-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+.media-card-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+}
+.media-card-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+.media-card-action {
+    margin-top: auto;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    transition: opacity 0.2s;
+}
+.media-card:hover .media-card-action { opacity: 0.8; }
+
+.media-download-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    transition: border-color 0.2s;
+}
+.media-download-row:hover { border-color: var(--accent); }
+.media-download-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+.media-download-info { flex: 1; }
+.media-download-info strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+.media-download-info span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+.media-download-btn {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+.media-download-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
 }
 
 /* ─── Responsive ────────────────────────────────────────────────── */

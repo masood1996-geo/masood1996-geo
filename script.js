@@ -304,6 +304,7 @@
         if (saved === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
             updateThemeIcons('light');
+            // Globe colours set after initGlobe runs
         }
 
         refs.themeToggle.addEventListener('click', () => {
@@ -316,6 +317,7 @@
             }
             localStorage.setItem('theme', next);
             updateThemeIcons(next);
+            updateGlobeTheme(next);
             playClickSound();
         });
     }
@@ -329,6 +331,27 @@
         } else {
             moon.style.display = 'block';
             sun.style.display = 'none';
+        }
+    }
+
+    function updateGlobeTheme(theme) {
+        if (!renderer) return;
+        if (theme === 'light') {
+            renderer.setClearColor(0xdce4ec, 1);
+            if (globeMesh) {
+                globeMesh.material.color.setHex(0xb8c8d6);
+                globeMesh.material.emissive.setHex(0xc8d4de);
+            }
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x8899aa); });
+            if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x0077aa);
+        } else {
+            renderer.setClearColor(0x07080f, 1);
+            if (globeMesh) {
+                globeMesh.material.color.setHex(0x0d1117);
+                globeMesh.material.emissive.setHex(0x050810);
+            }
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x1a1a3e); });
+            if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x00f0ff);
         }
     }
 
@@ -803,6 +826,8 @@
         initTheme();
         initSound();
         initGlobe();
+        // Apply saved theme to globe (initTheme runs before initGlobe)
+        if (localStorage.getItem('theme') === 'light') updateGlobeTheme('light');
         initPickaxeCursor();
         initExcavation();
 
