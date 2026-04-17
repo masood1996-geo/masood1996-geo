@@ -205,7 +205,7 @@
 
     // Three.js objects
     let scene, camera, renderer;
-    let globeGroup, countryLinesMesh, globeMesh, atmosphereMesh, gridGroup, berlinMarker;
+    let globeGroup, countryLinesMesh, globeMesh, atmosphereMesh, gridGroup, starsMesh;
     let cracksGroup;
     let activeParticles = [];
     let mouseX = 0, mouseY = 0;
@@ -451,7 +451,7 @@
         globeGroup.add(cracksGroup);
 
         loadCountryData();
-        addBerlinMarker();
+
 
         window.addEventListener('resize', handleResize);
         document.addEventListener('mousemove', handleMouseMove);
@@ -558,21 +558,6 @@
             .catch(err => console.warn('Failed to load world atlas:', err));
     }
 
-    function addBerlinMarker() {
-        const pos = latLngToVector3(BERLIN.lat, BERLIN.lng, GLOBE_RADIUS * 1.01);
-        const geo = new THREE.SphereGeometry(0.012, 16, 16);
-        const mat = new THREE.MeshBasicMaterial({ color: 0xff3366 });
-        berlinMarker = new THREE.Mesh(geo, mat);
-        berlinMarker.position.copy(pos);
-        globeGroup.add(berlinMarker);
-
-        const ringGeo = new THREE.RingGeometry(0.018, 0.024, 32);
-        const ringMat = new THREE.MeshBasicMaterial({ color: 0xff3366, transparent: true, opacity: 0.4, side: THREE.DoubleSide });
-        const ring = new THREE.Mesh(ringGeo, ringMat);
-        ring.position.copy(pos);
-        ring.lookAt(new THREE.Vector3(0, 0, 0));
-        globeGroup.add(ring);
-    }
 
     function handleResize() {
         if (!camera || !renderer) return;
@@ -613,10 +598,6 @@
 
         updateParticles();
 
-        if (berlinMarker && !excavated) {
-            const s = 1 + Math.sin(Date.now() * 0.004) * 0.3;
-            berlinMarker.scale.setScalar(s);
-        }
 
         renderer.render(scene, camera);
     }
@@ -788,7 +769,7 @@
             if (countryLinesMesh) countryLinesMesh.material.opacity = Math.max(0, countryLinesMesh.material.opacity - 0.02);
             if (gridGroup) gridGroup.children.forEach(l => { l.material.opacity = Math.max(0, l.material.opacity - 0.02); });
             cracksGroup.children.forEach(c => { c.material.opacity = Math.max(0, c.material.opacity - 0.03); });
-            if (berlinMarker) berlinMarker.material.opacity = Math.max(0, 1 - ease);
+
             if (t < 1) requestAnimationFrame(finalDissolve);
         }
         finalDissolve();
