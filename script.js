@@ -339,10 +339,10 @@
         if (theme === 'light') {
             renderer.setClearColor(0xd4c4a8, 1);
             if (globeMesh) {
-                globeMesh.material.color.setHex(0x2a2520);
-                globeMesh.material.emissive.setHex(0x1a1510);
+                globeMesh.material.color.setHex(0xc8b89a);
+                globeMesh.material.emissive.setHex(0xb0a080);
             }
-            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x8a7a60); });
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x7a6a50); });
             if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x0077aa);
         } else {
             renderer.setClearColor(0x07080f, 1);
