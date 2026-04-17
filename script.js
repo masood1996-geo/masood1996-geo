@@ -337,12 +337,12 @@
     function updateGlobeTheme(theme) {
         if (!renderer) return;
         if (theme === 'light') {
-            renderer.setClearColor(0xdce4ec, 1);
+            renderer.setClearColor(0xd4c4a8, 1);
             if (globeMesh) {
-                globeMesh.material.color.setHex(0xb8c8d6);
-                globeMesh.material.emissive.setHex(0xc8d4de);
+                globeMesh.material.color.setHex(0x2a2520);
+                globeMesh.material.emissive.setHex(0x1a1510);
             }
-            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x8899aa); });
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x8a7a60); });
             if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x0077aa);
         } else {
             renderer.setClearColor(0x07080f, 1);
