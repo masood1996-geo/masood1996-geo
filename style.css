@@ -42,7 +42,7 @@
     --border: rgba(0, 0, 0, 0.08);
     --border-strong: rgba(0, 0, 0, 0.14);
     --surface: rgba(0, 0, 0, 0.025);
-    --globe-bg: #c8b89a;
+    --globe-bg: #e8e6e1;
     /* Terminal light overrides */
     --term-bg: #f4f4f0;
     --term-bar-bg: #eaeae6;
@@ -263,24 +263,24 @@ body[data-page="home"] #main-nav {
     justify-content: center;
 }
 
-/* Warm daylight glow behind globe in light mode */
+/* Soft daylight behind globe in light mode */
 [data-theme="light"] #page-home {
-    background: radial-gradient(ellipse at 50% 40%, #f5e6d0 0%, #e8d5b8 30%, #d4c4a8 55%, #c2b498 80%, #b0a48e 100%);
+    background: radial-gradient(ellipse at 50% 45%, #f5f4f0 0%, #eeedea 35%, #e5e3de 60%, #dddbd6 100%);
 }
 [data-theme="light"] #page-home .dig-text {
-    color: #5c4f3d;
+    color: #4a4a5a;
 }
 [data-theme="light"] #page-home .skip-globe {
-    color: #5c4f3d;
-    border-color: rgba(60,45,20,0.2);
+    color: #4a4a5a;
+    border-color: rgba(0,0,0,0.12);
 }
 [data-theme="light"] #page-home .skip-globe:hover {
-    color: #2a2015;
+    color: #1a1a2e;
     border-color: var(--accent);
     background: rgba(0, 119, 170, 0.08);
 }
 [data-theme="light"] .reveal-subtitle {
-    color: #5c4f3d;
+    color: #4a4a5a;
 }
 
 #globe-container {

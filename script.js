@@ -342,12 +342,12 @@
     function updateGlobeTheme(theme) {
         if (!renderer) return;
         if (theme === 'light') {
-            renderer.setClearColor(0xd4c4a8, 1);
+            renderer.setClearColor(0xe8e6e1, 1);
             if (globeMesh) {
-                globeMesh.material.color.setHex(0xc8b89a);
-                globeMesh.material.emissive.setHex(0xb0a080);
+                globeMesh.material.color.setHex(0xd8d6d0);
+                globeMesh.material.emissive.setHex(0xc0beb8);
             }
-            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x7a6a50); });
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xa0a0a0); });
             if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x0077aa);
         } else {
             renderer.setClearColor(0x07080f, 1);
