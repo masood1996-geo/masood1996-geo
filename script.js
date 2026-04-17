@@ -808,6 +808,10 @@
 
         const seismicCanvas = document.getElementById('seismic-canvas');
         if (seismicCanvas) new SeismicTrail(seismicCanvas);
+
+        // Email obfuscation — assemble address client-side
+        const emailEl = document.getElementById('email-display');
+        if (emailEl) emailEl.textContent = 'masood.geo' + '@' + 'yahoo.com';
     }
 
     if (document.readyState === 'loading') {

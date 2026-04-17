@@ -221,7 +221,8 @@ body[data-page="home"] #main-nav {
     margin-bottom: 1rem;
 }
 
-.page-header h1 {
+.page-header h1,
+.page-header h2 {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 600;
     line-height: 1.2;
@@ -902,7 +903,8 @@ details[open] .terminal-toggle { color: var(--accent); }
 
 .contact-hero { margin-bottom: 4rem; }
 
-.contact-hero h1 {
+.contact-hero h1,
+.contact-hero h2 {
     font-size: clamp(1.6rem, 4.5vw, 3.2rem);
     font-weight: 600;
     line-height: 1.25;
