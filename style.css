@@ -263,24 +263,29 @@ body[data-page="home"] #main-nav {
     justify-content: center;
 }
 
-/* Soft daylight behind globe in light mode */
+/* Soft pastel yellow daylight behind globe in light mode */
 [data-theme="light"] #page-home {
-    background: radial-gradient(ellipse at 50% 45%, #f5f4f0 0%, #eeedea 35%, #e5e3de 60%, #dddbd6 100%);
+    background: radial-gradient(ellipse at 50% 45%, #fffdf5 0%, #fef8e6 35%, #fcf0ce 60%, #faeac2 100%);
 }
 [data-theme="light"] #page-home .dig-text {
-    color: #4a4a5a;
+    color: #111111;
+    font-weight: 500;
 }
 [data-theme="light"] #page-home .skip-globe {
-    color: #4a4a5a;
-    border-color: rgba(0,0,0,0.12);
+    color: #111111;
+    border-color: rgba(0,0,0,0.3);
 }
 [data-theme="light"] #page-home .skip-globe:hover {
-    color: #1a1a2e;
+    color: #000000;
     border-color: var(--accent);
     background: rgba(0, 119, 170, 0.08);
 }
+[data-theme="light"] .reveal-name {
+    color: #111111;
+}
 [data-theme="light"] .reveal-subtitle {
-    color: #4a4a5a;
+    color: #222222;
+    font-weight: 500;
 }
 
 #globe-container {

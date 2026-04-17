@@ -345,10 +345,10 @@
         if (isLight) {
             renderer.setClearColor(0x000000, 0); // Transparent to show CSS gradient
             if (globeMesh) {
-                globeMesh.material.color.setHex(0xf8f9fa);
-                globeMesh.material.emissive.setHex(0xe9ecef);
+                globeMesh.material.color.setHex(0xfffaeb);
+                globeMesh.material.emissive.setHex(0xfdf4dc);
             }
-            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xcdd4dd); });
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xe6cba1); });
             if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x0077aa);
         } else {
             renderer.setClearColor(0x07080f, 1);
