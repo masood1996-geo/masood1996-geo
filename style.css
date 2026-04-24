@@ -300,6 +300,10 @@ body[data-page="home"] #main-nav {
     display: block;
     touch-action: none;
 }
+#globe-canvas:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -10px;
+}
 
 /* Dig Prompt */
 #dig-prompt {
@@ -716,6 +720,62 @@ body[data-page="home"] #main-nav {
 .proj-link.accent { color: var(--accent); }
 .proj-link.accent:hover { opacity: 0.8; }
 
+.section-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.2rem 1.4rem;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--surface), rgba(0, 240, 255, 0.035));
+    border-radius: var(--radius);
+    margin: 2rem 0 4rem;
+}
+.project-positioning { margin-top: -1rem; }
+.section-cta p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.25rem 0 0;
+}
+.cta-kicker {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.project-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 1.5rem;
+}
+.proof-item {
+    padding: 0.85rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: var(--radius);
+}
+.proof-item span {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.proof-item strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
 /* Terminal Collapsible Accordion */
 .terminal-collapse {
     border: 1px solid var(--border);
@@ -977,7 +1037,7 @@ details[open] .terminal-toggle { color: var(--accent); }
 .contact-body {
     color: var(--text-muted);
     font-size: 1.1rem;
-    max-width: 500px;
+    max-width: 650px;
     margin-bottom: 1.5rem;
 }
 
@@ -1006,6 +1066,13 @@ details[open] .terminal-toggle { color: var(--accent); }
     background: var(--accent);
     color: var(--bg);
     transform: translateY(-1px);
+}
+
+.contact-action-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
 }
 
 .signal-bar {
@@ -1075,6 +1142,27 @@ details[open] .terminal-toggle { color: var(--accent); }
 .contact-link:hover .cl-arrow {
     transform: translateX(4px);
     color: var(--accent);
+}
+
+.copy-email-btn {
+    align-self: flex-start;
+    margin: -0.75rem 0 0.75rem 100px;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.copy-email-btn:hover,
+.copy-email-btn:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-glow);
+    outline: none;
 }
 
 /* ─── Footer ────────────────────────────────────────────────────── */
@@ -1210,6 +1298,11 @@ body[data-page="home"] #site-footer { display: none; }
         grid-template-columns: 1fr;
         direction: ltr;
     }
+    .section-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .project-proof-grid { grid-template-columns: 1fr; }
     .thesis-grid { grid-template-columns: 1fr; }
     .kiea-grid { grid-template-columns: 1fr; }
 }
@@ -1259,6 +1352,9 @@ body[data-page="home"] #site-footer { display: none; }
     .lang-grid { grid-template-columns: 1fr; }
     .contact-link { flex-wrap: wrap; }
     .cl-label { width: 100%; margin-bottom: 2px; }
+    .copy-email-btn { margin-left: 0; }
+    .contact-action-row .btn-primary,
+    .contact-action-row .btn-ghost { width: 100%; justify-content: center; }
     .reveal-name { font-size: clamp(1.8rem, 14vw, 3rem); }
     .reveal-subtitle { font-size: 0.6rem; letter-spacing: 0.05em; }
     .btn-primary, .btn-ghost { padding: 0.6rem 1.2rem; font-size: 0.8rem; }

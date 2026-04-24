@@ -663,6 +663,7 @@
     function initExcavation() {
         refs.globeCanvas.addEventListener('click', onGlobeClick);
         refs.globeCanvas.addEventListener('touchend', onGlobeTouch);
+        refs.globeCanvas.addEventListener('keydown', onGlobeKeydown);
     }
 
     function onGlobeTouch(e) {
@@ -675,6 +676,13 @@
     function onGlobeClick(e) {
         if (excavated || digStage >= MAX_DIGS) return;
         performDig(e.clientX, e.clientY);
+    }
+
+    function onGlobeKeydown(e) {
+        if (excavated || digStage >= MAX_DIGS) return;
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        e.preventDefault();
+        performDig(window.innerWidth / 2, window.innerHeight / 2);
     }
 
     function performDig(clientX, clientY) {
@@ -781,6 +789,7 @@
 
         refs.globeCanvas.removeEventListener('click', onGlobeClick);
         refs.globeCanvas.removeEventListener('touchend', onGlobeTouch);
+        refs.globeCanvas.removeEventListener('keydown', onGlobeKeydown);
     }
 
     function showNameDirectly() {
@@ -844,9 +853,44 @@
         // Email obfuscation — assemble address client-side
         const emailEl = document.getElementById('email-display');
         if (emailEl) emailEl.textContent = 'masood.geo' + '@' + 'yahoo.com';
+        initContactActions();
 
         // Accessibility toolbar
         initAccessibility();
+    }
+
+    function initContactActions() {
+        const copyBtn = document.getElementById('copy-email');
+        if (!copyBtn) return;
+
+        copyBtn.addEventListener('click', async () => {
+            const email = copyBtn.dataset.email || 'masood.geo@yahoo.com';
+            const originalText = copyBtn.textContent;
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(email);
+                } else {
+                    const temp = document.createElement('textarea');
+                    temp.value = email;
+                    temp.setAttribute('readonly', '');
+                    temp.style.position = 'absolute';
+                    temp.style.left = '-9999px';
+                    document.body.appendChild(temp);
+                    temp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(temp);
+                }
+
+                copyBtn.textContent = 'Copied';
+                const announceEl = document.getElementById('a11y-announce');
+                if (announceEl) announceEl.textContent = 'Email address copied to clipboard';
+                setTimeout(() => { copyBtn.textContent = originalText || 'Copy email'; }, 1600);
+            } catch (err) {
+                copyBtn.textContent = 'Copy failed';
+                setTimeout(() => { copyBtn.textContent = originalText || 'Copy email'; }, 1600);
+            }
+        });
     }
 
     // ─── Accessibility Toolbar ─────────────────────────────────────

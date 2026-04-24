@@ -98,8 +98,8 @@
 
         <!-- ─── HOME: Globe + Excavation ─── -->
         <section id="page-home" class="page active" aria-label="Home">
-            <div id="globe-container" aria-label="Interactive 3D Earth globe visualization">
-                <canvas id="globe-canvas" aria-hidden="true"></canvas>
+            <div id="globe-container">
+                <canvas id="globe-canvas" role="button" tabindex="0" aria-label="Interactive excavation globe. Press Enter or Space to unearth the portfolio."></canvas>
             </div>
             <div id="dig-prompt">
                 <div class="dig-text">Click the earth to unearth what lies beneath</div>
@@ -219,6 +219,14 @@
                     <h2>Things I’ve Built</h2>
                 </div>
 
+                <div class="section-cta project-positioning">
+                    <div>
+                        <span class="cta-kicker">Research systems, not just demos</span>
+                        <p>Computational geoscience tools for live hazards, adaptive scraping, intelligence fusion, and climate workflows.</p>
+                    </div>
+                    <a href="#/contact" class="btn-cv">Discuss research collaboration →</a>
+                </div>
+
                 <!-- OmniWatch -->
                 <article class="project-card" id="project-omniwatch">
                     <div class="project-header">
@@ -235,6 +243,12 @@
                                 <div class="feature"><strong>48+ Sources Fused</strong><span>8-tier intelligence pipeline from hazards to SIGINT</span></div>
                                 <div class="feature"><strong>AI Correlation Engine</strong><span>LLM-powered cross-referencing via Ollama</span></div>
                                 <div class="feature"><strong>Live Map Dashboard</strong><span>MapLibre GL with layer toggles &amp; severity filtering</span></div>
+                            </div>
+                            <div class="project-proof-grid" aria-label="OmniWatch project evidence">
+                                <div class="proof-item"><span>Problem</span><strong>Open intelligence and hazard signals are scattered across incompatible feeds.</strong></div>
+                                <div class="proof-item"><span>Role</span><strong>Built the fusion architecture, map layers, and AI correlation workflow.</strong></div>
+                                <div class="proof-item"><span>Stack</span><strong>TypeScript, Next.js, MapLibre GL, open feeds, and local LLM inference.</strong></div>
+                                <div class="proof-item"><span>Proof</span><strong>48+ sources, live dashboard, and public repository demonstrate the system.</strong></div>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/masood1996-geo/OmniWatch" target="_blank" rel="noopener" class="proj-link">View repository →</a>
@@ -280,6 +294,12 @@
                                 <div class="feature"><strong>Server-Sent Events</strong><span>Real-time push without polling</span></div>
                                 <div class="feature"><strong>Interactive Dashboard</strong><span>Live map markers + severity filters</span></div>
                             </div>
+                            <div class="project-proof-grid" aria-label="TerraMind Core project evidence">
+                                <div class="proof-item"><span>Problem</span><strong>Live hazard feeds are fragmented across agencies.</strong></div>
+                                <div class="proof-item"><span>Role</span><strong>Designed the API pipeline, normalizers, and dashboard flow.</strong></div>
+                                <div class="proof-item"><span>Stack</span><strong>Express API, SSE updates, USGS, NASA, and NOAA feeds.</strong></div>
+                                <div class="proof-item"><span>Proof</span><strong>Live dashboard and repository show the working system.</strong></div>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/masood1996-geo/terramind-core" target="_blank" rel="noopener" class="proj-link">View repository →</a>
                                 <a href="https://huggingface.co/spaces/masood1996/terramind-core" target="_blank" rel="noopener" class="proj-link accent">Live Dashboard →</a>
@@ -323,6 +343,12 @@
                                 <div class="feature"><strong>Persistent Memory</strong><span>Domain profiling compounds over time</span></div>
                                 <div class="feature"><strong>Quality Scoring</strong><span>Self-evaluates extraction accuracy</span></div>
                             </div>
+                            <div class="project-proof-grid" aria-label="ai-scraper project evidence">
+                                <div class="proof-item"><span>Problem</span><strong>Traditional scrapers break when page structures shift.</strong></div>
+                                <div class="proof-item"><span>Role</span><strong>Built the learning loop for prompts, memory, and extraction checks.</strong></div>
+                                <div class="proof-item"><span>Stack</span><strong>Python, headless browser automation, LLM prompts, domain profiles.</strong></div>
+                                <div class="proof-item"><span>Proof</span><strong>Reusable profiles and quality scoring reduce repeat setup work.</strong></div>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/masood1996-geo/ai-scraper" target="_blank" rel="noopener" class="proj-link">View repository →</a>
                             </div>
@@ -365,6 +391,12 @@
                                 <div class="feature"><strong>Instant Telegram Alerts</strong><span>New listings hit your phone in seconds</span></div>
                                 <div class="feature"><strong>Live HF Demo</strong><span>Real-time scraping in browser</span></div>
                             </div>
+                            <div class="project-proof-grid" aria-label="openhouse-bot project evidence">
+                                <div class="proof-item"><span>Problem</span><strong>High-volume listings disappear before manual search catches them.</strong></div>
+                                <div class="proof-item"><span>Role</span><strong>Built crawler orchestration, filters, and real-time alerting.</strong></div>
+                                <div class="proof-item"><span>Stack</span><strong>Python crawling, Telegram bot delivery, Hugging Face demo hosting.</strong></div>
+                                <div class="proof-item"><span>Proof</span><strong>Live demo and repo demonstrate a transferable monitoring architecture.</strong></div>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" rel="noopener" class="proj-link">View repository →</a>
                                 <a href="https://huggingface.co/spaces/masood1996/openhouse-bot" target="_blank" rel="noopener" class="proj-link accent">Try Live Demo →</a>
@@ -391,6 +423,13 @@
                     </div>
                 </article>
 
+                <div class="section-cta">
+                    <div>
+                        <span class="cta-kicker">Want to evaluate the work?</span>
+                        <p>Start with the live demos and GitHub repositories, then reach out about PhD, research engineering, or climate AI collaborations.</p>
+                    </div>
+                    <a href="#/contact" class="btn-cv">Contact Masood →</a>
+                </div>
             </div>
         </section>
 
@@ -514,7 +553,7 @@
             <div class="page-content contact-page">
                 <div class="contact-hero">
                     <h2>Looking for a PhD position<br>in computational geoscience<br>or <em class="serif-accent">climate AI</em>.</h2>
-                    <p class="contact-body">If you're seeking a researcher at the intersection of geoscience, AI, and climate adaptation — someone who can build the tools <em>and</em> do the science — let's connect. Based in Berlin.</p>
+                    <p class="contact-body">If you're seeking a researcher at the intersection of geoscience, AI, and climate adaptation — someone who can build the tools <em>and</em> do the science — let's connect. Based in Berlin. For the fastest reply, include the role, lab, project, timeline, and links to any relevant call or research group.</p>
                     <div class="contact-cta-row">
                         <div class="signal-bar">
                             <span class="signal-pulse"></span>
@@ -522,13 +561,18 @@
                         </div>
                         <a href="assets/Masood_Sultan_Academic_CV.pdf" target="_blank" class="btn-cv">Download Academic CV →</a>
                     </div>
+                    <div class="contact-action-row">
+                        <a href="mailto:masood.geo@yahoo.com?subject=Research%20collaboration%20inquiry" class="btn-primary">Email about research roles</a>
+                        <a href="#/media" class="btn-ghost">Review CV and papers</a>
+                    </div>
                 </div>
                 <div class="contact-links">
-                    <a href="#" class="contact-link" id="lnk-email" onclick="window.location.href='mailto:' + 'masood.geo' + '@' + 'yahoo.com'; return false;">
+                    <a href="mailto:masood.geo@yahoo.com?subject=Research%20collaboration%20inquiry" class="contact-link contact-link-with-action" id="lnk-email">
                         <span class="cl-label">Email</span>
                         <span class="cl-value" id="email-display">masood.geo[at]yahoo.com</span>
                         <span class="cl-arrow">→</span>
                     </a>
+                    <button type="button" class="copy-email-btn" id="copy-email" data-email="masood.geo@yahoo.com" aria-label="Copy email address">Copy email</button>
                     <a href="https://www.linkedin.com/in/masood1996/" target="_blank" rel="noopener" class="contact-link" id="lnk-linkedin">
                         <span class="cl-label">LinkedIn</span>
                         <span class="cl-value">/in/masood1996</span>
