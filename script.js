@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════
-   MASOOD SULTAN — Portfolio Engine
+   MASOOD SULTAN - Portfolio Engine
    Three.js Globe · SPA Router · Excavation · Sound · Theme
    ═══════════════════════════════════════════════════════════════════ */
 (function () {
@@ -404,7 +404,7 @@
             return;
         }
 
-        // NO sessionStorage check — always show fresh globe
+        // NO sessionStorage check - always show fresh globe
 
         scene = new THREE.Scene();
 
@@ -594,7 +594,7 @@
         const targetRotY = globeGroup.rotation.y + mouseX * 0.1;
         globeGroup.rotation.y += (targetRotY - globeGroup.rotation.y) * 0.01;
 
-        // No per-frame opacity manipulation — keep globe solid until final reveal
+        // No per-frame opacity manipulation - keep globe solid until final reveal
 
         updateParticles();
 
@@ -751,7 +751,7 @@
         }
     }
 
-    // No intermediate dissolve — globe stays solid and only fades on final reveal
+    // No intermediate dissolve - globe stays solid and only fades on final reveal
 
     function completeExcavation(hitPoint) {
         excavated = true;
@@ -850,7 +850,7 @@
         const seismicCanvas = document.getElementById('seismic-canvas');
         if (seismicCanvas) new SeismicTrail(seismicCanvas);
 
-        // Email obfuscation — assemble address client-side
+        // Email obfuscation - assemble address client-side
         const emailEl = document.getElementById('email-display');
         if (emailEl) emailEl.textContent = 'masood.geo' + '@' + 'yahoo.com';
         initContactActions();

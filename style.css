@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════
-   MASOOD SULTAN — Portfolio Stylesheet
+   MASOOD SULTAN - Portfolio Stylesheet
    Dark/Light geoscience aesthetic · Felix Rieseberg inspired
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -623,7 +623,7 @@ body[data-page="home"] #main-nav {
     position: relative;
 }
 .stack-col li::before {
-    content: '—';
+    content: '-';
     position: absolute;
     left: 0;
     color: var(--text-dim);
