@@ -30,12 +30,27 @@ location:   Berlin, Germany 🇩🇪
 
 I'm a **Geoscientist** with a passion for building intelligent automation tools. My work sits at the intersection of **Earth Sciences**, **AI/LLM technologies**, and **full-stack development**. I specialize in taking complex, manual workflows and turning them into sleek, automated pipelines.
 
-- 🌐 Check out my **[Professional Portfolio](https://69d066a8a49071a26788.appwrite.network/)**
-- 🔭 Currently building **[TerraMind Core](https://github.com/masood1996-geo/terramind-core)** (Global Disaster Intelligence Platform) and **autonomous web agents**
+- 🌐 Check out my **[Personal Website](https://masoodsultan.com)** and **[Professional Portfolio](https://69d066a8a49071a26788.appwrite.network/)**
+- ☕ View my **[Barista Portfolio](https://barista.masoodsultan.com)** and **[Blog](https://blog.masoodsultan.com)**
+- 🔭 Currently building **[Paperclip](https://github.com/masood1996-geo/paperclip)** and **autonomous web agents**
+- ✨ Finished **[TerraMind Core](https://github.com/masood1996-geo/terramind-core)** (Global Disaster Intelligence Platform)
+- 🤝 Finished **Brother In Need** (Anonymous peer support video platform) & **[Kindly Berlin](https://kindly.berlin)** (Business site)
 - 🌱 Pursuing opportunities in **climate modeling**, **AI weather prediction**, and **computational geoscience**
 - 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin**
 - 🎓 **BSc** in Geophysics from **Bahria University** (CGPA 3.55/4.00)
 - 🏆 **3rd Runner-up** — Imperial Barrel Awards, Asia Pacific Region (AAPG)
+
+---
+
+## 💼 Agency & Services
+
+I am the founder of **[Maven Webcraft](https://mavenwebcraft.com)**, a modern web development agency specializing in crafting premium, dynamic, and high-performance digital experiences. 
+
+**Core Services Provided:**
+- **Full-Stack Web Development:** Building scalable applications with modern frontend frameworks and robust backends.
+- **Premium UI/UX Design:** Delivering rich aesthetics with modern typography, custom styling, and engaging micro-animations.
+- **Technical SEO:** Implementing best practices to ensure high visibility, optimized metadata, and strong search engine indexing.
+- **Custom Business Solutions:** Delivering tailored digital platforms—from dynamic interactive sites to comprehensive data tools.
 
 ---
 
