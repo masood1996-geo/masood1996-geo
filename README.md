@@ -32,7 +32,7 @@ location:   Berlin, Germany 🇩🇪
 
 I'm a **Geoscientist** with a passion for building intelligent automation tools. My work sits at the intersection of **Earth Sciences**, **AI/LLM technologies**, and **full-stack development**. I specialize in taking complex, manual workflows and turning them into sleek, automated pipelines.
 
-- 🌐 Check out my **[Personal Website](https://masoodsultan.com)** and **[Professional Portfolio](https://69d066a8a49071a26788.appwrite.network/)**
+- 🌐 Check out my **[Personal Website & Portfolio](https://masoodsultan.com)**
 - ☕ View my **[Barista Portfolio](https://barista.masoodsultan.com)** and **[Blog](https://blog.masoodsultan.com)**
 - 🔭 Currently building **autonomous web agents**
 - ✨ Finished **[TerraMind Core](https://github.com/masood1996-geo/terramind-core)** (Global Disaster Intelligence Platform)
