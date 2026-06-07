@@ -277,7 +277,7 @@
         window.scrollTo(0, 0);
 
         // Screen reader announcement
-        const pageNames = { home: 'Home', info: 'About me', projects: 'Projects', research: 'Academic Research', media: 'Media and Downloads', contact: 'Contact' };
+        const pageNames = { home: 'Home', info: 'About me', projects: 'Projects', web: 'Web Projects', research: 'Academic Research', media: 'Media and Downloads', contact: 'Contact' };
         const announceEl = document.getElementById('a11y-announce');
         if (announceEl) announceEl.textContent = 'Navigated to ' + (pageNames[currentPage] || currentPage) + ' page';
 
