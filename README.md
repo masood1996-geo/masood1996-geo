@@ -36,7 +36,7 @@ I'm a **Geoscientist** with a passion for building intelligent automation tools.
 - ☕ View my **[Barista Portfolio](https://barista.masoodsultan.com)** and **[Blog](https://blog.masoodsultan.com)**
 - 🔭 Currently building **autonomous web agents**
 - ✨ Finished **[TerraMind Core](https://github.com/masood1996-geo/terramind-core)** (Global Disaster Intelligence Platform)
-- 🤝 Built **[Kindly Berlin](https://kindly.berlin)** (Business site)
+- 🤝 Built **[Kindly Berlin](https://kindly.berlin)**, **[Café Zwei Freunde](https://zweifreunde.cafe/)**, and **[Shareekat-ul-Hussain](https://www.shareekatulhussain.com/)** (Business & community sites)
 - 🌱 Pursuing opportunities in **climate modeling**, **AI weather prediction**, and **computational geoscience**
 - 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin** (Grade 2.1)
 - 🎓 **BSc** in Geophysics from **Bahria University** (CGPA 3.55/4.00)
@@ -46,7 +46,7 @@ I'm a **Geoscientist** with a passion for building intelligent automation tools.
 
 ## 💼 Agency & Services
 
-I am the founder of **[Maven Webcraft](https://mavenwebcraft.com)**, a modern web development agency specializing in crafting premium, dynamic, and high-performance digital experiences. 
+I am the co-founder and lead engineer of **[Maven Webcraft](https://mavenwebcraft.com)**, a modern web development agency specializing in crafting premium, dynamic, and high-performance digital experiences. 
 
 **Core Services Provided:**
 - **Full-Stack Web Development:** Building scalable applications with modern frontend frameworks and robust backends.
