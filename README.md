@@ -25,7 +25,7 @@
 ```yaml
 name:       Masood Sultan
 role:       Geoscientist & AI Developer
-education:  MSc Global Change Geography — Humboldt University of Berlin
+education:  MSc Global Change Geography — Humboldt University of Berlin (Grade: 2.1)
 focus:      Earth Sciences × Artificial Intelligence × Automation
 location:   Berlin, Germany 🇩🇪
 ```
@@ -38,7 +38,7 @@ I'm a **Geoscientist** with a passion for building intelligent automation tools.
 - ✨ Finished **[TerraMind Core](https://github.com/masood1996-geo/terramind-core)** (Global Disaster Intelligence Platform)
 - 🤝 Built **[Kindly Berlin](https://kindly.berlin)** (Business site)
 - 🌱 Pursuing opportunities in **climate modeling**, **AI weather prediction**, and **computational geoscience**
-- 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin**
+- 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin** (Grade 2.1)
 - 🎓 **BSc** in Geophysics from **Bahria University** (CGPA 3.55/4.00)
 - 🏆 **3rd Runner-up** — Imperial Barrel Awards, Asia Pacific Region (AAPG)
 
@@ -155,7 +155,7 @@ I am the founder of **[Maven Webcraft](https://mavenwebcraft.com)**, a modern we
 
 | Degree | Field | Institution | Year |
 |--------|-------|-------------|------|
-| 🎓 **MSc** | Global Change Geography | Humboldt University of Berlin 🇩🇪 | 2019–2026 |
+| 🎓 **MSc** | Global Change Geography | Humboldt University of Berlin 🇩🇪 (Grade: 2.1) | 2019–2026 |
 | 🎓 **BSc** | Geophysics | Bahria University Karachi 🇵🇰 | 2014–2018 |
 
 ### 📄 Research
