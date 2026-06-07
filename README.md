@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://mavenwebcraft.com">
-    <img src="assets/maven-logo-flat.png" alt="Maven Webcraft Logo" width="120px"/>
+    <img src="assets/maven-logo-flat.png" alt="Maven Webcraft Logo" width="240px"/>
   </a>
 </p>
 
