@@ -35,7 +35,7 @@ portfolio:  https://www.arbeit.fit | https://mavenwebcraft.com
 
 I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth Sciences**, **LLM-driven Autonomous Agents**, **GeoSpatial Intelligence**, and **Full-Stack Engineering**. I specialize in turning complex, multi-source data streams and manual workflows into sleek, resilient, and automated production platforms.
 
-- 💼 **Creator of [Arbeit.fit](https://www.arbeit.fit)** — Private AI-assisted CV analysis & evidence-bound job matching engine.
+- 💼 **Creator of [Arbeit.fit](https://www.arbeit.fit)** ([`ai-job-hunter`](https://github.com/masood1996-geo/ai-job-hunter)) — Private AI-assisted CV analysis & evidence-bound job matching engine.
 - 🌋 **Built [TerraMind Core](https://github.com/masood1996-geo/terramind-core)** — Real-time disaster intelligence fusing USGS, NASA EONET, NOAA, NASA FIRMS, GDACS & GlobalBuildingAtlas.
 - 🏠 **Built [OpenHouse Bot](https://github.com/masood1996-geo/openhouse-bot)** — AI apartment hunting bot scraping 50+ portals with 24/7 Telegram alerts.
 - 🛰️ **Built [OmniWatch](https://github.com/masood1996-geo/OmniWatch)** — Global OSINT threat platform fusing 48+ sources (ADS-B, AIS, GDELT).
@@ -182,6 +182,26 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 
 ---
 
+<<<<<<< HEAD
+=======
+## 🚀 Featured Projects
+
+<a href="https://github.com/masood1996-geo/ai-job-hunter">
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-job-hunter&theme=tokyonight&hide_border=true&border_radius=10" />
+</a>
+<a href="https://github.com/masood1996-geo/terramind-core">
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=terramind-core&theme=tokyonight&hide_border=true&border_radius=10" />
+</a>
+<a href="https://github.com/masood1996-geo/openhouse-bot">
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot&theme=tokyonight&hide_border=true&border_radius=10" />
+</a>
+<a href="https://github.com/masood1996-geo/ai-scraper">
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-scraper&theme=tokyonight&hide_border=true&border_radius=10" />
+</a>
+
+---
+
+>>>>>>> 84075a5 (Add ai-job-hunter and Arbeit.fit project to portfolio)
 ## 📊 GitHub Stats
 
 <p align="center">

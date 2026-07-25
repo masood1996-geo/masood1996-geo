@@ -329,15 +329,64 @@
                     </div>
                 </article>
 
+                <!-- ai-job-hunter / Arbeit.fit -->
+                <article class="project-card" id="project-jobhunter">
+                    <div class="project-header">
+                        <span class="project-num">03</span>
+                        <div class="project-tags">
+                            <span>Python</span><span>Appwrite</span><span>LLMs</span><span>SQLite</span><span>Telegram</span><span>Arbeit.fit</span>
+                        </div>
+                    </div>
+                    <div class="project-body reverse">
+                        <div class="project-info">
+                            <h2><a href="https://github.com/masood1996-geo/ai-job-hunter" target="_blank" rel="noopener">ai-job-hunter</a></h2>
+                            <p>A local-first &amp; serverless <strong>AI-assisted CV analysis &amp; evidence-bound job matching engine</strong>. Features privacy-masked profile generation, multi-feed vacancy discovery (Arbeitnow, Jobicy, Remote OK, ATS boards like Greenhouse &amp; Ashby), explainable local ranking, and Telegram alerts. Production platform deployed via Appwrite Functions at <a href="https://www.arbeit.fit" target="_blank" rel="noopener"><strong>Arbeit.fit</strong></a>.</p>
+                            <div class="feature-list">
+                                <div class="feature"><strong>CV Privacy Masking</strong><span>Local PDF/DOCX parsing with PII redaction before LLM inference</span></div>
+                                <div class="feature"><strong>Multi-Feed Discovery</strong><span>Asynchronous fan-out across 10+ public job feeds &amp; ATS boards</span></div>
+                                <div class="feature"><strong>Appwrite &amp; CLI Workflows</strong><span>Serverless production backend + localhost Click CLI tool</span></div>
+                            </div>
+                            <div class="project-proof-grid" aria-label="ai-job-hunter project evidence">
+                                <div class="proof-item"><span>Problem</span><strong>Manual job search is fragmented across boards with repetitive screening and zero explainability.</strong></div>
+                                <div class="proof-item"><span>Role</span><strong>Designed PDF extraction, LLM candidate profiling, multi-source pipeline, and Appwrite service.</strong></div>
+                                <div class="proof-item"><span>Stack</span><strong>Python, Appwrite Functions, OpenCode / LLMs, SQLite, Telegram Bot, Click CLI.</strong></div>
+                                <div class="proof-item"><span>Proof</span><strong>Live production deployment at Arbeit.fit and open-source GitHub repository.</strong></div>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/masood1996-geo/ai-job-hunter" target="_blank" rel="noopener" class="proj-link">View repository →</a>
+                                <a href="https://www.arbeit.fit" target="_blank" rel="noopener" class="proj-link accent">Visit Arbeit.fit →</a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <details class="terminal-collapse">
+                                <summary class="terminal-toggle">View Terminal Output</summary>
+                                <div class="terminal-window" role="img" aria-label="Terminal output showing AI Job Hunter booting engine, parsing CV, running multi-feed discovery, scoring matches, and dispatching Telegram alert">
+                                    <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">ai-job-hunter</span></div>
+                                    <div class="terminal-body">
+                                        <div class="tl"><span class="tp">$</span> <span class="tc">job-hunter-web --port 8765</span></div>
+                                        <div class="tl dim"><span class="ti">[engine]</span> AI Job Hunter v1.0 booting local server</div>
+                                        <div class="tl dim"><span class="ti">[cv]</span> Parsed resume PDF → local contact privacy masking active</div>
+                                        <div class="tl accent"><span class="ti">[profile]</span> Generated profile: Geoscientist &amp; AI Engineer (Berlin)</div>
+                                        <div class="tl dim"><span class="ti">[sweep]</span> Multi-feed fan-out: Arbeitnow, Jobicy, Remote OK, ATS boards</div>
+                                        <div class="tl accent"><span class="ti">[match]</span> Evaluated 34 vacancies → <span class="th">12 high-confidence matches</span></div>
+                                        <div class="tl"><span class="ti">[telegram]</span> Summary notification sent to Telegram bot</div>
+                                        <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- ai-scraper -->
                 <article class="project-card" id="project-aiscraper">
                     <div class="project-header">
-                        <span class="project-num">03</span>
+                        <span class="project-num">04</span>
                         <div class="project-tags">
                             <span>Python</span><span>LLMs</span><span>Self-Learning</span><span>MIT License</span>
                         </div>
                     </div>
-                    <div class="project-body reverse">
+                    <div class="project-body">
                         <div class="project-info">
                             <h2><a href="https://github.com/masood1996-geo/ai-scraper" target="_blank" rel="noopener">ai-scraper</a></h2>
                             <p>A web scraper that <strong>teaches itself</strong>. Point it at any website - it figures out the structure, extracts data using LLMs, and <strong>remembers what worked</strong>. It builds domain-specific profiles, scores its own output quality, and auto-evolves its extraction prompts. Headless Chrome under the hood, with persistent memory that compounds over time.</p>
@@ -380,12 +429,12 @@
                 <!-- openhouse-bot -->
                 <article class="project-card" id="project-openhouse">
                     <div class="project-header">
-                        <span class="project-num">04</span>
+                        <span class="project-num">05</span>
                         <div class="project-tags">
                             <span>Python</span><span>Telegram</span><span>Automation</span><span>AGPL-3.0</span>
                         </div>
                     </div>
-                    <div class="project-body">
+                    <div class="project-body reverse">
                         <div class="project-info">
                             <h2><a href="https://github.com/masood1996-geo/openhouse-bot" target="_blank" rel="noopener">openhouse-bot</a></h2>
                             <p>An <strong>adaptive, LLM-powered universal crawler</strong> that autonomously learns any website's structure - originally built to solve Berlin's housing crisis by scraping <strong>50+ real estate portals worldwide</strong>. The underlying architecture is directly transferable to geoscience applications: scraping unstructured climate reports, policy documents, and global hydrological databases. Features real-time Telegram alerting and a <strong>Live Demo on Hugging Face</strong>.</p>
