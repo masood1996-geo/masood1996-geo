@@ -35,11 +35,11 @@ portfolio:  https://www.arbeit.fit | https://mavenwebcraft.com
 
 I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth Sciences**, **LLM-driven Autonomous Agents**, **GeoSpatial Intelligence**, and **Full-Stack Engineering**. I specialize in turning complex, multi-source data streams and manual workflows into sleek, resilient, and automated production platforms.
 
-- 💼 **Creator of [Arbeit.fit](https://www.arbeit.fit)** ([`ai-job-hunter`](https://github.com/masood1996-geo/ai-job-hunter)) — Private AI-assisted CV analysis & evidence-bound job matching engine.
+- 💼 **Creator of [Arbeit.fit](https://www.arbeit.fit)** (`ai-job-hunter`, private repository) — Private AI-assisted CV analysis & evidence-bound job matching engine.
 - 🌋 **Built [TerraMind Core](https://github.com/masood1996-geo/terramind-core)** — Real-time disaster intelligence fusing USGS, NASA EONET, NOAA, NASA FIRMS, GDACS & GlobalBuildingAtlas.
-- 🏠 **Built [OpenHouse Bot](https://github.com/masood1996-geo/openhouse-bot)** — AI apartment hunting bot scraping 50+ portals with 24/7 Telegram alerts.
+- 🏠 **Built [OpenHouse Bot](https://github.com/masood1996-geo/openhouse-bot-prime)** — AI apartment hunting bot scraping 50+ portals with 24/7 Telegram alerts.
 - 🛰️ **Built [OmniWatch](https://github.com/masood1996-geo/OmniWatch)** — Global OSINT threat platform fusing 48+ sources (ADS-B, AIS, GDELT).
-- 🕷️ **Built [AI Scraper](https://github.com/masood1996-geo/ai-scraper)** — Self-learning, self-healing AI web scraper with Open WebUI integration.
+- 🕷️ **Built [AI Scraper](https://github.com/masood1996-geo/ai-scraper-prime)** — Self-learning, self-healing AI web scraper with Open WebUI integration.
 - 💧 **Developed the KIEA Framework** — Adaptive water governance diagnostic framework & engine for climate change adaptation.
 - 🌐 Co-founder & Lead Engineer at **[Maven Webcraft](https://mavenwebcraft.com)** (Agency digital solutions).
 - 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin** (Grade 2.14, 2026).
@@ -49,7 +49,7 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 
 ## 🚀 Flagship Projects
 
-### 💼 [Arbeit.fit — Find work that fits](https://www.arbeit.fit) | [`masood1996-geo/ai-job-hunter`](https://github.com/masood1996-geo/ai-job-hunter)
+### 💼 [Arbeit.fit — Find work that fits](https://www.arbeit.fit) | `ai-job-hunter` (private repository)
 > **Private AI-Assisted CV Analysis & Evidence-Bound Job Matching Platform**
 > - **Privacy-First Parsing**: Local SHA-256 digest calculation and automatic PII masking (names, emails, phone numbers, addresses replaced prior to LLM processing).
 > - **Evidence-Bound Matching**: Uses MiMo-V2.5, OpenRouter, Claude & GPT-4o-mini to score candidate suitability strictly against verified profile facts.
@@ -61,7 +61,7 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 > - Fuses **USGS Earthquakes**, **NASA EONET Wildfires**, **NOAA Weather Alerts**, **NASA FIRMS Satellite Fire Detection**, **GDACS Alerts**, and **GlobalBuildingAtlas** exposure into a single unified Express/TypeScript API and interactive map dashboard.
 > - Features an embedded AI-powered GeoScience assistant for automated natural disaster hazard analysis.
 
-### 🏠 [OpenHouse Bot](https://github.com/masood1996-geo/openhouse-bot) | [🤗 Live Demo](https://huggingface.co/spaces/masood1996/openhouse-bot)
+### 🏠 [OpenHouse Bot](https://github.com/masood1996-geo/openhouse-bot-prime) | [🤗 Live Demo](https://huggingface.co/spaces/masood1996/openhouse-bot)
 > **AI-Powered Global Apartment Hunter with Telegram Integration**
 > - Scrapes over 50 real estate platforms globally, filters apartment listings using customizable LLM criteria, and delivers real-time Telegram alerts 24/7.
 > - Security-hardened Telegram bot handler with automated deduplication and budget/location validation.
@@ -71,7 +71,7 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 > - Real-time dashboard fusing **48+ live data feeds** including military aircraft telemetry (ADS-B), maritime vessel tracking (AIS), GDELT conflict news events, and seismic activity.
 > - Powered by an AI correlation engine for rapid cross-domain event detection.
 
-### 🕷️ [AI Scraper](https://github.com/masood1996-geo/ai-scraper)
+### 🕷️ [AI Scraper](https://github.com/masood1996-geo/ai-scraper-prime)
 > **Self-Learning AI Web Scraper with Codified Self-Healing**
 > - Headless Chrome + LLM extraction pipeline with 10+ failure scenario self-healing routines.
 > - Features a 7-step command safety validation pipeline, auto-evolving prompt memory, and Open WebUI GUI tool bindings.
@@ -89,17 +89,14 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 ## 📌 Featured Repositories
 
 <p align="center">
-  <a href="https://github.com/masood1996-geo/ai-job-hunter">
-    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-job-hunter&theme=tokyonight&hide_border=true&border_radius=10" />
-  </a>
   <a href="https://github.com/masood1996-geo/terramind-core">
     <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=terramind-core&theme=tokyonight&hide_border=true&border_radius=10" />
   </a>
-  <a href="https://github.com/masood1996-geo/openhouse-bot">
-    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot&theme=tokyonight&hide_border=true&border_radius=10" />
+  <a href="https://github.com/masood1996-geo/openhouse-bot-prime">
+    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot-prime&theme=tokyonight&hide_border=true&border_radius=10" />
   </a>
-  <a href="https://github.com/masood1996-geo/ai-scraper">
-    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-scraper&theme=tokyonight&hide_border=true&border_radius=10" />
+  <a href="https://github.com/masood1996-geo/ai-scraper-prime">
+    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-scraper-prime&theme=tokyonight&hide_border=true&border_radius=10" />
   </a>
   <a href="https://github.com/masood1996-geo/OmniWatch">
     <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=OmniWatch&theme=tokyonight&hide_border=true&border_radius=10" />
@@ -182,26 +179,6 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 
 ---
 
-<<<<<<< HEAD
-=======
-## 🚀 Featured Projects
-
-<a href="https://github.com/masood1996-geo/ai-job-hunter">
-  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-job-hunter&theme=tokyonight&hide_border=true&border_radius=10" />
-</a>
-<a href="https://github.com/masood1996-geo/terramind-core">
-  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=terramind-core&theme=tokyonight&hide_border=true&border_radius=10" />
-</a>
-<a href="https://github.com/masood1996-geo/openhouse-bot">
-  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot&theme=tokyonight&hide_border=true&border_radius=10" />
-</a>
-<a href="https://github.com/masood1996-geo/ai-scraper">
-  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-scraper&theme=tokyonight&hide_border=true&border_radius=10" />
-</a>
-
----
-
->>>>>>> 84075a5 (Add ai-job-hunter and Arbeit.fit project to portfolio)
 ## 📊 GitHub Stats
 
 <p align="center">
