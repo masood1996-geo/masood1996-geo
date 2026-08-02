@@ -41,7 +41,7 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 - 🛰️ **Built [OmniWatch](https://github.com/masood1996-geo/OmniWatch)** — Global OSINT threat platform fusing 48+ sources (ADS-B, AIS, GDELT).
 - 🕷️ **Built [AI Scraper](https://github.com/masood1996-geo/ai-scraper-prime)** — Self-learning, self-healing AI web scraper with Open WebUI integration.
 - 💧 **Developed the KIEA Framework** — Adaptive water governance diagnostic framework & engine for climate change adaptation.
-- 🌐 Co-founder & Lead Engineer at **[Maven Webcraft](https://mavenwebcraft.com)** (Agency digital solutions).
+- 🌐 Founder & Lead Engineer at **[Maven Webcraft](https://mavenwebcraft.com)** (Agency digital solutions).
 - 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin** (Grade 2.14, 2026).
 - 🎓 **BSc** in Geophysics from **Bahria University Karachi** (CGPA 3.55/4.00).
 
