@@ -10,14 +10,14 @@
 
 <p align="center">
   <a href="https://www.arbeit.fit"><img src="https://img.shields.io/badge/Arbeit.fit-Live_App-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Arbeit.fit"/></a>
-  <a href="https://www.linkedin.com/in/masood1996/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://www.linkedin.com/in/masood1996/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge" alt="LinkedIn"/></a>
   <a href="mailto:masood.geo@yahoo.com"><img src="https://img.shields.io/badge/Email-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/masood1996-geo"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://mavenwebcraft.com"><img src="https://img.shields.io/badge/Agency-Maven_Webcraft-2E86C1?style=for-the-badge" alt="Maven Webcraft"/></a>
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&multiline=true&repeat=true&width=650&height=80&lines=%F0%9F%8C%8D+Geoscientist+%7C+AI+%26+Automation+Developer;%F0%9F%A4%96+Creator+of+Arbeit.fit+(AI+Job+Hunter);%F0%9F%93%8D+Berlin%2C+Germany+%7C+MSc+Global+Change+Geography" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&multiline=true&repeat=true&width=650&height=80&lines=%F0%9F%8C%8D+Geoscientist+%7C+AI+%26+Automation+Developer;%F0%9F%A4%96+Creator+of+Arbeit.fit+(AI+Job+Hunter);%F0%9F%93%8D+Berlin%2C+Germany+%7C+MSc+Global+Change+Geography" alt="Typing SVG" />
 </p>
 
 ---
@@ -52,7 +52,7 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 ### 💼 [Arbeit.fit — Find work that fits](https://www.arbeit.fit) | `ai-job-hunter` (private repository)
 > **Private AI-Assisted CV Analysis & Evidence-Bound Job Matching Platform**
 > - **Privacy-First Parsing**: Local SHA-256 digest calculation and automatic PII masking (names, emails, phone numbers, addresses replaced prior to LLM processing).
-> - **Evidence-Bound Matching**: Uses MiMo-V2.5, OpenRouter, Claude & GPT-4o-mini to score candidate suitability strictly against verified profile facts.
+> - **Evidence-Bound Matching**: Provider-agnostic LLM routing (OpenRouter & any OpenAI-compatible API) scores candidate suitability strictly against verified profile facts.
 > - **Multi-Source Discovery**: Integrated with `ai-scraper` to search 50+ company portals and job boards automatically.
 > - **Open WebUI Ready**: Exposes full CLI and native Open WebUI tool extensions (`open_webui_tool.py`) for custom AI agent integration.
 
@@ -118,6 +118,7 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
 
@@ -127,55 +128,65 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 ### 🌍 Geosciences & GIS
 ![ArcGIS](https://img.shields.io/badge/ArcGIS-2C7AC3?style=flat-square&logo=arcgis&logoColor=white)
 ![QGIS](https://img.shields.io/badge/QGIS-589632?style=flat-square&logo=qgis&logoColor=white)
-![Petrel](https://img.shields.io/badge/Schlumberger_Petrel-0070C0?style=flat-square&logoColor=white)
-![3D Geomodelling](https://img.shields.io/badge/3D_Geomodelling-FF8C00?style=flat-square&logo=three.js&logoColor=white)
-![3D Seismic](https://img.shields.io/badge/3D_Seismic-8B0000?style=flat-square&logoColor=white)
-![ERDAS](https://img.shields.io/badge/ERDAS_IMAGINE-008080?style=flat-square&logoColor=white)
+![Petrel](https://img.shields.io/badge/Schlumberger_Petrel-0070C0?style=flat-square)
+![3D Geomodelling](https://img.shields.io/badge/3D_Geomodelling-FF8C00?style=flat-square&logo=threedotjs&logoColor=white)
+![3D Seismic](https://img.shields.io/badge/3D_Seismic-8B0000?style=flat-square)
+![ERDAS](https://img.shields.io/badge/ERDAS_IMAGINE-008080?style=flat-square)
 
 </td>
 <td valign="top" width="33%">
 
-### 🧠 AI & LLM Systems
-![MiMo-V2.5](https://img.shields.io/badge/MiMo--V2.5-FF6F00?style=flat-square&logo=openai&logoColor=white)
-![Open WebUI](https://img.shields.io/badge/Open_WebUI-00C7B7?style=flat-square&logo=openai&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude_Code-D97706?style=flat-square&logo=anthropic&logoColor=white)
-![Codex](https://img.shields.io/badge/Codex-412991?style=flat-square&logo=openai&logoColor=white)
-![Antigravity](https://img.shields.io/badge/Google_Antigravity-4285F4?style=flat-square&logo=google&logoColor=white)
+### 🧠 LLM Providers & APIs
+![OpenRouter](https://img.shields.io/badge/OpenRouter-0F172A?style=flat-square&logo=openrouter&logoColor=94A3B8)
+![OpenAI](https://img.shields.io/badge/OpenAI-10A37F?style=flat-square)
+![Anthropic Claude](https://img.shields.io/badge/Anthropic_Claude-D97757?style=flat-square&logo=claude&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-5786FE?style=flat-square&logo=deepseek&logoColor=white)
+![Meta Llama](https://img.shields.io/badge/Meta_Llama-0467DF?style=flat-square&logo=meta&logoColor=white)
+![Mistral AI](https://img.shields.io/badge/Mistral_AI-FA520F?style=flat-square&logo=mistralai&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging_Face-000000?style=flat-square&logo=huggingface&logoColor=FFD21E)
+![LLM Routing](https://img.shields.io/badge/LLM_Routing-Any_API_Provider-6E56CF?style=flat-square)
 
 </td>
 </tr>
 <tr>
 <td valign="top" width="33%">
 
+### 🤖 AI Tooling & Agents
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![Open WebUI](https://img.shields.io/badge/Open_WebUI-00C7B7?style=flat-square)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=modelcontextprotocol&logoColor=white)
+![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-412991?style=flat-square)
+![Antigravity](https://img.shields.io/badge/Google_Antigravity-4285F4?style=flat-square&logo=google&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
 ### 🔧 Dev Tools & Databases
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 ![Appwrite](https://img.shields.io/badge/Appwrite-FD366E?style=flat-square&logo=appwrite&logoColor=white)
-![REST APIs](https://img.shields.io/badge/REST_APIs-009688?style=flat-square&logo=fastapi&logoColor=white)
+![REST APIs](https://img.shields.io/badge/REST_APIs-009688?style=flat-square)
 
 </td>
 <td valign="top" width="33%">
 
 ### ⚙️ Scraping & Automation
-![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square)
 ![Headless Chrome](https://img.shields.io/badge/Chrome_Headless-4285F4?style=flat-square&logo=googlechrome&logoColor=white)
 ![Telegram API](https://img.shields.io/badge/Telegram_Bot_API-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-3776AB?style=flat-square&logo=python&logoColor=white)
 
 </td>
-<td valign="top" width="33%">
-
-### 🗣️ Languages
-![English](https://img.shields.io/badge/English-C1-2E86C1?style=flat-square)
-![German](https://img.shields.io/badge/German-A2-F4D03F?style=flat-square)
-![Urdu](https://img.shields.io/badge/Urdu-C1-1ABC9C?style=flat-square)
-![Hindi](https://img.shields.io/badge/Hindi-B1-E74C3C?style=flat-square)
-
-</td>
 </tr>
 </table>
+
+🗣️ **Spoken Languages:** English (C1) · Urdu (C1) · Hindi (B1) · German (A2)
 
 ---
 
