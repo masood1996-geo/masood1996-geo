@@ -338,24 +338,68 @@
         el.textContent = ld ? JSON.stringify(ld) : '';
     }
 
+    // History API is unavailable on file:// and some sandboxed contexts
+    const historyOk = window.location.protocol !== 'file:' && (() => {
+        try {
+            window.history.replaceState(window.history.state, '', window.location.href);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    })();
+
+    function routeFromHash() {
+        const match = window.location.hash.match(/^#\/?(\w*)/);
+        const name = match ? match[1] : '';
+        return name && ROUTES.includes(name) ? name : 'home';
+    }
+
+    function goTo(page) {
+        const target = routeUrl(page);
+        if (historyOk) {
+            if (target !== window.location.pathname + window.location.hash) {
+                try {
+                    window.history.pushState(null, '', target);
+                } catch (err) {
+                    window.location.hash = page === 'home' ? '#/' : '#/' + page;
+                }
+            }
+        } else {
+            window.location.hash = page === 'home' ? '#/' : '#/' + page;
+        }
+        navigateTo(page);
+    }
+
     function initRouter() {
         // Old hash links (#/projects) redirect to the real path once
         const legacy = window.location.hash.match(/^#\/(\w+)/);
-        if (legacy) {
+        if (historyOk && legacy) {
             const route = ROUTES.includes(legacy[1]) ? legacy[1] : 'home';
-            history.replaceState(null, '', routeUrl(route));
+            try {
+                window.history.replaceState(null, '', routeUrl(route));
+            } catch (err) { /* keep the hash URL */ }
         }
 
-        const initial = routeFromPath(window.location.pathname);
+        if (!historyOk) {
+            window.addEventListener('hashchange', () => {
+                navigateTo(routeFromHash());
+            });
+        }
+
+        const initial = historyOk ? routeFromPath(window.location.pathname) : routeFromHash();
         if (initial) {
             navigateTo(initial);
+        } else if (historyOk) {
+            try {
+                window.history.replaceState(null, '', '/');
+            } catch (err) { /* ignore */ }
+            navigateTo('home');
         } else {
-            history.replaceState(null, '', '/');
             navigateTo('home');
         }
 
         window.addEventListener('popstate', () => {
-            navigateTo(routeFromPath(window.location.pathname) || 'home');
+            navigateTo(historyOk ? (routeFromPath(window.location.pathname) || 'home') : routeFromHash());
         });
 
         document.addEventListener('click', (e) => {
@@ -364,16 +408,12 @@
             if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
             const href = link.getAttribute('href');
             if (!href || href.startsWith('#')) return;
-            const url = new URL(href, window.location.origin);
+            const url = new URL(href, window.location.href);
             if (url.origin !== window.location.origin) return;
             const next = routeFromPath(url.pathname);
             if (!next) return;
             e.preventDefault();
-            const target = routeUrl(next) + url.hash;
-            if (target !== window.location.pathname + window.location.hash) {
-                history.pushState(null, '', target);
-            }
-            navigateTo(next);
+            goTo(next);
         });
     }
 
