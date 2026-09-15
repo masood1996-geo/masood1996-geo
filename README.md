@@ -90,16 +90,16 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 
 <p align="center">
   <a href="https://github.com/masood1996-geo/terramind-core">
-    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=terramind-core&theme=tokyonight&hide_border=true&border_radius=10" />
+    <img align="center" src="https://github-readme-stats.shion.dev/api/pin/?username=masood1996-geo&repo=terramind-core&theme=tokyonight&hide_border=true&border_radius=10" />
   </a>
   <a href="https://github.com/masood1996-geo/openhouse-bot-prime">
-    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=openhouse-bot-prime&theme=tokyonight&hide_border=true&border_radius=10" />
+    <img align="center" src="https://github-readme-stats.shion.dev/api/pin/?username=masood1996-geo&repo=openhouse-bot-prime&theme=tokyonight&hide_border=true&border_radius=10" />
   </a>
   <a href="https://github.com/masood1996-geo/ai-scraper-prime">
-    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=ai-scraper-prime&theme=tokyonight&hide_border=true&border_radius=10" />
+    <img align="center" src="https://github-readme-stats.shion.dev/api/pin/?username=masood1996-geo&repo=ai-scraper-prime&theme=tokyonight&hide_border=true&border_radius=10" />
   </a>
   <a href="https://github.com/masood1996-geo/OmniWatch">
-    <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=masood1996-geo&repo=OmniWatch&theme=tokyonight&hide_border=true&border_radius=10" />
+    <img align="center" src="https://github-readme-stats.shion.dev/api/pin/?username=masood1996-geo&repo=OmniWatch&theme=tokyonight&hide_border=true&border_radius=10" />
   </a>
 </p>
 
@@ -182,12 +182,12 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api?username=masood1996-geo&show_icons=true&theme=tokyonight&hide_border=true&border_radius=10&include_all_commits=true&count_private=true" />
-  <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=masood1996-geo&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" />
+  <img height="180em" src="https://github-readme-stats.shion.dev/api?username=masood1996-geo&show_icons=true&theme=tokyonight&hide_border=true&border_radius=10&include_all_commits=true&count_private=true" />
+  <img height="180em" src="https://github-readme-stats.shion.dev/api/top-langs/?username=masood1996-geo&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=masood1996-geo&theme=tokyonight&hide_border=true&border_radius=10" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=masood1996-geo&theme=tokyonight&hide_border=true&border_radius=10" alt="GitHub Streak" />
 </p>
 
 ---
@@ -241,7 +241,7 @@ Developed the **Conditional Enabling Framework (KIEA)** to diagnose participator
 
 ## 📈 Activity Graph
 
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=masood1996-geo&theme=tokyo-night&hide_border=true&radius=10)](https://github.com/masood1996-geo)
+[![Activity Graph](https://ghchart.rshah.org/38BDF8/masood1996-geo)](https://github.com/masood1996-geo)
 
 ---
 
