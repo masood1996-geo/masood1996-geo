@@ -984,6 +984,15 @@ details[open] .terminal-toggle { color: var(--accent); }
     margin-bottom: 0.8rem;
 }
 
+/* Research interests line */
+.research-interests {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    max-width: 68ch;
+    margin: 0 0 2rem;
+}
+
 .pub-note {
     border-top: 1px solid var(--border);
     padding-top: 1rem;

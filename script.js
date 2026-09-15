@@ -242,16 +242,139 @@
         );
     }
 
-    // ─── SPA Router ────────────────────────────────────────────────
-    function initRouter() {
-        window.addEventListener('hashchange', handleRoute);
-        handleRoute();
+    // ─── SPA Router (History API, real URLs) ──────────────────────
+    const ROUTES = ['home', 'info', 'projects', 'web', 'research', 'media', 'contact'];
+
+    const ROUTE_META = {
+        home: {
+            title: 'Masood Sultan - Geoscientist & AI Engineer · Berlin',
+            description: 'Geoscientist and AI engineer building evidence-based job matching, audited data-extraction workflows, and computational geoscience systems in Berlin.'
+        },
+        info: {
+            title: 'About - Masood Sultan',
+            description: 'Background, education, and technical stack: BSc Geophysics at Bahria University, MSc Global Change Geography at Humboldt University of Berlin, founder of Maven Webcraft.'
+        },
+        projects: {
+            title: 'Projects - Masood Sultan',
+            description: 'Selected work: Arbeit.fit, OmniWatch, TerraMind Core, AI Scraper Prime, and OpenHouse Bot Prime: evidence-driven geoscience and AI systems.'
+        },
+        web: {
+            title: 'Web Projects - Masood Sultan',
+            description: 'Client websites by Maven Webcraft: Café Zwei Freunde, Kindly Berlin, Barista Portfolio, Shareekat-ul-Hussain, and the Masood Sultan Blog.'
+        },
+        research: {
+            title: 'Research - Masood Sultan',
+            description: 'Peer-reviewed and thesis research: the KIEA framework for participatory water governance at Humboldt University of Berlin, and 3D geomodelling of the Teapot Dome (Journal of Applied Geophysics).'
+        },
+        media: {
+            title: 'Media & Downloads - Masood Sultan',
+            description: 'Download the academic CV, MSc thesis, BSc thesis, and the Journal of Applied Geophysics research paper by Masood Sultan.'
+        },
+        contact: {
+            title: 'Contact - Masood Sultan',
+            description: 'Contact Masood Sultan in Berlin about PhD positions, research engineering, and climate AI collaborations.'
+        }
+    };
+
+    function routeUrl(page) {
+        return page === 'home' ? '/' : '/' + page;
     }
 
-    function handleRoute() {
-        const hash = window.location.hash || '#/';
-        const route = hash.replace('#/', '').replace('/', '') || 'home';
-        navigateTo(route);
+    function routeFromPath(path) {
+        const clean = (path || '/').replace(/\/+$/, '') || '/';
+        if (clean === '/') return 'home';
+        const name = clean.replace(/^\//, '');
+        return ROUTES.includes(name) ? name : null;
+    }
+
+    function applyRouteMeta(page) {
+        const meta = ROUTE_META[page] || ROUTE_META.home;
+        const canonical = 'https://masoodsultan.com' + routeUrl(page);
+        document.title = meta.title;
+        const setAttr = (selector, attr, value) => {
+            const el = document.querySelector(selector);
+            if (el) el.setAttribute(attr, value);
+        };
+        setAttr('meta[name="description"]', 'content', meta.description);
+        setAttr('link[rel="canonical"]', 'href', canonical);
+        setAttr('meta[property="og:title"]', 'content', meta.title);
+        setAttr('meta[property="og:description"]', 'content', meta.description);
+        setAttr('meta[property="og:url"]', 'content', canonical);
+        setAttr('meta[name="twitter:title"]', 'content', meta.title);
+        setAttr('meta[name="twitter:description"]', 'content', meta.description);
+    }
+
+    const ROUTE_LD = {
+        research: {
+            "@context": "https://schema.org",
+            "@type": "ScholarlyArticle",
+            "name": "A Case Study of 3D Geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA",
+            "author": [
+                {"@type": "Person", "name": "H. A. Khan"},
+                {"@type": "Person", "name": "Masood Sultan", "identifier": "https://orcid.org/0000-0003-3123-1461"},
+                {"@type": "Person", "name": "M. J. Khan"},
+                {"@type": "Person", "name": "M. D. Alvarez"},
+                {"@type": "Person", "name": "S. D. Mehdi"},
+                {"@type": "Person", "name": "M. A. Javed"}
+            ],
+            "datePublished": "2020-09",
+            "isPartOf": {
+                "@type": "Periodical",
+                "name": "Journal of Applied Geophysics",
+                "issn": "0926-9851"
+            },
+            "publisher": {"@type": "Organization", "name": "Elsevier"},
+            "volumeNumber": "179",
+            "pagination": "104114",
+            "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1016/j.jappgeo.2020.104114"},
+            "url": "https://doi.org/10.1016/j.jappgeo.2020.104114"
+        }
+    };
+
+    function applyRouteLd(page) {
+        const el = document.getElementById('route-ld');
+        if (!el) return;
+        const ld = ROUTE_LD[page];
+        el.textContent = ld ? JSON.stringify(ld) : '';
+    }
+
+    function initRouter() {
+        // Old hash links (#/projects) redirect to the real path once
+        const legacy = window.location.hash.match(/^#\/(\w+)/);
+        if (legacy) {
+            const route = ROUTES.includes(legacy[1]) ? legacy[1] : 'home';
+            history.replaceState(null, '', routeUrl(route));
+        }
+
+        const initial = routeFromPath(window.location.pathname);
+        if (initial) {
+            navigateTo(initial);
+        } else {
+            history.replaceState(null, '', '/');
+            navigateTo('home');
+        }
+
+        window.addEventListener('popstate', () => {
+            navigateTo(routeFromPath(window.location.pathname) || 'home');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+            const link = e.target.closest('a[href]');
+            if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('#')) return;
+            const url = new URL(href, window.location.origin);
+            if (url.origin !== window.location.origin) return;
+            const next = routeFromPath(url.pathname);
+            if (!next) return;
+            e.preventDefault();
+            const target = routeUrl(next) + url.hash;
+            if (target !== window.location.pathname + window.location.hash) {
+                history.pushState(null, '', target);
+            }
+            navigateTo(next);
+        });
     }
 
     function navigateTo(page) {
@@ -269,6 +392,8 @@
         }
 
         document.body.setAttribute('data-page', currentPage);
+        applyRouteMeta(currentPage);
+        applyRouteLd(currentPage);
 
         refs.navAnchors.forEach(a => {
             a.classList.toggle('active', a.dataset.page === currentPage);

@@ -11,6 +11,7 @@
 <p align="center">
   <a href="https://www.arbeit.fit"><img src="https://img.shields.io/badge/Arbeit.fit-Live_App-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Arbeit.fit"/></a>
   <a href="https://www.linkedin.com/in/masood1996/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge" alt="LinkedIn"/></a>
+  <a href="https://orcid.org/0000-0003-3123-1461"><img src="https://img.shields.io/badge/ORCID-0000--0003--3123--1461-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"/></a>
   <a href="mailto:masood.geo@yahoo.com"><img src="https://img.shields.io/badge/Email-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/masood1996-geo"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://mavenwebcraft.com"><img src="https://img.shields.io/badge/Agency-Maven_Webcraft-2E86C1?style=for-the-badge" alt="Maven Webcraft"/></a>
@@ -27,7 +28,7 @@
 ```yaml
 name:       Masood Sultan
 role:       Geoscientist & AI / Automation Engineer
-education:  MSc Global Change Geography — Humboldt University of Berlin (Grade: 2.14)
+education:  MSc Global Change Geography - Humboldt University of Berlin (Grade: 2.14)
 focus:      Earth Sciences × AI Systems × Autonomous Agents × GeoSpatial Intelligence
 location:   Berlin, Germany 🇩🇪
 portfolio:  https://www.arbeit.fit | https://mavenwebcraft.com
@@ -35,12 +36,12 @@ portfolio:  https://www.arbeit.fit | https://mavenwebcraft.com
 
 I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth Sciences**, **LLM-driven Autonomous Agents**, **GeoSpatial Intelligence**, and **Full-Stack Engineering**. I specialize in turning complex, multi-source data streams and manual workflows into sleek, resilient, and automated production platforms.
 
-- 💼 **Creator of [Arbeit.fit](https://www.arbeit.fit)** (`ai-job-hunter`, private repository) — Private AI-assisted CV analysis & evidence-bound job matching engine.
-- 🌋 **Built [TerraMind Core](https://github.com/masood1996-geo/terramind-core)** — Real-time disaster intelligence fusing USGS, NASA EONET, NOAA, NASA FIRMS, GDACS & GlobalBuildingAtlas.
-- 🏠 **Built [OpenHouse Bot](https://github.com/masood1996-geo/openhouse-bot-prime)** — AI apartment hunting bot scraping 50+ portals with 24/7 Telegram alerts.
-- 🛰️ **Built [OmniWatch](https://github.com/masood1996-geo/OmniWatch)** — Global OSINT threat platform fusing 48+ sources (ADS-B, AIS, GDELT).
-- 🕷️ **Built [AI Scraper](https://github.com/masood1996-geo/ai-scraper-prime)** — Self-learning, self-healing AI web scraper with Open WebUI integration.
-- 💧 **Developed the KIEA Framework** — Adaptive water governance diagnostic framework & engine for climate change adaptation.
+- 💼 **Creator of [Arbeit.fit](https://www.arbeit.fit)** (`ai-job-hunter`, private repository): Private AI-assisted CV analysis & evidence-bound job matching engine.
+- 🌋 **Built [TerraMind Core](https://github.com/masood1996-geo/terramind-core)**: Real-time disaster intelligence fusing USGS, NASA EONET, NOAA, NASA FIRMS, GDACS & GlobalBuildingAtlas.
+- 🏠 **Built [OpenHouse Bot](https://github.com/masood1996-geo/openhouse-bot-prime)**: AI apartment hunting bot scraping 50+ portals with 24/7 Telegram alerts.
+- 🛰️ **Built [OmniWatch](https://github.com/masood1996-geo/OmniWatch)**: Global OSINT threat platform fusing 48+ sources (ADS-B, AIS, GDELT).
+- 🕷️ **Built [AI Scraper](https://github.com/masood1996-geo/ai-scraper-prime)**: Self-learning, self-healing AI web scraper with Open WebUI integration.
+- 💧 **Developed the KIEA Framework**: Adaptive water governance diagnostic framework & engine for climate change adaptation.
 - 🌐 Founder & Lead Engineer at **[Maven Webcraft](https://mavenwebcraft.com)** (Agency digital solutions).
 - 🎓 **MSc** in Global Change Geography from **Humboldt University of Berlin** (Grade 2.14, 2026).
 - 🎓 **BSc** in Geophysics from **Bahria University Karachi** (CGPA 3.55/4.00).
@@ -49,7 +50,7 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 
 ## 🚀 Flagship Projects
 
-### 💼 [Arbeit.fit — Find work that fits](https://www.arbeit.fit) | `ai-job-hunter` (private repository)
+### 💼 [Arbeit.fit: Find work that fits](https://www.arbeit.fit) | `ai-job-hunter` (private repository)
 > **Private AI-Assisted CV Analysis & Evidence-Bound Job Matching Platform**
 > - **Privacy-First Parsing**: Local SHA-256 digest calculation and automatic PII masking (names, emails, phone numbers, addresses replaced prior to LLM processing).
 > - **Evidence-Bound Matching**: Provider-agnostic LLM routing (OpenRouter & any OpenAI-compatible API) scores candidate suitability strictly against verified profile facts.
@@ -235,12 +236,12 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 
 | Degree | Field | Institution | Year | Details |
 |--------|-------|-------------|------|---------|
-| 🎓 **MSc** | Global Change Geography | Humboldt University of Berlin 🇩🇪 | 2019–2026 | Grade: **2.14** *(Completed)* |
-| 🎓 **BSc** | Geophysics | Bahria University Karachi 🇵🇰 | 2014–2018 | CGPA: **3.55 / 4.00** *(Completed)* |
+| 🎓 **MSc** | Global Change Geography | Humboldt University of Berlin 🇩🇪 | 2019-2026 | Grade: **2.14** *(Completed)* |
+| 🎓 **BSc** | Geophysics | Bahria University Karachi 🇵🇰 | 2014-2018 | CGPA: **3.55 / 4.00** *(Completed)* |
 
 ### 📄 Peer-Reviewed Research
-- 🗺️ **3D Geomodelling Case Study** — *A case study of 3D geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA*. Published in the **Journal of Applied Geophysics**. [DOI: 10.1016/j.jappgeo.2020.104114](https://doi.org/10.1016/j.jappgeo.2020.104114)
-- 💧 **Rebound Effect in Water Resources** — Water supply & demand dynamics in developed economies *(In Progress)*
+- 🗺️ **3D Geomodelling Case Study**: *A case study of 3D geomodelling of Frontier Formation Second Wall Creek Sand, Teapot Dome, Wyoming, USA*. Published in the **Journal of Applied Geophysics**. [DOI: 10.1016/j.jappgeo.2020.104114](https://doi.org/10.1016/j.jappgeo.2020.104114)
+- 💧 **Rebound Effect in Water Resources**: Water supply & demand dynamics in developed economies *(In Progress)*
 
 ### 📖 Master's Thesis: The KIEA Framework for Adaptive Water Governance
 **Title:** *A Critical Review of Participatory Approaches in Water Management for Climate Change Adaptation*
@@ -260,9 +261,9 @@ Developed the **Conditional Enabling Framework (KIEA)** to diagnose participator
 
 ## 🏅 Awards & Achievements
 
-- 🥉 **3rd Runner-up** — Imperial Barrel Awards, Asia Pacific Region (AAPG)
-- 🏆 **Rector Honor Award** — Bahria University Karachi (2014–2018)
-- ⚓ **Behr-e-Paima Survey Vessel Boarding** — Pakistan Navy (2015)
+- 🥉 **3rd Runner-up**: Imperial Barrel Awards, Asia Pacific Region (AAPG)
+- 🏆 **Rector Honor Award**: Bahria University Karachi (2014-2018)
+- ⚓ **Behr-e-Paima Survey Vessel Boarding**: Pakistan Navy (2015)
 - 🎖️ **Multiple Academic Merit Scholarships**
 
 ---
@@ -271,9 +272,9 @@ Developed the **Conditional Enabling Framework (KIEA)** to diagnose participator
 
 | Organization | Role |
 |--------------|------|
-| Pakistan Association of Petroleum Geoscientist (PAPG) | 🎓 Student Vice President (2017–2018) |
+| Pakistan Association of Petroleum Geoscientist (PAPG) | 🎓 Student Vice President (2017-2018) |
 | American Association of Petroleum Geologist (AAPG) | 📋 Student Member |
-| Society of Exploration Geophysicist (SEG) | 💰 Student Treasurer (2016–2018) |
+| Society of Exploration Geophysicist (SEG) | 💰 Student Treasurer (2016-2018) |
 | HOPE (Help Of Patients In Exigency By Students) | 🌟 Ambassador |
 
 ---
@@ -289,5 +290,5 @@ Developed the **Conditional Enabling Framework (KIEA)** to diagnose participator
 </p>
 
 <p align="center">
-  <em>🌍 Bridging Earth Sciences and AI — one commit at a time.</em>
+  <em>🌍 Bridging Earth Sciences and AI, one commit at a time.</em>
 </p>
