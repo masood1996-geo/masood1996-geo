@@ -111,29 +111,40 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 <tr>
 <td valign="top" width="33%">
 
-### 💻 Languages & Frameworks
+### 💻 Languages
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-663399?style=flat-square&logo=css&logoColor=white)
 
 </td>
 <td valign="top" width="33%">
 
-### 🌍 Geosciences & GIS
-![ArcGIS](https://img.shields.io/badge/ArcGIS-2C7AC3?style=flat-square&logo=arcgis&logoColor=white)
-![QGIS](https://img.shields.io/badge/QGIS-589632?style=flat-square&logo=qgis&logoColor=white)
-![Petrel](https://img.shields.io/badge/Schlumberger_Petrel-0070C0?style=flat-square)
-![3D Geomodelling](https://img.shields.io/badge/3D_Geomodelling-FF8C00?style=flat-square&logo=threedotjs&logoColor=white)
-![3D Seismic](https://img.shields.io/badge/3D_Seismic-8B0000?style=flat-square)
-![ERDAS](https://img.shields.io/badge/ERDAS_IMAGINE-008080?style=flat-square)
+### 🎨 Frontend & UI
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-9135FF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 
 </td>
+<td valign="top" width="33%">
+
+### ⚙️ Backend & APIs
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
+![REST APIs](https://img.shields.io/badge/REST_APIs-009688?style=flat-square)
+![OpenAPI](https://img.shields.io/badge/OpenAPI-000000?style=flat-square&logo=swagger&logoColor=85EA2D)
+![WebSockets](https://img.shields.io/badge/WebSockets-475569?style=flat-square)
+![Zod](https://img.shields.io/badge/Zod-408AFF?style=flat-square&logo=zod&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white)
+
+</td>
+</tr>
+<tr>
 <td valign="top" width="33%">
 
 ### 🧠 LLM Providers & APIs
@@ -141,46 +152,63 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 ![OpenAI](https://img.shields.io/badge/OpenAI-10A37F?style=flat-square)
 ![Anthropic Claude](https://img.shields.io/badge/Anthropic_Claude-D97757?style=flat-square&logo=claude&logoColor=white)
 ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
-![DeepSeek](https://img.shields.io/badge/DeepSeek-5786FE?style=flat-square&logo=deepseek&logoColor=white)
 ![Meta Llama](https://img.shields.io/badge/Meta_Llama-0467DF?style=flat-square&logo=meta&logoColor=white)
 ![Mistral AI](https://img.shields.io/badge/Mistral_AI-FA520F?style=flat-square&logo=mistralai&logoColor=white)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-5786FE?style=flat-square&logo=deepseek&logoColor=white)
 ![Hugging Face](https://img.shields.io/badge/Hugging_Face-000000?style=flat-square&logo=huggingface&logoColor=FFD21E)
 ![LLM Routing](https://img.shields.io/badge/LLM_Routing-Any_API_Provider-6E56CF?style=flat-square)
+
+</td>
+<td valign="top" width="33%">
+
+### 🤖 Agentic AI Tooling
+![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-412991?style=flat-square)
+![Antigravity](https://img.shields.io/badge/Google_Antigravity-4285F4?style=flat-square&logo=google&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![Open WebUI](https://img.shields.io/badge/Open_WebUI-00C7B7?style=flat-square)
+![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=modelcontextprotocol&logoColor=white)
+![Gradio](https://img.shields.io/badge/Gradio-F97316?style=flat-square&logo=gradio&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
+### 🗄️ Data & Storage
+![Appwrite](https://img.shields.io/badge/Appwrite-FD366E?style=flat-square&logo=appwrite&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-DD2C00?style=flat-square&logo=firebase&logoColor=white)
 
 </td>
 </tr>
 <tr>
 <td valign="top" width="33%">
 
-### 🤖 AI Tooling & Agents
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
-![Open WebUI](https://img.shields.io/badge/Open_WebUI-00C7B7?style=flat-square)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=modelcontextprotocol&logoColor=white)
-![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white)
-![Codex](https://img.shields.io/badge/Codex-412991?style=flat-square)
-![Antigravity](https://img.shields.io/badge/Google_Antigravity-4285F4?style=flat-square&logo=google&logoColor=white)
-
-</td>
-<td valign="top" width="33%">
-
-### 🔧 Dev Tools & Databases
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+### ☁️ DevOps & Deployment
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![Appwrite](https://img.shields.io/badge/Appwrite-FD366E?style=flat-square&logo=appwrite&logoColor=white)
-![REST APIs](https://img.shields.io/badge/REST_APIs-009688?style=flat-square)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=flat-square&logo=githubpages&logoColor=white)
+![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-4285F4?style=flat-square&logo=chromewebstore&logoColor=white)
 
 </td>
 <td valign="top" width="33%">
 
-### ⚙️ Scraping & Automation
+### 🕷️ Scraping & Automation
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square)
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
 ![Headless Chrome](https://img.shields.io/badge/Chrome_Headless-4285F4?style=flat-square&logo=googlechrome&logoColor=white)
-![Telegram API](https://img.shields.io/badge/Telegram_Bot_API-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-3776AB?style=flat-square&logo=python&logoColor=white)
+![Telegram Bot API](https://img.shields.io/badge/Telegram_Bot_API-26A5E4?style=flat-square&logo=telegram&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
+### 🌍 Geoscience & GIS
+![ArcGIS](https://img.shields.io/badge/ArcGIS-2C7AC3?style=flat-square&logo=arcgis&logoColor=white)
+![QGIS](https://img.shields.io/badge/QGIS-589632?style=flat-square&logo=qgis&logoColor=white)
+![MapLibre](https://img.shields.io/badge/MapLibre-396CB2?style=flat-square&logo=maplibre&logoColor=white)
+![Petrel](https://img.shields.io/badge/Schlumberger_Petrel-0070C0?style=flat-square)
+![ERDAS](https://img.shields.io/badge/ERDAS_IMAGINE-008080?style=flat-square)
+![3D Geomodelling](https://img.shields.io/badge/3D_Geomodelling-FF8C00?style=flat-square&logo=threedotjs&logoColor=white)
+![3D Seismic](https://img.shields.io/badge/3D_Seismic-8B0000?style=flat-square)
 
 </td>
 </tr>
