@@ -1,0 +1,12 @@
+# local secrets and helper tooling - never commit
+.env
+.env.*
+*.py
+mcp_tools.json
+gh_tools.json
+__pycache__/
+.venv/
+node_modules/
+.next/
+out/
+dist/

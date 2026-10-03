@@ -1,0 +1,17 @@
+# Masood Sultan - Portfolio
+
+> Berlin-based geoscientist and AI engineer building evidence-based job matching, audited data-extraction workflows, and computational geoscience systems.
+
+This portfolio presents selected projects, publications, research, and consulting work by Masood Sultan, spanning geoscience, geospatial data, AI systems, and web engineering.
+
+## Key Pages
+
+- [Portfolio home](https://masoodsultan.com/): projects, publications, academic CV, and contact
+- [Blog](https://blog.masoodsultan.com/): research briefs and analysis on AI, geoscience, GIS, and computing
+- [Maven Webcraft](https://mavenwebcraft.com/): web design and AI-search studio for small businesses
+
+## About
+
+- Name: Masood Sultan
+- Location: Berlin, Germany
+- Focus: job matching, data extraction, computational geoscience, web engineering
