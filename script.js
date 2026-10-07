@@ -1025,11 +1025,22 @@
     }
 
     function initContactActions() {
+        // mailto: links are assembled here instead of living in the HTML so
+        // Cloudflare email obfuscation cannot rewrite them into
+        // /cdn-cgi/l/email-protection links, which 404 when crawled.
+        const address = 'masood.geo' + '@' + 'yahoo.com';
+        document.querySelectorAll('a[data-email-link]').forEach((link) => {
+            const subject = link.dataset.emailSubject;
+            link.href = subject
+                ? 'mailto:' + address + '?subject=' + encodeURIComponent(subject)
+                : 'mailto:' + address;
+        });
+
         const copyBtn = document.getElementById('copy-email');
         if (!copyBtn) return;
 
         copyBtn.addEventListener('click', async () => {
-            const email = copyBtn.dataset.email || 'masood.geo@yahoo.com';
+            const email = copyBtn.dataset.email || address;
             const originalText = copyBtn.textContent;
 
             try {
