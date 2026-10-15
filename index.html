@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20261015-3">
+    <link rel="stylesheet" href="style.css?v=20261015-4">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -237,7 +237,7 @@
                 <div class="section-cta project-positioning">
                     <div>
                         <span class="cta-kicker">Research systems, not just demos</span>
-                        <p>Computational geoscience tools for live hazards, adaptive scraping, intelligence fusion, and climate workflows.</p>
+                        <p>Computational geoscience tools for live hazards, adaptive scraping, and climate workflows.</p>
                     </div>
                     <a href="/contact" class="btn-cv">Discuss research collaboration →</a>
                 </div>
@@ -270,6 +270,9 @@
                             </div>
                         </div>
                         <div class="project-visual">
+                            <a href="https://www.arbeit.fit" target="_blank" rel="noopener" class="site-preview">
+                                <img src="assets/previews/arbeitfit.jpg" alt="Arbeit.fit live website — evidence-based job matching" loading="lazy" width="1200" height="750">
+                            </a>
                             <details class="terminal-collapse">
                                 <summary class="terminal-toggle">View Terminal Output</summary>
                                 <div class="terminal-window" role="img" aria-label="Terminal-style visualization of Arbeit.fit isolating profile evidence, masking personal data, preparing a country-aware search plan, and returning source-linked matches">
@@ -290,60 +293,10 @@
                     </div>
                 </article>
 
-                <!-- OmniWatch -->
-                <article class="project-card" id="project-omniwatch">
-                    <div class="project-header">
-                        <span class="project-num">02</span>
-                        <div class="project-tags">
-                            <span>TypeScript</span><span>Next.js</span><span>OSINT</span><span>MapLibre GL</span>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-info">
-                            <h2><a href="https://github.com/masood1996-geo/OmniWatch" target="_blank" rel="noopener">OmniWatch</a></h2>
-                            <p>A <strong>global OSINT &amp; threat intelligence platform</strong> that fuses <strong>48+ open data sources</strong> (military ADS-B aircraft tracking, maritime AIS vessel monitoring, USGS earthquakes, NASA wildfires, GDELT conflict events) into a single real-time dashboard with an <strong>AI correlation engine</strong> powered by local LLMs. Built on the paradigm that geoscience monitoring and intelligence analysis share the same architectural DNA.</p>
-                            <div class="feature-list">
-                                <div class="feature"><strong>48+ Sources Fused</strong><span>8-tier intelligence pipeline from hazards to SIGINT</span></div>
-                                <div class="feature"><strong>AI Correlation Engine</strong><span>LLM-powered cross-referencing via Ollama</span></div>
-                                <div class="feature"><strong>Live Map Dashboard</strong><span>MapLibre GL with layer toggles &amp; severity filtering</span></div>
-                            </div>
-                            <div class="project-proof-grid" aria-label="OmniWatch project evidence">
-                                <div class="proof-item"><span>Problem</span><strong>Open intelligence and hazard signals are scattered across incompatible feeds.</strong></div>
-                                <div class="proof-item"><span>Role</span><strong>Built the fusion architecture, map layers, and AI correlation workflow.</strong></div>
-                                <div class="proof-item"><span>Stack</span><strong>TypeScript, Next.js, MapLibre GL, open feeds, and local LLM inference.</strong></div>
-                                <div class="proof-item"><span>Proof</span><strong>48+ sources, live dashboard, and public repository demonstrate the system.</strong></div>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/masood1996-geo/OmniWatch" target="_blank" rel="noopener" class="proj-link">View repository →</a>
-                                <a href="https://huggingface.co/spaces/masood1996/omniwatch" target="_blank" rel="noopener" class="proj-link accent">Live Dashboard →</a>
-                            </div>
-                        </div>
-                        <div class="project-visual">
-                            <details class="terminal-collapse">
-                                <summary class="terminal-toggle">View Terminal Output</summary>
-                                <div class="terminal-window">
-                                    <div class="terminal-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="term-title">omniwatch-server</span></div>
-                                    <div class="terminal-body">
-                                        <div class="tl"><span class="tp">$</span> <span class="tc">npx ts-node src/index.ts</span></div>
-                                        <div class="tl dim"><span class="ti">[engine]</span> OmniWatch Intelligence Engine v1.0 booting on port 4100</div>
-                                        <div class="tl accent"><span class="ti">[sweep]</span> Intelligence sweep initiated: 48 sources across 8 tiers</div>
-                                        <div class="tl dim"><span class="ti">[tier-1]</span> USGS: 12 seismic events | NASA FIRMS: 847 fire detections</div>
-                                        <div class="tl dim"><span class="ti">[tier-2]</span> ADS-B: 23 military aircraft tracked | OpenSky: active</div>
-                                        <div class="tl dim"><span class="ti">[tier-3]</span> MarineTraffic AIS: 156 vessels in monitored zones</div>
-                                        <div class="tl accent"><span class="ti">[ai]</span> Correlation engine: <span class="th">3 cross-source anomalies detected</span></div>
-                                        <div class="tl"><span class="ti">[sse]</span> Broadcasting delta to connected clients. Next sweep in 900s.</div>
-                                        <div class="tl"><span class="tp">$</span> <span class="cursor-block">█</span></div>
-                                    </div>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </article>
-
                 <!-- TerraMind Core -->
                 <article class="project-card" id="project-terramind">
                     <div class="project-header">
-                        <span class="project-num">03</span>
+                        <span class="project-num">02</span>
                         <div class="project-tags">
                             <span>TypeScript</span><span>Node.js</span><span>Express</span><span>SSE</span>
                         </div>
@@ -369,6 +322,9 @@
                             </div>
                         </div>
                         <div class="project-visual">
+                            <a href="https://huggingface.co/spaces/masood1996/terramind-core" target="_blank" rel="noopener" class="site-preview">
+                                <img src="assets/previews/terramind.jpg" alt="TerraMind Core live dashboard — real-time hazard feed fusion" loading="lazy" width="1200" height="678">
+                            </a>
                             <details class="terminal-collapse">
                                 <summary class="terminal-toggle">View Terminal Output</summary>
                                 <div class="terminal-window" role="img" aria-label="Terminal output showing TerraMind API booting on port 4100, normalizing hazard feeds from USGS, NASA FIRMS, and broadcasting 22 active events via server-sent events">
@@ -392,7 +348,7 @@
                 <!-- AI Scraper Prime -->
                 <article class="project-card" id="project-aiscraper">
                     <div class="project-header">
-                        <span class="project-num">04</span>
+                        <span class="project-num">03</span>
                         <div class="project-tags">
                             <span>Python</span><span>Structured Data</span><span>Bounded Recovery</span><span>SQLite</span><span>MIT License</span>
                         </div>
@@ -440,7 +396,7 @@
                 <!-- OpenHouse Bot Prime -->
                 <article class="project-card" id="project-openhouse">
                     <div class="project-header">
-                        <span class="project-num">05</span>
+                        <span class="project-num">04</span>
                         <div class="project-tags">
                             <span>Python</span><span>Berlin</span><span>Crawling</span><span>SQLite</span><span>Notifications</span><span>AGPL-3.0</span>
                         </div>
@@ -525,6 +481,11 @@
                                 <a href="https://zweifreunde.cafe/" target="_blank" rel="noopener" class="proj-link accent">Visit Website →</a>
                             </div>
                         </div>
+                        <div class="project-visual">
+                            <a href="https://zweifreunde.cafe/" target="_blank" rel="noopener" class="site-preview">
+                                <img src="assets/previews/zweifreunde.jpg" alt="Café Zwei Freunde live website" loading="lazy" width="1200" height="750">
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -548,6 +509,11 @@
                             <div class="project-links">
                                 <a href="https://kindly.berlin" target="_blank" rel="noopener" class="proj-link accent">Visit Website →</a>
                             </div>
+                        </div>
+                        <div class="project-visual">
+                            <a href="https://kindly.berlin" target="_blank" rel="noopener" class="site-preview">
+                                <img src="assets/previews/kindly.jpg" alt="Kindly Berlin live website" loading="lazy" width="1200" height="678">
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -573,6 +539,11 @@
                                 <a href="https://barista.masoodsultan.com" target="_blank" rel="noopener" class="proj-link accent">Visit Website →</a>
                             </div>
                         </div>
+                        <div class="project-visual">
+                            <a href="https://barista.masoodsultan.com" target="_blank" rel="noopener" class="site-preview">
+                                <img src="assets/previews/barista.jpg" alt="Barista portfolio live website" loading="lazy" width="1200" height="750">
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -597,6 +568,11 @@
                                 <a href="https://www.shareekatulhussain.com/" target="_blank" rel="noopener" class="proj-link accent">Visit Website →</a>
                             </div>
                         </div>
+                        <div class="project-visual">
+                            <a href="https://www.shareekatulhussain.com/" target="_blank" rel="noopener" class="site-preview">
+                                <img src="assets/previews/shareeka.jpg" alt="Shareekat-ul-Hussain live website" loading="lazy" width="1200" height="750">
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -620,6 +596,11 @@
                             <div class="project-links">
                                 <a href="https://blog.masoodsultan.com" target="_blank" rel="noopener" class="proj-link accent">Visit Website →</a>
                             </div>
+                        </div>
+                        <div class="project-visual">
+                            <a href="https://blog.masoodsultan.com" target="_blank" rel="noopener" class="site-preview">
+                                <img src="assets/previews/blog.jpg" alt="Masood Sultan blog live website" loading="lazy" width="1200" height="441">
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -803,7 +784,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-    <script src="script.js?v=20261015-1"></script>
+    <script src="script.js?v=20261015-4"></script>
 
     <!-- Screen reader live region for page announcements -->
     <div id="a11y-announce" class="sr-only" aria-live="assertive" aria-atomic="true"></div>

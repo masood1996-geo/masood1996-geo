@@ -256,7 +256,7 @@
         },
         projects: {
             title: 'Projects - Masood Sultan',
-            description: 'Selected work: Arbeit.fit, OmniWatch, TerraMind Core, AI Scraper Prime, and OpenHouse Bot Prime: evidence-driven geoscience and AI systems.'
+            description: 'Selected work: Arbeit.fit, TerraMind Core, AI Scraper Prime, and OpenHouse Bot Prime: evidence-driven geoscience and AI systems.'
         },
         web: {
             title: 'Web Projects - Masood Sultan',

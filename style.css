@@ -694,6 +694,22 @@ body[data-page="home"] #main-nav {
 .project-body.reverse { direction: rtl; }
 .project-body.reverse > * { direction: ltr; }
 
+.site-preview {
+    display: block;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-card);
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.site-preview img { width: 100%; height: auto; display: block; }
+.site-preview:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
 .project-info h2 {
     font-size: 1.9rem;
     font-weight: 600;

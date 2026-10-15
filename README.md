@@ -39,7 +39,6 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 - 💼 **Creator of [Arbeit.fit](https://www.arbeit.fit)** (`ai-job-hunter`, private repository): Private AI-assisted CV analysis & evidence-bound job matching engine.
 - 🌋 **Built [TerraMind Core](https://github.com/masood1996-geo/terramind-core)**: Real-time disaster intelligence fusing USGS, NASA EONET, NOAA, NASA FIRMS, GDACS & GlobalBuildingAtlas.
 - 🏠 **Built [OpenHouse Bot](https://github.com/masood1996-geo/openhouse-bot-prime)**: AI apartment hunting bot scraping 50+ portals with 24/7 Telegram alerts.
-- 🛰️ **Built [OmniWatch](https://github.com/masood1996-geo/OmniWatch)**: Global OSINT threat platform fusing 48+ sources (ADS-B, AIS, GDELT).
 - 🕷️ **Built [AI Scraper](https://github.com/masood1996-geo/ai-scraper-prime)**: Self-learning, self-healing AI web scraper with Open WebUI integration.
 - 💧 **Developed the KIEA Framework**: Adaptive water governance diagnostic framework & engine for climate change adaptation.
 - 🌐 Founder & Lead Engineer at **[Maven Webcraft](https://mavenwebcraft.com)** (Agency digital solutions).
@@ -67,11 +66,6 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
 > - Scrapes over 50 real estate platforms globally, filters apartment listings using customizable LLM criteria, and delivers real-time Telegram alerts 24/7.
 > - Security-hardened Telegram bot handler with automated deduplication and budget/location validation.
 
-### 🛰️ [OmniWatch OSINT Platform](https://github.com/masood1996-geo/OmniWatch)
-> **Global OSINT & Threat Intelligence Platform**
-> - Real-time dashboard fusing **48+ live data feeds** including military aircraft telemetry (ADS-B), maritime vessel tracking (AIS), GDELT conflict news events, and seismic activity.
-> - Powered by an AI correlation engine for rapid cross-domain event detection.
-
 ### 🕷️ [AI Scraper](https://github.com/masood1996-geo/ai-scraper-prime)
 > **Self-Learning AI Web Scraper with Codified Self-Healing**
 > - Headless Chrome + LLM extraction pipeline with 10+ failure scenario self-healing routines.
@@ -98,9 +92,6 @@ I'm a **Geoscientist and AI Developer** based in Berlin. My work fuses **Earth S
   </a>
   <a href="https://github.com/masood1996-geo/ai-scraper-prime">
     <img align="center" src="https://github-readme-stats.shion.dev/api/pin/?username=masood1996-geo&repo=ai-scraper-prime&theme=tokyonight&hide_border=true&border_radius=10" />
-  </a>
-  <a href="https://github.com/masood1996-geo/OmniWatch">
-    <img align="center" src="https://github-readme-stats.shion.dev/api/pin/?username=masood1996-geo&repo=OmniWatch&theme=tokyonight&hide_border=true&border_radius=10" />
   </a>
 </p>
 
