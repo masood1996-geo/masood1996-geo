@@ -23,7 +23,6 @@
     --mono: 'JetBrains Mono', monospace;
     --serif: 'Clash Display', system-ui, sans-serif;
     --nav-height: 64px;
-    --max-width: 1100px;
     --globe-bg: #0d120e;
     --term-bg: #0c110c;
     --term-bar-bg: #131a13;
@@ -90,6 +89,9 @@ a { color: inherit; text-decoration: none; transition: color 0.2s; }
 img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; }
 strong { font-weight: 600; }
+/* Long-form prose: keep a readable measure inside the full-bleed wide layout.
+   The cap only activates on screens wider than ~1280px. */
+p { max-width: 112ch; }
 
 .serif-accent {
     font-family: inherit;
@@ -141,8 +143,6 @@ body[data-page="home"] #main-nav {
 }
 
 .nav-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
     height: 100%;
     padding: 0 2cm;
     display: flex;
@@ -244,8 +244,6 @@ body[data-page="home"] #main-nav {
 }
 
 .page-content {
-    max-width: var(--max-width);
-    margin: 0 auto;
     padding: calc(var(--nav-height) + 3rem) 2cm 4rem;
 }
 
@@ -1205,8 +1203,6 @@ details[open] .terminal-toggle { color: var(--accent); }
 body[data-page="home"] #site-footer { display: none; }
 
 .footer-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
     padding: 0 2cm;
     display: flex;
     justify-content: space-between;
