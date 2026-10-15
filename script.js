@@ -48,7 +48,7 @@
         animate() {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-            const rgb = isLight ? '31, 110, 134' : '108, 169, 191';
+            const rgb = isLight ? '77, 124, 51' : '198, 229, 154';
 
             if (this.points.length > 1) {
                 this.ctx.lineJoin = 'round';
@@ -514,7 +514,7 @@
                 globeMesh.material.emissive.setHex(0xfdf4dc);
             }
             if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0xe6cba1); });
-            if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x1f6e86);
+            if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x4d7c33);
             if (atmosphereMesh && atmosphereMesh.material.uniforms) {
                 atmosphereMesh.material.blending = THREE.NormalBlending;
                 atmosphereMesh.material.uniforms.color1.value.setHex(0xd4bea8); // Darker warm contrast
@@ -522,17 +522,17 @@
                 atmosphereMesh.material.uniforms.alphaMult.value = 0.4;
             }
         } else {
-            renderer.setClearColor(0x0f1218, 1);
+            renderer.setClearColor(0x0a0f0b, 1);
             if (globeMesh) {
-                globeMesh.material.color.setHex(0x14181f);
-                globeMesh.material.emissive.setHex(0x0b0e13);
+                globeMesh.material.color.setHex(0x1b241c);
+                globeMesh.material.emissive.setHex(0x0a0f0b);
             }
-            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x212a36); });
-            if (countryLinesMesh) countryLinesMesh.material.color.setHex(0x6ca9bf);
+            if (gridGroup) gridGroup.children.forEach(l => { l.material.color.setHex(0x263020); });
+            if (countryLinesMesh) countryLinesMesh.material.color.setHex(0xc6e59a);
             if (atmosphereMesh && atmosphereMesh.material.uniforms) {
                 atmosphereMesh.material.blending = THREE.AdditiveBlending;
-                atmosphereMesh.material.uniforms.color1.value.setHex(0x6ca9bf); // Muted teal
-                atmosphereMesh.material.uniforms.color2.value.setHex(0x7e93a8); // Slate blue
+                atmosphereMesh.material.uniforms.color1.value.setHex(0xc6e59a); // Muted teal
+                atmosphereMesh.material.uniforms.color2.value.setHex(0xd9c48a); // Slate blue
                 atmosphereMesh.material.uniforms.alphaMult.value = 0.5;
             }
         }
@@ -585,12 +585,12 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setClearColor(0x000000, 0);
 
-        const ambient = new THREE.AmbientLight(0x242a33, 0.6);
+        const ambient = new THREE.AmbientLight(0x1f281c, 0.6);
         scene.add(ambient);
-        const point = new THREE.PointLight(0x6ca9bf, 0.8, 50);
+        const point = new THREE.PointLight(0xc6e59a, 0.8, 50);
         point.position.set(5, 3, 5);
         scene.add(point);
-        const point2 = new THREE.PointLight(0xc98a6b, 0.3, 50);
+        const point2 = new THREE.PointLight(0xe09a6b, 0.3, 50);
         point2.position.set(-5, -2, 3);
         scene.add(point2);
 
@@ -599,8 +599,8 @@
 
         const sphereGeo = new THREE.SphereGeometry(GLOBE_RADIUS, GLOBE_SEGMENTS, GLOBE_SEGMENTS);
         const sphereMat = new THREE.MeshPhongMaterial({
-            color: 0x14181f,
-            emissive: 0x0b0e13,
+            color: 0x1b241c,
+            emissive: 0x0a0f0b,
             shininess: 5,
             transparent: true,
             opacity: 1.0
@@ -641,8 +641,8 @@
         const geo = new THREE.SphereGeometry(GLOBE_RADIUS * 1.15, 64, 64);
         const mat = new THREE.ShaderMaterial({
             uniforms: {
-                color1: { value: new THREE.Color(0x6ca9bf) },
-                color2: { value: new THREE.Color(0x7e93a8) },
+                color1: { value: new THREE.Color(0xc6e59a) },
+                color2: { value: new THREE.Color(0xd9c48a) },
                 alphaMult: { value: 0.5 }
             },
             vertexShader: `
@@ -673,7 +673,7 @@
 
     function createGridLines() {
         gridGroup = new THREE.Group();
-        const gridMat = new THREE.LineBasicMaterial({ color: 0x212a36, transparent: true, opacity: 0.25 });
+        const gridMat = new THREE.LineBasicMaterial({ color: 0x263020, transparent: true, opacity: 0.25 });
 
         for (let lat = -60; lat <= 60; lat += 30) {
             const pts = [];
@@ -716,7 +716,7 @@
                 });
 
                 const geo = new THREE.BufferGeometry().setFromPoints(points);
-                const mat = new THREE.LineBasicMaterial({ color: 0x6ca9bf, transparent: true, opacity: 0.5 });
+                const mat = new THREE.LineBasicMaterial({ color: 0xc6e59a, transparent: true, opacity: 0.5 });
                 countryLinesMesh = new THREE.LineSegments(geo, mat);
                 globeGroup.add(countryLinesMesh);
             })
@@ -911,7 +911,7 @@
                 current = next;
             }
             const geo = new THREE.BufferGeometry().setFromPoints(pts);
-            const mat = new THREE.LineBasicMaterial({ color: digStage >= 3 ? 0xc98a6b : 0xd9a27a, transparent: true, opacity: 0.7 });
+            const mat = new THREE.LineBasicMaterial({ color: digStage >= 3 ? 0xe09a6b : 0xd9a27a, transparent: true, opacity: 0.7 });
             cracksGroup.add(new THREE.LineSegments(geo, mat));
         }
     }
