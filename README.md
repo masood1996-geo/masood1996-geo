@@ -12,7 +12,7 @@
   <a href="https://www.arbeit.fit"><img src="https://img.shields.io/badge/Arbeit.fit-Live_App-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Arbeit.fit"/></a>
   <a href="https://www.linkedin.com/in/masood1996/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge" alt="LinkedIn"/></a>
   <a href="https://orcid.org/0000-0003-3123-1461"><img src="https://img.shields.io/badge/ORCID-0000--0003--3123--1461-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"/></a>
-  <a href="mailto:masood.geo@yahoo.com"><img src="https://img.shields.io/badge/Email-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" alt="Email"/></a>
+  <a href="mailto:info@masoodsultan.com"><img src="https://img.shields.io/badge/Email-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/masood1996-geo"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://mavenwebcraft.com"><img src="https://img.shields.io/badge/Agency-Maven_Webcraft-2E86C1?style=for-the-badge" alt="Maven Webcraft"/></a>
 </p>

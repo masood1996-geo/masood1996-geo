@@ -1017,7 +1017,7 @@
 
         // Email obfuscation - assemble address client-side
         const emailEl = document.getElementById('email-display');
-        if (emailEl) emailEl.textContent = 'masood.geo' + '@' + 'yahoo.com';
+        if (emailEl) emailEl.textContent = 'info' + '@' + 'masoodsultan.com';
         initContactActions();
 
         // Accessibility toolbar
@@ -1028,7 +1028,7 @@
         // mailto: links are assembled here instead of living in the HTML so
         // Cloudflare email obfuscation cannot rewrite them into
         // /cdn-cgi/l/email-protection links, which 404 when crawled.
-        const address = 'masood.geo' + '@' + 'yahoo.com';
+        const address = 'info' + '@' + 'masoodsultan.com';
         document.querySelectorAll('a[data-email-link]').forEach((link) => {
             const subject = link.dataset.emailSubject;
             link.href = subject
